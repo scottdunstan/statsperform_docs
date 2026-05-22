@@ -86,6 +86,7 @@
     gap: 8px;
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-items: center;
   }
 
   .badge {
@@ -104,7 +105,36 @@
     background: var(--accent-dim2);
   }
 
+  /* Loading indicator */
+  .kb-status {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
 
+  .kb-status.loading { color: var(--accent); }
+  .kb-status.error { color: #ef9a9a; }
+  .kb-status.ready { color: #81c784; }
+
+  .kb-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .kb-status.loading .kb-dot {
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 
   /* ── Messages ── */
   .messages {
@@ -174,6 +204,13 @@
     word-break: break-word;
   }
 
+  .bubble.ai {
+    background: var(--ai-bubble);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-top-left-radius: 4px;
+  }
+
   .bubble.ai h1, .bubble.ai h2, .bubble.ai h3 {
     font-size: 13px;
     font-weight: 700;
@@ -196,11 +233,6 @@
   }
   .bubble.ai strong { color: var(--text-primary); font-weight: 600; }
   .bubble.ai hr { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
-    background: var(--ai-bubble);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    border-top-left-radius: 4px;
-  }
 
   .bubble.user {
     background: var(--user-bubble);
@@ -353,6 +385,10 @@
       <span class="badge accent">Stats Perform</span>
       <span class="badge accent">Sportradar</span>
       <span class="badge">Compare</span>
+      <span class="kb-status loading" id="kbStatus">
+        <span class="kb-dot"></span>
+        <span id="kbStatusText">Loading knowledge…</span>
+      </span>
     </div>
   </header>
 
@@ -366,7 +402,7 @@
         </svg>
       </div>
       <div class="bubble-wrap">
-        <div class="bubble ai">Hello! I now have documentation for both <strong>Stats Perform</strong> and <strong>Sportradar</strong>. You can ask me about either provider individually, or ask me to compare them. Try asking about specific sports, endpoints, delivery methods, or product areas.</div>
+        <div class="bubble ai">Hello! I have documentation for both <strong>Stats Perform</strong> and <strong>Sportradar</strong>. Ask me about either provider individually, or ask me to compare them — specific sports, endpoints, delivery methods, coverage tiers, or product areas.</div>
         <div class="suggestions" id="suggestions">
           <button class="sug" onclick="ask('Compare Stats Perform and Sportradar soccer APIs')">Compare soccer APIs</button>
           <button class="sug" onclick="ask('Which provider has better cricket coverage?')">Cricket coverage comparison</button>
@@ -384,7 +420,7 @@
     <div class="input-row">
       <textarea
         id="userInput"
-        placeholder="Ask about Stats Perform APIs…"
+        placeholder="Ask about Stats Perform or Sportradar APIs…"
         rows="1"
         onkeydown="handleKey(event)"
         oninput="autoResize(this)"
@@ -395,236 +431,284 @@
         </svg>
       </button>
     </div>
-    <p class="hint">Enter / Shift+Enter for newline</p>
+    <p class="hint">Enter to send &nbsp;·&nbsp; Shift+Enter for newline</p>
   </div>
 
 </div>
 
 <script>
 // ─────────────────────────────────────────────
-// Knowledge base — full OpenAPI data for all 17 sports
+// Knowledge base — loaded from JSON files
 // ─────────────────────────────────────────────
-const KNOWLEDGE = {"australianfootball":{"title":"SDAPI - Australian Football","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}/{contestantUuid}":{"method":"GET","summary":"","description":"","parameters":["contestantUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","comp","_pgSz","_pgNm","ctst","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]}}},"badminton":{"title":"SDAPI - Badminton","description":"","endpoints":{"/tournament/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trcl","trnDt","trn","_ordSrt","comp","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/tournament/{outletAuthKey}/{tournamentUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentUuid","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trn","mt","ctst2","_pgSz","_pgNm","ctst","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]}}},"baseball":{"title":"SDAPI - Baseball","description":"","endpoints":{"/venues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["venue","ctst","tmcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["date","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentsimulations/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","date","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["stages","coverage","comp","ctst","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["stages","coverage","comp","ctst","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["stages","coverage","comp","ctst","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["stages","coverage","comp","ctst","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["srs","ctry","ctst","tmcl","stg","detailed","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}/{contestantId}":{"method":"GET","summary":"","description":"","parameters":["contestantId","detailed","outletAuthKey","_fmt","_rt","_clbk"]},"/standingsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/squadsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","ctst","tmcl","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","detailed","tmcl","ctst","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/seasonstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","detailed","people","ctst","fx","stg","tmcl","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["statsId","fx","live","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","live","outletAuthKey","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","comp","ctst","tmcl","live","mt.mDt","week","stg","status","_ordSrt","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","live","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","ctst","tmcl","mt.mDt","week","ctry","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matcheventv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matcheventv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","comp","ctst","tmcl","_pgSz","_pgNm","_ordSrt","week","stg","mt.mDt","live","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","live","outletAuthKey","_fmt","_rt","_clbk"]},"/depthcharts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]}}},"basketball":{"title":"SDAPI - Basketball","description":"","endpoints":{"/tournamentsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["date","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentsimulations/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentCalendarUuid","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","stages","comp","ctst","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/teamlog/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}/{contestantUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","contestantUuid","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","detailed","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","stg","_fmt","_rt","_clbk"]},"/polls/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentCalendarUuid","_fmt","_rt","_clbk"]},"/playerrankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/playerlog/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","tmcl","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","ctst","active","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","statsId","fx","_lcl","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_lcl","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_lcl","detailed","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","type","_lcl","detailed","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_dlt","fx","comp","tmcl","mt.mDt","_pgSz","_pgNm","_ordSrt","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","srs","lineups","fx","tmcl","stg","comp","ctst","mt.mDt","_ordSrt","live","status","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/head2head/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["h2h","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/depthcharts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]}}},"beachsoccer":{"title":"SDAPI - Beach Soccer","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type1}/{type2}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type1","type2","comp","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","comp","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","lineups","tmcl","_pgSz","_pgNm","comp","ctst","_ordSrt","fx","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]}}},"cricket":{"title":"SDAPI - Cricket","description":"","endpoints":{"/wagonwheel/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/wagonwheel/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type}":{"method":"GET","summary":"","description":"","parameters":["type","comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type1}/{type2}":{"method":"GET","summary":"","description":"","parameters":["type1","type2","comp","outletAuthKey","_fmt","_rt","_clbk"]},"/topperformers/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/topperformers/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","prsn","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","active","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","active","outletAuthKey","_fmt","_rt","_clbk"]},"/playerbattingpredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/playerbattingpredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/nextballpredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/nextballpredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","overs","ball","_iPP","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivescore/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["innings","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivescore/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["state","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","state","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["innings","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["gameType","ingl","fx","mt.mDt","comp","tmcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/manhattan/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/manhattan/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["innings","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","innings","outletAuthKey","_fmt","_rt","_clbk"]},"/bowlingheatmap/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/bowlingheatmap/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/advancedmatchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/advancedmatchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]}}},"football":{"title":"SDAPI - American Football","description":"","endpoints":{"/tournamentsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["date","tmcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentsimulations/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","date","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentCalendarUuid","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/teams/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","ctst","tmcl","_fmt","_rt","_clbk"]},"/teams/{outletAuthKey}/{contestantUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","contestantUuid","_fmt","_rt","_clbk"]},"/standingsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","live","_fmt","_rt","_clbk"]},"/squadsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","detailed","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/seasonstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","people","fx","ctst","tmcl","stg","detailed","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","ctst","tmcl","comp","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","statsId","fx","detailed","_lcl","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","detailed","_lcl","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","comp","fx","live","week","mt.mDt","stg","status","_ordSrt","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_lcl","detailed","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","type","_lcl","detailed","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matcheventv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","detailed","drivechart","xinfo","playerparticipation","fx"]},"/matcheventv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","detailed","drivechart","xinfo","playerparticipation"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","comp","live","week","mt.mDt","stg","status","_ordSrt","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]},"/gofortwopredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/gofortwopredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/fourthdownpredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/fourthdownpredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]}}},"futsal":{"title":"SDAPI - Futsal","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["stages","comp","ctst","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["stages","comp","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["stages","comp","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["stages","comp","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","comp","_pgSz","_pgNm","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]}}},"golf":{"title":"SDAPI - Golf","description":"","endpoints":{"/tournament/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trcl","trn","tr","trnDt","comp","_ordSrt","_pgSz","_pgNm","_fmt","_rt","_clbk"]},"/tournament/{outletAuthKey}/{tournamentUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentUuid","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","date","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","detailed","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/people/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","tm","trcl","trn","_fmt","_rt","_clbk"]},"/matchplay/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trn","rnd","_fmt","_rt","_clbk"]},"/leaderboard/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["trn","outletAuthKey","_fmt","_rt","_clbk"]},"/holebyhole/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["trn","prsn","rnd","outletAuthKey","_fmt","_rt","_clbk"]}}},"handball":{"title":"SDAPI - Handball","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","detailed","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","comp","ctst","_ordSrt","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]}}},"icehockey":{"title":"SDAPI - Ice Hockey","description":"","endpoints":{"/tournamentschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["srs","ctry","ctst","tmcl","stg","detailed","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}/{contestantId}":{"method":"GET","summary":"","description":"","parameters":["contestantId","detailed","outletAuthKey","_fmt","_rt","_clbk"]},"/standingsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","stg","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/squadsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","stg","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","detailed","_fmt","_rt","_clbk"]},"/seasonstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","people","tmcl","ctst","detailed","fx","stg","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/seasonsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["date","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonsimulations/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["statsId","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","comp","ctst","_ordSrt","fx","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/matchv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","ctst","fx","ctry","week","mt.mDt","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstatsv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matcheventv2/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matcheventv2/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","lineups","tmcl","_pgSz","_pgNm","comp","ctst","_ordSrt","fx","stg","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","lineups","live","_fmt","_rt","_clbk"]}}},"motorsport":{"title":"SDAPI - Motorsports","description":"","endpoints":{"/sessions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","rc","ssn","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["chcl","type","outletAuthKey","_fmt","_rt","_clbk"]},"/race/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["rc","chcl","rcDt","comp","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/race/{outletAuthKey}/{raceUuid}":{"method":"GET","summary":"","description":"","parameters":["raceUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/lapbylap/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["rc","ssn","prsn","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/grid/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["rc","ssn","outletAuthKey","_fmt","_rt","_clbk"]},"/competitors/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","rc","tm","chcl","_fmt","_rt","_clbk"]},"/championshipcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/championshipcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/championshipcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/championshipcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]}}},"rugbyleague":{"title":"SDAPI - Rugby League","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentCalendarUuid","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_pgSz","_pgNm","detailed","active","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","_pgSz","_pgNm","ctst","fx","ctry","week","mt.mDt","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","fx","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","fx","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]},"/mappings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["idList","idType","outletAuthKey","_fmt","_rt","_clbk"]}}},"rugbyunion":{"title":"SDAPI - Rugby Union","description":"","endpoints":{"/venues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/venues/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentCalendarUuid","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_pgSz","_pgNm","detailed","active","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","_fmt","_rt","_clbk"]},"/refereestats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/refereestats/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","_pgSz","_pgNm","ctst","fx","ctry","week","mt.mDt","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_pgSz","_pgNm","fx","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","fx","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]},"/mappings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["idList","idType","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]}}},"soccer":{"title":"SDAPI - Soccer","description":"","endpoints":{"/weatherforecasts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","tmcl","mt.mDt","outletAuthKey","_fmt","_rt","_clbk"]},"/weatherforecasts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/venues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["venue","ctst","tmcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/trophies/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","comp","tmcl","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/transfers/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","strtDt","endDt","ctst","tmcl","comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["cvlv","tmcl","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentschedule/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","cvlv","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendarreference/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_rdlt","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["stages","coverage","comp","ctst","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type}":{"method":"GET","summary":"","description":"","parameters":["type","stages","coverage","comp","ctst","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/{type1}/{type2}":{"method":"GET","summary":"","description":"","parameters":["type1","type2","stages","coverage","comp","ctst","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/topperformers/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/topperformers/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/teamplayerpredictions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["stat","min","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/teamplayerpredictions/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["stat","min","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["srs","ctry","ctst","tmcl","stg","detailed","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/team/{outletAuthKey}/{contestantId}":{"method":"GET","summary":"","description":"","parameters":["contestantId","detailed","outletAuthKey","_fmt","_rt","_clbk"]},"/suspensions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","fx","_lcl","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","tmcl","stg","live","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","ctst","detailed","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonstatspoints/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["ctst2","srs","people","top","plrpos","tmcl","ctst","detailed","stg","week","mt.mDt","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","tmcl","ctst","detailed","minimal","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonpowerrankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["confed","rank","rankDt","type","tmcl","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonplaytime/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonplaytime/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonplayerratings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonexpectedgoals/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","tmcl","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/seasonandtournamentsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","stg","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteshape/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteshape/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remotepressuretimeline/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remotepressuretimeline/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteplayershape/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteplayershape/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteplayerruns/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteplayerruns/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remotephasesofplay/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remotephasesofplay/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remotematchtrackingepts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remotematchtrackingepts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteevents/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteevents/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedruns/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedruns/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedphases/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedphases/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedfitness/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedfitness/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["type","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedevents/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/remoteaggregatedevents/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/refereestats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/referees/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","_lcl","_pgSz","_pgNm","tmcl","stg","outletAuthKey","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["tmcl","outletAuthKey","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}/{tournamentCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/possessionevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/possessionevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/possession/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/possession/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/playerpossessionvalues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","_lcl","tmcl","_fmt","_rt","_clbk"]},"/playerpossessionvalues/{outletAuthKey}/{playerUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","playerUuid","_lcl","tmcl","_fmt","_rt","_clbk"]},"/playercontract/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/playercontract/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","_lcl","_pgSz","_pgNm","ctst","active","outletAuthKey","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/passmatrix/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/passmatrix/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgmatchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","_lcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","bioType","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlg_match_recap/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/nlg_match_recap/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/momentum/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/momentum/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","ctst","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtvlisting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtracking/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchtracking/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_lcl","detailed","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstream/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["type","matchUuid","_lcl","detailed","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstatspoints/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["people","top","fx","tmcl","detailed","week","status","_ordSrt","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstatspoints/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["people","top","matchUuid","_lcl","detailed","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["people","srs","_dlt","_fld","fx","detailed","comp","tmcl","ctst","stg","mt.mDt","status","week","_ordSrt","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["people","_dlt","_fld","matchUuid","detailed","status","_ordSrt","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchreference/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_rdlt","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchprovisionallineups/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","tmcl","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchprovisionallineups/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpossessionvalues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpossessionvalues/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchplaytime/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchplayerratings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["indexscore","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchplayerratings/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["indexscore","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpenaltiespreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchpenaltiespreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchlivewinprobability/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["state","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["state","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfitness/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","fx","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfitness/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["type","matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfactsbetting/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfactsbetting/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfactsall/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["state","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfactsall/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["state","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchfacts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchexpectedgoals/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchexpectedgoals/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matcheventspossessionvalues/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matcheventspossessionvalues/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["prsn","type","matchUuid","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","type","timeLive","fx","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["prsn","type","timeLive","matchUuid","ctst","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchdetailed/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["lineups","ctst2","srs","cvlv","prsn","prsntp","_dlt","_fld","fx","live","comp","tmcl","ctst","stg","mt.mDt","status","week","_ordSrt","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/matchdetailed/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["lineups","srs","cvlv","_dlt","_fld","matchUuid","live","stg","mt.mDt","status","week","_ordSrt","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchcornerspreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchcornerspreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["lineups","earlylineups","optaBetting","ctst2","srs","cvlv","prsn","prsntp","_dlt","_fld","fx","live","comp","tmcl","ctst","stg","mt.mDt","status","week","_ordSrt","_lcl","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["lineups","earlylineups","optaBetting","srs","cvlv","_dlt","_fld","matchUuid","live","stg","mt.mDt","status","week","_ordSrt","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/mappings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["idType","idList","outletAuthKey","_fmt","_rt"]},"/managerpreview/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/managerpreview/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueshape/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueshape/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuepressuretimeline/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuepressuretimeline/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueplayershape/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueplayershape/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueplayerruns/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueplayerruns/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuephasesofplay/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuephasesofplay/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuematchtrackingepts/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenuematchtrackingepts/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueevents/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueevents/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedruns/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedruns/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedphases/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedphases/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedfitness/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedfitness/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["type","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedevents/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/invenueaggregatedevents/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/injuries/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["prsn","tmcl","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/deletions/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","_dlt","_pgSz","_pgNm","outletAuthKey","_fmt","_rt","_clbk"]},"/decode/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","outletAuthKey","_fmt","_rt","_clbk"]},"/contestantparticipation/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["ctst","active","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/contestantparticipation/{outletAuthKey}/{contestantUuid}":{"method":"GET","summary":"","description":"","parameters":["contestantUuid","active","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["type","fx","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/commentary/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["type","matchUuid","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/areas/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["area","outletAuthKey","_fmt","_rt","_clbk"]},"/areas/{outletAuthKey}/{id}":{"method":"GET","summary":"","description":"","parameters":["id","outletAuthKey","_fmt","_rt","_clbk"]}}},"tennis":{"title":"SDAPI - Tennis","description":"","endpoints":{"/tournamentsimulations/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["trn","date","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentsimulations/{outletAuthKey}/{tournamentUuid}":{"method":"GET","summary":"","description":"","parameters":["tournamentUuid","date","ctst","outletAuthKey","_fmt","_rt","_clbk"]},"/tournament/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trn","trcl","trnDt","tr","comp","_pgSz","_pgNm","_ordSrt","_fmt","_rt","_clbk"]},"/tournament/{outletAuthKey}/{tournamentId}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tournamentId","trcl","trnDt","tr","comp","_pgSz","_pgNm","_ordSrt","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/tourcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","_fmt","_rt","_clbk"]},"/seasonstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trcl","trn","qualifiers","ctst","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","trcl","type","week","_fmt","_rt","_clbk"]},"/rankings/{outletAuthKey}/{tourCalendarId}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tourCalendarId","type","week","_fmt","_rt","_clbk"]},"/prizemoney/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["trcl","outletAuthKey","_fmt","_rt","_clbk"]},"/prizemoney/{outletAuthKey}/{tourCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tourCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/players/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["trcl","trn","type","outletAuthKey","_fmt","_rt","_clbk"]},"/players/{outletAuthKey}/{tourCalendarUuid}":{"method":"GET","summary":"","description":"","parameters":["tourCalendarUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","prsn","trcl","_fmt","_rt","_clbk"]},"/playercareer/{outletAuthKey}/{personUuid}":{"method":"GET","summary":"","description":"","parameters":["personUuid","outletAuthKey","trcl","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["mt","outletAuthKey","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["mt","state","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchinsights/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","state","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["mt","outletAuthKey","_fmt","_rt","_clbk"]},"/matchevent/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","outletAuthKey","_fmt","_rt","_clbk"]},"/matcheditorial/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["mt","type","state","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/matcheditorial/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["matchUuid","state","type","_lcl","outletAuthKey","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","mt","trn","ctst2","detailed","ctst","_pgSz","_pgNm","_ordSrt","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","detailed","_fmt","_rt","_clbk"]},"/competitionschedule/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","comp","year","_fmt","_rt","_clbk"]},"/competitionschedule/{outletAuthKey}/{competitionUuid}":{"method":"GET","summary":"","description":"","parameters":["competitionUuid","outletAuthKey","year","_fmt","_rt","_clbk"]}}},"volleyball":{"title":"SDAPI - Volleyball","description":"","endpoints":{"/tournamentcalendar/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/tournamentcalendar/{outletAuthKey}/active/authorized":{"method":"GET","summary":"","description":"","parameters":["comp","outletAuthKey","_fmt","_rt","_clbk"]},"/standings/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","type","tmcl","_fmt","_rt","_clbk"]},"/squads/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","ctst","detailed","_fmt","_rt","_clbk"]},"/matchstats/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","tmcl","_pgSz","_pgNm","comp","ctst","mt.mDt","live","status","_fmt","_rt","_clbk"]},"/match/{outletAuthKey}/{matchUuid}":{"method":"GET","summary":"","description":"","parameters":["outletAuthKey","matchUuid","live","_fmt","_rt","_clbk"]}}}};
+let SP_KNOWLEDGE = null;   // statsperform-knowledge.json
+let SR_KNOWLEDGE = null;   // sportradar-knowledge.json
+let kbReady = false;
 
-const PROJECTS = {
-  sdapi: "Sports DataAPI (SDAPI) — the main REST API for accessing historical and live sports data across all 17 sports. Authentication uses an outletAuthKey in the URL path.",
-  "apimanagement/opta": "Opta API Management — configuration and access management for Opta data feeds.",
-  "apimanagement/sdapi": "SDAPI API Management — subscription and access management documentation.",
-  "apimanagement/statsapi": "Stats API Management — broader Stats Perform platform API management.",
-  "data/opta-push": "Opta Push — a real-time push delivery system (not REST polling) for live sports data including football, cricket, rugby. Feeds delivered via HTTP push or file transfer.",
-  "data/rugby": "Rugby Data Feeds — specialist push feeds for Rugby Union and Rugby League.",
-  "dynamic-betting-stats-api": "Dynamic Betting Stats API — real-time statistical data tailored for betting use cases.",
-  sddp: "Sports Data Delivery Platform (SDDP) — the delivery and scheduling platform for data feeds.",
-  sgapi: "Slate & Graphics API (SGAPI) — graphics and visualisation data feeds.",
-  srsr: "Stats Retail Sportsbook Reference — documentation for retail sportsbook integrations.",
-  "video(vod)": "Video on Demand (VOD) API — access to sports video content and highlights.",
-  editorial: "Editorial API — content and editorial data products."
+// Sport keyword → key in SP openapi_specs.sports
+const SP_SPORT_MAP = {
+  soccer: 'soccer', football: 'soccer', 'american football': 'football', nfl: 'football',
+  ncaafb: 'football', basketball: 'basketball', nba: 'basketball', cricket: 'cricket',
+  rugby: 'rugbyunion', 'rugby league': 'rugbyleague', 'rugby union': 'rugbyunion',
+  tennis: 'tennis', golf: 'golf', baseball: 'baseball', 'ice hockey': 'icehockey',
+  hockey: 'icehockey', nhl: 'icehockey', handball: 'handball', volleyball: 'volleyball',
+  motorsport: 'motorsport', f1: 'motorsport', badminton: 'badminton',
+  'beach soccer': 'beachsoccer', futsal: 'futsal', 'australian football': 'australianfootball',
+  afl: 'australianfootball'
 };
 
-const SPORTRADAR_KNOWLEDGE = {
-  platform: {
-    name: "Sportradar",
-    description: "World's leading sports data company. B2B service — APIs not intended to be called directly from client applications.",
-    authentication: "API key passed as a query parameter or header. 30-day free trial available. Production keys issued after purchase.",
-    formats: "JSON and XML supported across all APIs",
-    coverage: "80+ sports, 500+ leagues, 750,000+ events per year. Interactive Coverage Matrix available at coverage-matrix.sportradar.com",
-    api_types: "Two formats: League Specific APIs (NFL, NBA, MLB, NHL etc — deepest coverage, full play-by-play) and General Sport APIs (global sports — consistent structure across leagues, breadth over depth)",
-    delivery: "REST polling + Push Feeds (real-time customers). Push available for most sports.",
-    tools: "OpenAPI specs, Postman collections, XSD schemas, MCP Server (Model Context Protocol integration for AI assistants), Simulations (replay actual games)"
-  },
-  product_areas: {
-    sports_api: "Core sports data APIs — real-time scores, statistics, lineups, standings, schedules. League Specific and General Sport formats.",
-    odds_api: "Live Odds, Prematch, Player Props, Futures, Odds Core, Probabilities — from 150+ bookmakers (US and Global)",
-    insights: "Player highs, milestones, leaderboards, predictions, expert picks, betting trends, scoring updates. Available for NFL, NBA, NHL, MLB, NCAAFB, NCAAMB, NCAAWB, WNBA, Soccer.",
-    betting_splits: "Real-time betting split data aggregated from 150+ bookmakers. Same leagues as Insights.",
-    images_editorial: "Player headshots, action shots, coach images, venue images, team/league logos, country flags. Editorial articles with stats, quotes, injuries, transactions.",
-    widgets: "Customisable hosted widgets for NFL, NBA, NHL, MLB, NCAA Football, NCAA Men's Basketball, WNBA, Soccer, Golf.",
-    broadcast: "Radar360 (analytics platform), OnAir (real-time stats-to-graphics), SRDI (data integration), AI Researcher (AI-driven insights for broadcasters)"
-  },
-  sports: {
-    soccer: {
-      api_version: "v4",
-      package: "General Sport API — 650+ competitions in one package",
-      key_endpoints: [
-        "Competitions / Competition Info / Competition Seasons",
-        "Daily Schedules / Daily Summaries / Live Schedules / Live Summaries",
-        "Live Timelines / Live Timelines Delta (10-second delta feed)",
-        "Sport Event Summary / Sport Event Timeline (x/y ball coordinates, play-by-play)",
-        "Sport Event Lineups (formations, substitutions)",
-        "Sport Event Fun Facts (human-readable statistical facts)",
-        "Season Standings / Season Leaders / Season Schedule / Season Summaries",
-        "Season Competitors / Season Players / Season Missing Players",
-        "Season Over/Under Statistics / Season Probabilities / Season Transfers",
-        "Seasonal Competitor Statistics / Seasonal Competitor Players",
-        "Competitor Profile / Competitor Schedules / Competitor Summaries / Competitor vs Competitor",
-        "Player Profile / Player Schedules / Player Summaries",
-        "Sport Events Created / Updated / Removed (delta feeds)",
-        "Push Events / Push Statistics (real-time push delivery)",
-        "League Timeline (official stats for EPL, Bundesliga, Serie A, La Liga, UCL, MLS, Austrian Bundesliga)",
-        "Season Outright Probabilities / Sport Event Probabilities / Live Probabilities / Timeline Probabilities"
-      ],
-      extended_api: "Soccer Extended API — deep stats extension with additional advanced metrics",
-      probabilities: "Optional add-on: 3-way win probabilities (home/away/draw), live in-game updates, season outrights",
-      additional: "Widgets, Odds, Images, Editorial Content, Betting Splits available as separate products"
-    },
-    american_football: {
-      leagues: "NFL (League Specific — deepest coverage), NCAAFB (League Specific), UFL (League Specific), Global American Football (General Sport)",
-      nfl_highlights: "Full play-by-play, real-time scores, depth charts, injury reports, rosters, standings, schedules, season stats, player profiles, draft data, transactions, team/player splits",
-      integration_guide: "Available. Insights available: Expert Picks, Highs, Milestones, Leaderboards, Lineup Changes, Predictions, Scoring updates, Player/Team Betting Trends",
-      widgets: "Available for NFL and NCAAFB"
-    },
-    basketball: {
-      leagues: "NBA (League Specific), WNBA (League Specific), G League (League Specific), NCAAMB (League Specific), NCAAWB (League Specific), Global Basketball (General Sport), Synergy Basketball, Unrivaled",
-      nba_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, transactions, injuries, draft data, team/player splits",
-      insights: "Available for NBA, WNBA, NCAAMB, NCAAWB: Expert Picks, Highs, Milestones, Leaderboards, Lineup Changes, Predictions, Scoring, Player/Team Betting Trends",
-      widgets: "Available for NBA, WNBA, NCAAMB"
-    },
-    ice_hockey: {
-      leagues: "NHL (League Specific), NCAAMH (League Specific), Global Ice Hockey (General Sport)",
-      nhl_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, transactions, injuries, goalie stats",
-      insights: "Available for NHL: Expert Picks, Highs, Milestones, Leaderboards, Predictions, Scoring, Player/Team Betting Trends",
-      widgets: "Available for NHL"
-    },
-    baseball: {
-      leagues: "MLB (League Specific), Global Baseball (General Sport)",
-      mlb_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, depth charts",
-      insights: "Available for MLB: Expert Picks, Highs, Milestones, Leaderboards, Scoring, Player/Team Betting Trends",
-      widgets: "Available for MLB"
-    },
-    tennis: {
-      api_version: "v3",
-      package: "General Sport API — 4,000+ competitions in one package",
-      key_endpoints: [
-        "Competitions / Competition Info / Competition Seasons / Competitions by Category (ATP/ITF/WTA)",
-        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
-        "Sport Event Summary / Sport Event Timeline (point-by-point when available)",
-        "Rankings (singles) / Doubles Rankings / Race Rankings / Doubles Race Rankings",
-        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
-        "Doubles Competitions Played / Doubles Competitor Rankings",
-        "Season Info / Season Competitors / Season Summaries / Season Links",
-        "Season Probabilities / Live Probabilities / Sport Event Probabilities / Timeline Probabilities",
-        "Complexes (venue info)",
-        "Push Events / Push Statistics",
-        "Sport Events Created / Updated / Removed"
-      ],
-      probabilities: "Optional add-on: 2-way win probabilities (home/away), live updates, season outrights"
-    },
-    golf: {
-      api_version: "v3",
-      package: "League Specific style — full hole-by-hole coverage",
-      tours_covered: "PGA Tour, DP World Tour, LIV Golf, LPGA Tour, Champions Tour, Korn Ferry Tour, Olympics, Ryder Cup, President's Cup, Solheim Cup. All Majors covered.",
-      key_endpoints: [
-        "Tournament Schedule / Tournament Summary / Tournament Leaderboard (real-time)",
-        "Tournament Hole Statistics",
-        "Tee Times per Round (pairings and starting positions)",
-        "Scorecards per Round (hole-by-hole scoring)",
-        "Player Profile / Player Statistics (FedEx Cup season stats)",
-        "Players (by tour and year)",
-        "Official World Golf Ranking (top 200)",
-        "Seasons (all available seasons per tour)",
-        "Daily Change Log",
-        "Push Leaderboard / Push Scorecard (real-time push delivery)"
-      ]
-    },
-    cricket: {
-      api_version: "v2",
-      package: "General Sport API",
-      data_source: "Upgraded v2 data for ICC, ECB and Caribbean Premier League. Features: ball tracking, shot/delivery type coding, AI-powered automated text commentary, unique fielding data points.",
-      key_endpoints: [
-        "Daily Schedule / Daily Live Schedule / Daily Results / Daily Live Results",
-        "Match Summary / Match Timeline (ball-by-ball, live pitch/field coordinates)",
-        "Match Lineups",
-        "Team Profile / Team Results / Team Schedule / Team vs Team",
-        "Player Profile",
-        "Tournament List / Tour List / Tournament Info / Tournament Schedule / Tournament Results",
-        "Tournament Leaders / Tournament Standings / Tournament Squads / Tournament Seasons"
-      ],
-      coverage_levels: "Post-match (basic), Core (scores, current over stats, required run rate), Advanced (shot/ball types, wagon wheel data)"
-    },
-    rugby: {
-      api_version: "v3",
-      packages: "Three separate packages: Rugby Union, Rugby League, Rugby Sevens",
-      key_endpoints: [
-        "Competitions / Competition Info / Competition Seasons",
-        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
-        "Sport Event Summary / Sport Event Timeline / Sport Event Lineups",
-        "Season Standings / Season Summaries / Season Competitors / Season Players / Season Lineups / Season Links",
-        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
-        "Player Profile / Player Summaries",
-        "Season Probabilities (3-way: home/away/draw)",
-        "Push Events / Push Statistics",
-        "Sport Events Created / Updated / Removed"
-      ]
-    },
-    handball: {
-      api_version: "v2",
-      package: "General Sport API — 80+ leagues",
-      key_endpoints: [
-        "Competitions / Competition Info / Competition Seasons",
-        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
-        "Sport Event Summary / Sport Event Timeline / Sport Event Lineups",
-        "Season Standings / Season Form Standings / Season Summaries / Season Competitors / Season Players",
-        "Seasonal Competitor Statistics",
-        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
-        "Player Profile / Player Summaries",
-        "Season Probabilities / Live Probabilities / Sport Event Probabilities / Timeline Probabilities",
-        "Push Events / Push Statistics",
-        "Sport Events Created / Updated / Removed"
-      ],
-      probabilities: "Optional add-on: 3-way win probabilities, live updates, season outrights"
-    },
-    racing: {
-      leagues: "NASCAR, IndyCar, Formula 1, Formula E, MotoGP, Indy NXT (Indy Lights), Rally (WRC)",
-      highlights: "Real-time race data, lap-by-lap, standings, qualifying, pit stops, driver/team profiles"
-    },
-    aussie_rules: "General Sport API — Australian Rules Football (AFL coverage)",
-    badminton: "General Sport API",
-    bandy: "General Sport API",
-    darts: "General Sport API",
-    field_hockey: "General Sport API",
-    futsal: "General Sport API",
-    mma: "General Sport API — MMA/UFC coverage",
-    snooker: "General Sport API",
-    squash: "General Sport API",
-    table_tennis: "General Sport API",
-    volleyball: "General Sport API — Indoor Volleyball and Beach Volleyball as separate packages",
-    more_sports: "Beach Soccer, Curling, Cycling, Floorball, Olympics, Pesapallo, Waterpolo, Winter Sports"
+// Sport keyword → key in SR sports
+const SR_SPORT_MAP = {
+  soccer: 'soccer', football: 'soccer', 'american football': 'american_football',
+  nfl: 'american_football', ncaafb: 'american_football', basketball: 'basketball',
+  nba: 'basketball', cricket: 'cricket', rugby: 'rugby', tennis: 'tennis',
+  golf: 'golf', baseball: 'baseball', 'ice hockey': 'ice_hockey', hockey: 'ice_hockey',
+  nhl: 'ice_hockey', handball: 'handball', volleyball: 'volleyball',
+  motorsport: 'racing', f1: 'racing', nascar: 'racing', racing: 'racing'
+};
+
+// Load both JSON files in parallel
+async function loadKnowledge() {
+  setKbStatus('loading', 'Loading knowledge…');
+  try {
+    const [spRes, srRes] = await Promise.all([
+      fetch('statsperform-knowledge.json'),
+      fetch('sportradar-knowledge.json')
+    ]);
+
+    if (!spRes.ok) throw new Error(`statsperform-knowledge.json: HTTP ${spRes.status}`);
+    if (!srRes.ok) throw new Error(`sportradar-knowledge.json: HTTP ${srRes.status}`);
+
+    SP_KNOWLEDGE = await spRes.json();
+    SR_KNOWLEDGE = await srRes.json();
+
+    kbReady = true;
+    const spSports = Object.keys(SP_KNOWLEDGE?.product_areas?.openapi_specs?.sports || {}).length;
+    const srSports = Object.keys(SR_KNOWLEDGE?.product_areas?.sports_api?.sports || {}).length;
+    setKbStatus('ready', `Ready · SP ${spSports} sports · SR ${srSports} sports`);
+  } catch (err) {
+    setKbStatus('error', 'Knowledge load failed — ' + err.message);
+    console.error('Knowledge load error:', err);
   }
-};
+}
 
-const SYSTEM_PROMPT = `You are an expert on sports data API documentation for both Stats Perform and Sportradar. You answer questions clearly and helpfully in plain English, drawing on the documentation provided for both providers. You can answer questions about either provider individually, or compare them side by side.
+function setKbStatus(state, text) {
+  const el = document.getElementById('kbStatus');
+  const textEl = document.getElementById('kbStatusText');
+  el.className = 'kb-status ' + state;
+  textEl.textContent = text;
+}
 
-=== STATS PERFORM ===
+// ─────────────────────────────────────────────
+// Smart context routing
+// Detects what the question is about and pulls
+// only the relevant slices of the knowledge base
+// to keep the prompt a manageable size.
+// ─────────────────────────────────────────────
+function buildSystemPrompt(question) {
+  const q = question.toLowerCase();
 
-PRODUCT AREAS:
-${JSON.stringify(PROJECTS, null, 2)}
+  // Detect provider focus
+  const wantsSP = q.includes('stats perform') || q.includes('opta') || q.includes('sdapi');
+  const wantsSR = q.includes('sportradar');
+  const wantsCompare = q.includes('compar') || q.includes('vs') || q.includes('versus')
+    || q.includes('difference') || q.includes('both') || (!wantsSP && !wantsSR);
+  const includesSP = wantsSP || wantsCompare;
+  const includesSR = wantsSR || wantsCompare;
 
-KEY PLATFORM FACTS:
-- Stats Perform (formerly Opta/PA Sport) is a sports data and AI company
-- Sports DataAPI (SDAPI) covers 17 sports: Australian Football, Badminton, Baseball, Basketball, Beach Soccer, Cricket, American Football, Futsal, Golf, Handball, Ice Hockey, Motorsport, Rugby League, Rugby Union, Soccer, Tennis, Volleyball
-- Authentication: all SDAPI endpoints use an outletAuthKey parameter embedded directly in the URL path (e.g. /match/{outletAuthKey})
-- Universal query params: _fmt (response format: json/xml), _rt (response type), _clbk (JSONP callback)
-- Common filter params: tmcl (tournament calendar UUID), comp (competition), ctst (contestant/team), fx (fixture UUID), mt (match UUID), _pgSz/_pgNm (pagination)
-- Soccer has the richest API with 154+ endpoints including advanced analytics and player tracking
-- Opta Push delivers real-time data via HTTP push (separate from SDAPI REST polling)
-- The Dynamic Betting Stats API provides real-time betting-optimised data products
-- NLG endpoints (nlgmatchpreview, nlgdynamicplayerbio, nlg_match_recap) generate natural language content
-- SGAPI provides graphics/visualisation data feeds
-- VOD API provides access to sports video content and highlights
+  // Detect sport
+  let detectedSPSport = null;
+  let detectedSRSport = null;
+  for (const [kw, key] of Object.entries(SP_SPORT_MAP)) {
+    if (q.includes(kw)) { detectedSPSport = key; break; }
+  }
+  for (const [kw, key] of Object.entries(SR_SPORT_MAP)) {
+    if (q.includes(kw)) { detectedSRSport = key; break; }
+  }
 
-COMPLETE OPENAPI ENDPOINT KNOWLEDGE BASE (all 17 sports):
-${JSON.stringify(KNOWLEDGE)}
+  // Detect topic areas
+  const wantsCoverage = q.includes('coverage') || q.includes('tier');
+  const wantsEndpoints = q.includes('endpoint') || q.includes('feed') || q.includes('api');
+  const wantsPush = q.includes('push') || q.includes('real-time') || q.includes('live') || q.includes('stream');
+  const wantsBetting = q.includes('bet') || q.includes('odds') || q.includes('wagering');
+  const wantsOdds = q.includes('odds') || wantsBetting;
+  const wantsInsights = q.includes('insight') || q.includes('prediction') || q.includes('analytics');
+  const wantsEditorial = q.includes('editorial') || q.includes('video') || q.includes('image') || q.includes('content');
+  const wantsBroadcast = q.includes('broadcast') || q.includes('widget') || q.includes('radar360') || q.includes('onair');
 
-=== SPORTRADAR ===
+  let spContext = '';
+  let srContext = '';
 
-${JSON.stringify(SPORTRADAR_KNOWLEDGE, null, 2)}
+  // ── Stats Perform context ──
+  if (includesSP && SP_KNOWLEDGE) {
+    const sp = SP_KNOWLEDGE;
+    const overview = sp.overview || {};
+    const areas = sp.product_areas || {};
+
+    // Always include overview
+    spContext += `STATS PERFORM OVERVIEW:\n${JSON.stringify(overview, null, 2)}\n\n`;
+    spContext += `FEED CODE REFERENCE:\n${JSON.stringify(sp.feed_code_reference, null, 2)}\n\n`;
+
+    // Sport-specific OpenAPI data
+    if (detectedSPSport && areas.openapi_specs?.sports?.[detectedSPSport]) {
+      spContext += `STATS PERFORM - ${detectedSPSport.toUpperCase()} API (OpenAPI spec):\n`;
+      spContext += JSON.stringify(areas.openapi_specs.sports[detectedSPSport], null, 2) + '\n\n';
+    } else if (wantsEndpoints || wantsSP) {
+      // Include all sports as a summary (endpoint counts + titles only)
+      const sportsSummary = {};
+      for (const [sport, data] of Object.entries(areas.openapi_specs?.sports || {})) {
+        sportsSummary[sport] = {
+          title: data.title,
+          endpoint_count: data.endpoint_count,
+          tags: data.tags?.map(t => t.name)
+        };
+      }
+      spContext += `STATS PERFORM - ALL SPORTS SUMMARY:\n${JSON.stringify(sportsSummary, null, 2)}\n\n`;
+    }
+
+    // Sport-specific sdapi pages (coverage tiers etc)
+    if (detectedSPSport && areas.sports_data_api?.sports?.[detectedSPSport]) {
+      const pages = areas.sports_data_api.sports[detectedSPSport];
+      const relevant = pages.slice(0, 8).map(p => ({
+        title: p.title, url: p.url, feed_codes: p.feed_codes,
+        headings: p.headings?.slice(0, 5)
+      }));
+      spContext += `STATS PERFORM - ${detectedSPSport.toUpperCase()} DOCUMENTATION PAGES:\n`;
+      spContext += JSON.stringify(relevant, null, 2) + '\n\n';
+    }
+
+    // Coverage tiers for detected sport
+    if (wantsCoverage && detectedSPSport) {
+      const tierKey = 'coverage_' + detectedSPSport;
+      if (areas.sports_data_api?.coverage_tiers?.[tierKey]) {
+        spContext += `STATS PERFORM - ${detectedSPSport.toUpperCase()} COVERAGE TIERS:\n`;
+        spContext += JSON.stringify(areas.sports_data_api.coverage_tiers[tierKey], null, 2) + '\n\n';
+      }
+    } else if (wantsCoverage) {
+      // All coverage tier summaries (title + url only)
+      const tierSummary = {};
+      for (const [k, v] of Object.entries(areas.sports_data_api?.coverage_tiers || {})) {
+        tierSummary[k] = { title: v.title, url: v.url };
+      }
+      spContext += `STATS PERFORM - COVERAGE TIERS (all sports):\n${JSON.stringify(tierSummary, null, 2)}\n\n`;
+    }
+
+    // Push feeds
+    if (wantsPush) {
+      const push = areas.opta_push_feeds || {};
+      spContext += `STATS PERFORM - OPTA PUSH FEEDS:\n`;
+      spContext += `Description: ${push.description}\n`;
+      const pushSummary = {};
+      for (const [sport, feeds] of Object.entries(push.sports || {})) {
+        pushSummary[sport] = feeds.slice(0, 6).map(f => ({ title: f.title, codes: f.codes }));
+      }
+      spContext += JSON.stringify(pushSummary, null, 2) + '\n\n';
+    }
+
+    // Betting/dynamic stats
+    if (wantsBetting || wantsOdds) {
+      spContext += `STATS PERFORM - DYNAMIC BETTING STATS API:\n`;
+      spContext += JSON.stringify(areas.dynamic_betting_stats_api, null, 2) + '\n\n';
+    }
+
+    // Editorial/video/graphics
+    if (wantsEditorial) {
+      spContext += `STATS PERFORM - EDITORIAL & VIDEO:\n`;
+      spContext += JSON.stringify({ editorial: areas.editorial, video_vod: areas.video_vod, sports_graphics_api: areas.sports_graphics_api }, null, 2) + '\n\n';
+    }
+
+    // SmartRatings
+    if (q.includes('smart') || q.includes('rating') || q.includes('highlight')) {
+      spContext += `STATS PERFORM - SMARTRATINGS/SMARTREELS:\n`;
+      spContext += JSON.stringify(areas.smart_ratings_reels, null, 2) + '\n\n';
+    }
+
+    // General/platform facts if no specific sport
+    if (!detectedSPSport && !wantsPush && !wantsBetting) {
+      spContext += `STATS PERFORM - ALL PRODUCT AREAS (summary):\n`;
+      const areaSummary = {};
+      for (const [k, v] of Object.entries(areas)) {
+        if (k === 'openapi_specs') {
+          areaSummary[k] = { description: v.description, sports: Object.keys(v.sports || {}) };
+        } else if (k === 'sports_data_api') {
+          areaSummary[k] = { description: v.description, project_key: v.project_key, sports: Object.keys(v.sports || {}) };
+        } else {
+          areaSummary[k] = { description: v.description || v.description };
+        }
+      }
+      spContext += JSON.stringify(areaSummary, null, 2) + '\n\n';
+    }
+  }
+
+  // ── Sportradar context ──
+  if (includesSR && SR_KNOWLEDGE) {
+    const sr = SR_KNOWLEDGE;
+    const areas = sr.product_areas || {};
+
+    // Always include overview
+    srContext += `SPORTRADAR OVERVIEW:\n${JSON.stringify(sr.overview, null, 2)}\n\n`;
+
+    // Sport-specific
+    if (detectedSRSport && areas.sports_api?.sports?.[detectedSRSport]) {
+      srContext += `SPORTRADAR - ${detectedSRSport.toUpperCase()} API:\n`;
+      srContext += JSON.stringify(areas.sports_api.sports[detectedSRSport], null, 2) + '\n\n';
+    } else if (!detectedSRSport) {
+      // Summary of all sports
+      const sportsSummary = {};
+      for (const [sport, data] of Object.entries(areas.sports_api?.sports || {})) {
+        sportsSummary[sport] = typeof data === 'string' ? data : { leagues: data.leagues || data.league };
+      }
+      srContext += `SPORTRADAR - ALL SPORTS:\n${JSON.stringify(sportsSummary, null, 2)}\n\n`;
+    }
+
+    // Odds
+    if (wantsOdds || wantsBetting) {
+      srContext += `SPORTRADAR - ODDS API:\n${JSON.stringify(areas.odds_api, null, 2)}\n\n`;
+    }
+
+    // Insights
+    if (wantsInsights || wantsBetting) {
+      srContext += `SPORTRADAR - INSIGHTS:\n${JSON.stringify(areas.insights, null, 2)}\n\n`;
+    }
+
+    // Images/editorial
+    if (wantsEditorial) {
+      srContext += `SPORTRADAR - IMAGES & EDITORIAL:\n${JSON.stringify(areas.images_editorial, null, 2)}\n\n`;
+    }
+
+    // Broadcast/widgets
+    if (wantsBroadcast) {
+      srContext += `SPORTRADAR - BROADCAST & WIDGETS:\n`;
+      srContext += JSON.stringify({ broadcast: areas.broadcast, widgets: areas.widgets }, null, 2) + '\n\n';
+    }
+
+    // General product area summary if no specific focus
+    if (!detectedSRSport && !wantsOdds && !wantsInsights && !wantsEditorial && !wantsBroadcast) {
+      srContext += `SPORTRADAR - ALL PRODUCT AREAS:\n`;
+      const areaSummary = {};
+      for (const [k, v] of Object.entries(areas)) {
+        if (k === 'sports_api') {
+          areaSummary[k] = { description: v.description, sports: Object.keys(v.sports || {}) };
+        } else {
+          areaSummary[k] = v.description || v;
+        }
+      }
+      srContext += JSON.stringify(areaSummary, null, 2) + '\n\n';
+    }
+  }
+
+  return `You are an expert on sports data API documentation for both Stats Perform and Sportradar. You answer questions clearly and helpfully in plain English, drawing on the documentation context provided. You can answer questions about either provider individually, or compare them side by side.
+
+${spContext ? `=== STATS PERFORM ===\n\n${spContext}` : ''}
+${srContext ? `=== SPORTRADAR ===\n\n${srContext}` : ''}
 
 === ANSWER GUIDELINES ===
 - When asked about a specific provider, focus on that provider
-- When asked to compare, give a balanced side-by-side view covering: sports covered, endpoint depth, delivery methods, additional products, unique features
-- Be specific: name exact endpoints, parameters, and capabilities
-- If something isn't in the provided data, say so honestly rather than guessing
-- Keep answers concise but complete — use headers, bullet points or numbered lists when listing multiple items`;
+- When comparing, give a balanced side-by-side view: sports covered, endpoint depth, delivery methods, additional products, unique features
+- Be specific: name exact endpoints, feed codes, parameters, and capabilities where relevant
+- If something isn't in the provided context, say so honestly rather than guessing
+- Keep answers concise but complete — use headers and bullet points when listing multiple items
+- Stats Perform feed codes: OT = Tournament, MA = Match, TM = Team, PE = Person/Player (REST); F = Football/Soccer push, C = Cricket push, RL = Rugby League push, RU = Rugby Union push, MR = Motorsport push, TAB = Tennis push`;
+}
 
 // ─────────────────────────────────────────────
 // State
@@ -654,7 +738,6 @@ function scrollToBottom() {
 }
 
 function addMessage(role, content, thinking = false) {
-  // Hide suggestions after first user message
   const sugs = document.getElementById('suggestions');
   if (sugs && role === 'user') sugs.style.display = 'none';
 
@@ -717,29 +800,32 @@ async function sendMsg() {
   const question = input.value.trim();
   if (!question || isLoading) return;
 
-  // Reset input
+  if (!kbReady) {
+    addError('Knowledge base is still loading — please wait a moment and try again.');
+    return;
+  }
+
   input.value = '';
   input.style.height = 'auto';
   isLoading = true;
   sendBtn.disabled = true;
 
-  // Add user message
   addMessage('user', question);
   conversationHistory.push({ role: 'user', content: question });
 
-  // Add AI thinking bubble
-  const thinkingBubble = addMessage('ai', 'Searching documentation', true);
+  const thinkingBubble = addMessage('ai', 'Searching documentation…', true);
+
+  // Build context-aware system prompt for this specific question
+  const systemPrompt = buildSystemPrompt(question);
 
   try {
     const response = await fetch('https://anthropic-proxy.scottdunstan.workers.dev', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         model: 'claude-sonnet-4-6',
         max_tokens: 1500,
-        system: SYSTEM_PROMPT,
+        system: systemPrompt,
         messages: conversationHistory
       })
     });
@@ -769,6 +855,11 @@ async function sendMsg() {
     scrollToBottom();
   }
 }
+
+// ─────────────────────────────────────────────
+// Boot
+// ─────────────────────────────────────────────
+loadKnowledge();
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Stats Perform API Explorer</title>
+<title>Sports Data API Explorer</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -346,13 +346,13 @@
       </svg>
     </div>
     <div class="header-text">
-      <h1>Stats Perform API Explorer</h1>
-      <p>Natural language search across the full documentation</p>
+      <h1>Sports Data API Explorer</h1>
+      <p>Compare Stats Perform &amp; Sportradar side by side</p>
     </div>
     <div class="header-badges">
       <span class="badge accent">Stats Perform</span>
-      <span class="badge">17 sports</span>
-      <span class="badge">1,453 pages</span>
+      <span class="badge accent">Sportradar</span>
+      <span class="badge">Compare</span>
     </div>
   </header>
 
@@ -366,14 +366,14 @@
         </svg>
       </div>
       <div class="bubble-wrap">
-        <div class="bubble ai">Hello! I have full access to Stats Perform's API documentation — 17 sports, 1,453 pages, and all OpenAPI specs. Ask me anything about endpoints, feed structures, parameters, data types, and more.</div>
+        <div class="bubble ai">Hello! I now have documentation for both <strong>Stats Perform</strong> and <strong>Sportradar</strong>. You can ask me about either provider individually, or ask me to compare them. Try asking about specific sports, endpoints, delivery methods, or product areas.</div>
         <div class="suggestions" id="suggestions">
-          <button class="sug" onclick="ask('What sports does Stats Perform cover?')">What sports are covered?</button>
-          <button class="sug" onclick="ask('What soccer endpoints are available?')">Soccer endpoints</button>
-          <button class="sug" onclick="ask('What is the Opta Push feed and how does it differ from the REST API?')">What is Opta Push?</button>
-          <button class="sug" onclick="ask('Which sports have live win probability data?')">Live win probability</button>
-          <button class="sug" onclick="ask('What advanced analytics endpoints does soccer have that other sports do not?')">Soccer advanced analytics</button>
-          <button class="sug" onclick="ask('How does authentication work in the SDAPI?')">Authentication</button>
+          <button class="sug" onclick="ask('Compare Stats Perform and Sportradar soccer APIs')">Compare soccer APIs</button>
+          <button class="sug" onclick="ask('Which provider has better cricket coverage?')">Cricket coverage comparison</button>
+          <button class="sug" onclick="ask('How does Sportradar deliver real-time data?')">Sportradar real-time delivery</button>
+          <button class="sug" onclick="ask('What sports does Sportradar cover that Stats Perform does not?')">Sports coverage differences</button>
+          <button class="sug" onclick="ask('Compare the betting and odds products from both providers')">Betting products comparison</button>
+          <button class="sug" onclick="ask('What advanced analytics does Stats Perform offer for soccer?')">Stats Perform soccer analytics</button>
         </div>
       </div>
     </div>
@@ -421,31 +421,210 @@ const PROJECTS = {
   editorial: "Editorial API — content and editorial data products."
 };
 
-const SYSTEM_PROMPT = `You are an expert on Stats Perform's sports data API documentation. You answer questions clearly and helpfully in plain English, drawing on the documentation provided.
+const SPORTRADAR_KNOWLEDGE = {
+  platform: {
+    name: "Sportradar",
+    description: "World's leading sports data company. B2B service — APIs not intended to be called directly from client applications.",
+    authentication: "API key passed as a query parameter or header. 30-day free trial available. Production keys issued after purchase.",
+    formats: "JSON and XML supported across all APIs",
+    coverage: "80+ sports, 500+ leagues, 750,000+ events per year. Interactive Coverage Matrix available at coverage-matrix.sportradar.com",
+    api_types: "Two formats: League Specific APIs (NFL, NBA, MLB, NHL etc — deepest coverage, full play-by-play) and General Sport APIs (global sports — consistent structure across leagues, breadth over depth)",
+    delivery: "REST polling + Push Feeds (real-time customers). Push available for most sports.",
+    tools: "OpenAPI specs, Postman collections, XSD schemas, MCP Server (Model Context Protocol integration for AI assistants), Simulations (replay actual games)"
+  },
+  product_areas: {
+    sports_api: "Core sports data APIs — real-time scores, statistics, lineups, standings, schedules. League Specific and General Sport formats.",
+    odds_api: "Live Odds, Prematch, Player Props, Futures, Odds Core, Probabilities — from 150+ bookmakers (US and Global)",
+    insights: "Player highs, milestones, leaderboards, predictions, expert picks, betting trends, scoring updates. Available for NFL, NBA, NHL, MLB, NCAAFB, NCAAMB, NCAAWB, WNBA, Soccer.",
+    betting_splits: "Real-time betting split data aggregated from 150+ bookmakers. Same leagues as Insights.",
+    images_editorial: "Player headshots, action shots, coach images, venue images, team/league logos, country flags. Editorial articles with stats, quotes, injuries, transactions.",
+    widgets: "Customisable hosted widgets for NFL, NBA, NHL, MLB, NCAA Football, NCAA Men's Basketball, WNBA, Soccer, Golf.",
+    broadcast: "Radar360 (analytics platform), OnAir (real-time stats-to-graphics), SRDI (data integration), AI Researcher (AI-driven insights for broadcasters)"
+  },
+  sports: {
+    soccer: {
+      api_version: "v4",
+      package: "General Sport API — 650+ competitions in one package",
+      key_endpoints: [
+        "Competitions / Competition Info / Competition Seasons",
+        "Daily Schedules / Daily Summaries / Live Schedules / Live Summaries",
+        "Live Timelines / Live Timelines Delta (10-second delta feed)",
+        "Sport Event Summary / Sport Event Timeline (x/y ball coordinates, play-by-play)",
+        "Sport Event Lineups (formations, substitutions)",
+        "Sport Event Fun Facts (human-readable statistical facts)",
+        "Season Standings / Season Leaders / Season Schedule / Season Summaries",
+        "Season Competitors / Season Players / Season Missing Players",
+        "Season Over/Under Statistics / Season Probabilities / Season Transfers",
+        "Seasonal Competitor Statistics / Seasonal Competitor Players",
+        "Competitor Profile / Competitor Schedules / Competitor Summaries / Competitor vs Competitor",
+        "Player Profile / Player Schedules / Player Summaries",
+        "Sport Events Created / Updated / Removed (delta feeds)",
+        "Push Events / Push Statistics (real-time push delivery)",
+        "League Timeline (official stats for EPL, Bundesliga, Serie A, La Liga, UCL, MLS, Austrian Bundesliga)",
+        "Season Outright Probabilities / Sport Event Probabilities / Live Probabilities / Timeline Probabilities"
+      ],
+      extended_api: "Soccer Extended API — deep stats extension with additional advanced metrics",
+      probabilities: "Optional add-on: 3-way win probabilities (home/away/draw), live in-game updates, season outrights",
+      additional: "Widgets, Odds, Images, Editorial Content, Betting Splits available as separate products"
+    },
+    american_football: {
+      leagues: "NFL (League Specific — deepest coverage), NCAAFB (League Specific), UFL (League Specific), Global American Football (General Sport)",
+      nfl_highlights: "Full play-by-play, real-time scores, depth charts, injury reports, rosters, standings, schedules, season stats, player profiles, draft data, transactions, team/player splits",
+      integration_guide: "Available. Insights available: Expert Picks, Highs, Milestones, Leaderboards, Lineup Changes, Predictions, Scoring updates, Player/Team Betting Trends",
+      widgets: "Available for NFL and NCAAFB"
+    },
+    basketball: {
+      leagues: "NBA (League Specific), WNBA (League Specific), G League (League Specific), NCAAMB (League Specific), NCAAWB (League Specific), Global Basketball (General Sport), Synergy Basketball, Unrivaled",
+      nba_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, transactions, injuries, draft data, team/player splits",
+      insights: "Available for NBA, WNBA, NCAAMB, NCAAWB: Expert Picks, Highs, Milestones, Leaderboards, Lineup Changes, Predictions, Scoring, Player/Team Betting Trends",
+      widgets: "Available for NBA, WNBA, NCAAMB"
+    },
+    ice_hockey: {
+      leagues: "NHL (League Specific), NCAAMH (League Specific), Global Ice Hockey (General Sport)",
+      nhl_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, transactions, injuries, goalie stats",
+      insights: "Available for NHL: Expert Picks, Highs, Milestones, Leaderboards, Predictions, Scoring, Player/Team Betting Trends",
+      widgets: "Available for NHL"
+    },
+    baseball: {
+      leagues: "MLB (League Specific), Global Baseball (General Sport)",
+      mlb_highlights: "Full play-by-play, real-time scores, rosters, standings, schedules, season/game stats, player profiles, depth charts",
+      insights: "Available for MLB: Expert Picks, Highs, Milestones, Leaderboards, Scoring, Player/Team Betting Trends",
+      widgets: "Available for MLB"
+    },
+    tennis: {
+      api_version: "v3",
+      package: "General Sport API — 4,000+ competitions in one package",
+      key_endpoints: [
+        "Competitions / Competition Info / Competition Seasons / Competitions by Category (ATP/ITF/WTA)",
+        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
+        "Sport Event Summary / Sport Event Timeline (point-by-point when available)",
+        "Rankings (singles) / Doubles Rankings / Race Rankings / Doubles Race Rankings",
+        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
+        "Doubles Competitions Played / Doubles Competitor Rankings",
+        "Season Info / Season Competitors / Season Summaries / Season Links",
+        "Season Probabilities / Live Probabilities / Sport Event Probabilities / Timeline Probabilities",
+        "Complexes (venue info)",
+        "Push Events / Push Statistics",
+        "Sport Events Created / Updated / Removed"
+      ],
+      probabilities: "Optional add-on: 2-way win probabilities (home/away), live updates, season outrights"
+    },
+    golf: {
+      api_version: "v3",
+      package: "League Specific style — full hole-by-hole coverage",
+      tours_covered: "PGA Tour, DP World Tour, LIV Golf, LPGA Tour, Champions Tour, Korn Ferry Tour, Olympics, Ryder Cup, President's Cup, Solheim Cup. All Majors covered.",
+      key_endpoints: [
+        "Tournament Schedule / Tournament Summary / Tournament Leaderboard (real-time)",
+        "Tournament Hole Statistics",
+        "Tee Times per Round (pairings and starting positions)",
+        "Scorecards per Round (hole-by-hole scoring)",
+        "Player Profile / Player Statistics (FedEx Cup season stats)",
+        "Players (by tour and year)",
+        "Official World Golf Ranking (top 200)",
+        "Seasons (all available seasons per tour)",
+        "Daily Change Log",
+        "Push Leaderboard / Push Scorecard (real-time push delivery)"
+      ]
+    },
+    cricket: {
+      api_version: "v2",
+      package: "General Sport API",
+      data_source: "Upgraded v2 data for ICC, ECB and Caribbean Premier League. Features: ball tracking, shot/delivery type coding, AI-powered automated text commentary, unique fielding data points.",
+      key_endpoints: [
+        "Daily Schedule / Daily Live Schedule / Daily Results / Daily Live Results",
+        "Match Summary / Match Timeline (ball-by-ball, live pitch/field coordinates)",
+        "Match Lineups",
+        "Team Profile / Team Results / Team Schedule / Team vs Team",
+        "Player Profile",
+        "Tournament List / Tour List / Tournament Info / Tournament Schedule / Tournament Results",
+        "Tournament Leaders / Tournament Standings / Tournament Squads / Tournament Seasons"
+      ],
+      coverage_levels: "Post-match (basic), Core (scores, current over stats, required run rate), Advanced (shot/ball types, wagon wheel data)"
+    },
+    rugby: {
+      api_version: "v3",
+      packages: "Three separate packages: Rugby Union, Rugby League, Rugby Sevens",
+      key_endpoints: [
+        "Competitions / Competition Info / Competition Seasons",
+        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
+        "Sport Event Summary / Sport Event Timeline / Sport Event Lineups",
+        "Season Standings / Season Summaries / Season Competitors / Season Players / Season Lineups / Season Links",
+        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
+        "Player Profile / Player Summaries",
+        "Season Probabilities (3-way: home/away/draw)",
+        "Push Events / Push Statistics",
+        "Sport Events Created / Updated / Removed"
+      ]
+    },
+    handball: {
+      api_version: "v2",
+      package: "General Sport API — 80+ leagues",
+      key_endpoints: [
+        "Competitions / Competition Info / Competition Seasons",
+        "Daily Summaries / Live Summaries / Live Timelines / Live Timelines Delta",
+        "Sport Event Summary / Sport Event Timeline / Sport Event Lineups",
+        "Season Standings / Season Form Standings / Season Summaries / Season Competitors / Season Players",
+        "Seasonal Competitor Statistics",
+        "Competitor Profile / Competitor Summaries / Competitor vs Competitor",
+        "Player Profile / Player Summaries",
+        "Season Probabilities / Live Probabilities / Sport Event Probabilities / Timeline Probabilities",
+        "Push Events / Push Statistics",
+        "Sport Events Created / Updated / Removed"
+      ],
+      probabilities: "Optional add-on: 3-way win probabilities, live updates, season outrights"
+    },
+    racing: {
+      leagues: "NASCAR, IndyCar, Formula 1, Formula E, MotoGP, Indy NXT (Indy Lights), Rally (WRC)",
+      highlights: "Real-time race data, lap-by-lap, standings, qualifying, pit stops, driver/team profiles"
+    },
+    aussie_rules: "General Sport API — Australian Rules Football (AFL coverage)",
+    badminton: "General Sport API",
+    bandy: "General Sport API",
+    darts: "General Sport API",
+    field_hockey: "General Sport API",
+    futsal: "General Sport API",
+    mma: "General Sport API — MMA/UFC coverage",
+    snooker: "General Sport API",
+    squash: "General Sport API",
+    table_tennis: "General Sport API",
+    volleyball: "General Sport API — Indoor Volleyball and Beach Volleyball as separate packages",
+    more_sports: "Beach Soccer, Curling, Cycling, Floorball, Olympics, Pesapallo, Waterpolo, Winter Sports"
+  }
+};
 
-STATS PERFORM PRODUCT AREAS:
+const SYSTEM_PROMPT = `You are an expert on sports data API documentation for both Stats Perform and Sportradar. You answer questions clearly and helpfully in plain English, drawing on the documentation provided for both providers. You can answer questions about either provider individually, or compare them side by side.
+
+=== STATS PERFORM ===
+
+PRODUCT AREAS:
 ${JSON.stringify(PROJECTS, null, 2)}
 
 KEY PLATFORM FACTS:
 - Stats Perform (formerly Opta/PA Sport) is a sports data and AI company
 - Sports DataAPI (SDAPI) covers 17 sports: Australian Football, Badminton, Baseball, Basketball, Beach Soccer, Cricket, American Football, Futsal, Golf, Handball, Ice Hockey, Motorsport, Rugby League, Rugby Union, Soccer, Tennis, Volleyball
 - Authentication: all SDAPI endpoints use an outletAuthKey parameter embedded directly in the URL path (e.g. /match/{outletAuthKey})
-- Universal query params on most endpoints: _fmt (response format: json/xml), _rt (response type), _clbk (JSONP callback)
+- Universal query params: _fmt (response format: json/xml), _rt (response type), _clbk (JSONP callback)
 - Common filter params: tmcl (tournament calendar UUID), comp (competition), ctst (contestant/team), fx (fixture UUID), mt (match UUID), _pgSz/_pgNm (pagination)
-- Soccer has the richest API with 154+ endpoints including advanced analytics
+- Soccer has the richest API with 154+ endpoints including advanced analytics and player tracking
 - Opta Push delivers real-time data via HTTP push (separate from SDAPI REST polling)
 - The Dynamic Betting Stats API provides real-time betting-optimised data products
-- NLG endpoints (nlgmatchpreview, nlgdynamicplayerbio etc.) generate natural language content
+- NLG endpoints (nlgmatchpreview, nlgdynamicplayerbio, nlg_match_recap) generate natural language content
+- SGAPI provides graphics/visualisation data feeds
+- VOD API provides access to sports video content and highlights
 
 COMPLETE OPENAPI ENDPOINT KNOWLEDGE BASE (all 17 sports):
 ${JSON.stringify(KNOWLEDGE)}
 
-ANSWER GUIDELINES:
+=== SPORTRADAR ===
+
+${JSON.stringify(SPORTRADAR_KNOWLEDGE, null, 2)}
+
+=== ANSWER GUIDELINES ===
+- When asked about a specific provider, focus on that provider
+- When asked to compare, give a balanced side-by-side view covering: sports covered, endpoint depth, delivery methods, additional products, unique features
 - Be specific: name exact endpoints, parameters, and capabilities
-- When listing endpoints, use the path format (e.g. /matchstats/{outletAuthKey}/{matchUuid})
-- If comparing sports, be accurate about which features exist where
 - If something isn't in the provided data, say so honestly rather than guessing
-- Keep answers concise but complete — use bullet points or numbered lists when listing multiple items`;
+- Keep answers concise but complete — use headers, bullet points or numbered lists when listing multiple items`;
 
 // ─────────────────────────────────────────────
 // State

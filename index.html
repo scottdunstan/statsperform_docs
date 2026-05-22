@@ -174,7 +174,28 @@
     word-break: break-word;
   }
 
-  .bubble.ai {
+  .bubble.ai h1, .bubble.ai h2, .bubble.ai h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 12px 0 4px;
+  }
+  .bubble.ai h1:first-child, .bubble.ai h2:first-child, .bubble.ai h3:first-child { margin-top: 0; }
+  .bubble.ai p { margin: 0 0 8px; }
+  .bubble.ai p:last-child { margin-bottom: 0; }
+  .bubble.ai ul, .bubble.ai ol { padding-left: 18px; margin: 4px 0 8px; }
+  .bubble.ai li { margin-bottom: 3px; }
+  .bubble.ai code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    background: rgba(79, 195, 247, 0.08);
+    border: 1px solid rgba(79, 195, 247, 0.15);
+    border-radius: 4px;
+    padding: 1px 5px;
+    color: var(--accent);
+  }
+  .bubble.ai strong { color: var(--text-primary); font-weight: 600; }
+  .bubble.ai hr { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
     background: var(--ai-bubble);
     border: 1px solid var(--border);
     color: var(--text-primary);
@@ -310,6 +331,7 @@
     color: #ef9a9a;
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
 <body>
 
@@ -478,7 +500,11 @@ function addMessage(role, content, thinking = false) {
 
   const bubble = document.createElement('div');
   bubble.className = 'bubble ' + (role === 'user' ? 'user' : 'ai') + (thinking ? ' thinking' : '');
-  bubble.textContent = content;
+  if (role === 'ai' && !thinking) {
+    bubble.innerHTML = marked.parse(content);
+  } else {
+    bubble.textContent = content;
+  }
 
   bubbleWrap.appendChild(bubble);
   div.appendChild(avatar);
@@ -549,7 +575,7 @@ async function sendMsg() {
     const answer = data.content?.find(b => b.type === 'text')?.text || 'No response generated.';
 
     thinkingBubble.classList.remove('thinking');
-    thinkingBubble.textContent = answer;
+    thinkingBubble.innerHTML = marked.parse(answer);
 
     conversationHistory.push({ role: 'assistant', content: answer });
 

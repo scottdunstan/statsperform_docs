@@ -1,0 +1,424 @@
+{
+  "provider": "Sportradar",
+  "base_url": "https://developer.sportradar.com",
+  "llms_index": "https://developer.sportradar.com/llms.txt",
+  "overview": {
+    "description": "Sportradar is a B2B sports data provider offering APIs, odds, images, widgets, insights, and broadcast solutions across all major global sports. Not intended for direct client-side calls.",
+    "coverage_matrix": "https://coverage-matrix.sportradar.com/",
+    "authentication": "API key based; see https://developer.sportradar.com/getting-started/docs/authentication",
+    "id_types": "League Specific IDs and General Sport IDs (SRIDs). Mapping endpoints available between them.",
+    "api_formats": {
+      "league_specific": "Greatest depth for major leagues (NFL, NBA, MLB, NHL, etc). Full play-by-play, near real-time stats.",
+      "general_sport": "Broad coverage across many global leagues. Consistent structure across sports."
+    }
+  },
+  "product_areas": {
+    "sports_api": {
+      "description": "Core sports data APIs covering scores, stats, schedules, rosters, standings, play-by-play, and more.",
+      "sports": {
+        "football": {
+          "leagues": [
+            "NFL",
+            "NCAAFB",
+            "UFL",
+            "Global American Football"
+          ],
+          "base_url": "https://developer.sportradar.com/football/reference/",
+          "overview": "https://developer.sportradar.com/football/reference/overview",
+          "nfl": {
+            "overview": "https://developer.sportradar.com/football/reference/nfl-overview",
+            "integration_guide": "https://developer.sportradar.com/football/docs/nfl-ig-overview",
+            "coverage_levels": "https://developer.sportradar.com/football/reference/nfl-overview#introduction"
+          },
+          "ncaafb": {
+            "overview": "https://developer.sportradar.com/football/reference/ncaafb-overview",
+            "integration_guide": "https://developer.sportradar.com/football/docs/ncaafb-ig-overview",
+            "coverage_levels": "https://developer.sportradar.com/football/reference/ncaafb-overview#coverage-levels"
+          },
+          "ufl": {
+            "overview": "https://developer.sportradar.com/football/reference/ufl-overview"
+          },
+          "global_american_football": {
+            "overview": "https://developer.sportradar.com/football/reference/global-american-football-overview"
+          }
+        },
+        "basketball": {
+          "leagues": [
+            "NBA",
+            "WNBA",
+            "G League",
+            "NCAAMB",
+            "NCAAWB",
+            "Global Basketball",
+            "Synergy",
+            "Unrivaled"
+          ],
+          "base_url": "https://developer.sportradar.com/basketball/reference/",
+          "overview": "https://developer.sportradar.com/basketball/reference/overview",
+          "nba": {
+            "overview": "https://developer.sportradar.com/basketball/reference/nba-overview",
+            "integration_guide": "https://developer.sportradar.com/basketball/docs/nba-ig-overview",
+            "coverage_levels": "https://developer.sportradar.com/basketball/reference/nba-overview#coverage-levels"
+          },
+          "wnba": {
+            "overview": "https://developer.sportradar.com/basketball/reference/wnba-overview",
+            "coverage_levels": "https://developer.sportradar.com/basketball/reference/wnba-overview#coverage-levels"
+          },
+          "ncaamb": {
+            "overview": "https://developer.sportradar.com/basketball/reference/ncaamb-overview",
+            "coverage_levels": "https://developer.sportradar.com/basketball/reference/ncaamb-overview#coverage-levels"
+          },
+          "ncaawb": {
+            "overview": "https://developer.sportradar.com/basketball/reference/ncaa-womens-overview",
+            "coverage_levels": "https://developer.sportradar.com/basketball/reference/ncaa-womens-overview#coverage-levels"
+          },
+          "global_basketball": {
+            "overview": "https://developer.sportradar.com/basketball/reference/global-basketball-overview"
+          }
+        },
+        "hockey": {
+          "leagues": [
+            "NHL",
+            "NCAAMH",
+            "Global Hockey"
+          ],
+          "nhl": {
+            "overview": "https://developer.sportradar.com/ice-hockey/reference/nhl-overview",
+            "integration_guide": "https://developer.sportradar.com/ice-hockey/docs/nhl-ig-overview",
+            "coverage_levels": "https://developer.sportradar.com/ice-hockey/reference/nhl-overview#coverage-levels"
+          },
+          "global_hockey": {
+            "overview": "https://developer.sportradar.com/ice-hockey/reference/global-ice-hockey-overview"
+          }
+        },
+        "baseball": {
+          "leagues": [
+            "MLB",
+            "Global Baseball"
+          ],
+          "mlb": {
+            "overview": "https://developer.sportradar.com/baseball/reference/mlb-overview",
+            "integration_guide": "https://developer.sportradar.com/baseball/docs/mlb-ig-overview",
+            "coverage_levels": "https://developer.sportradar.com/baseball/reference/mlb-overview#coverage-levels",
+            "key_endpoints": [
+              "Daily Schedule",
+              "Daily Boxscore",
+              "Daily Summary",
+              "Game Play-by-Play",
+              "Game Summary",
+              "Game Extended Summary",
+              "Game Pitch Metrics",
+              "Game Play Statistics",
+              "Game Boxscore",
+              "Event Tracking",
+              "League Schedule",
+              "League Hierarchy",
+              "League Leaders",
+              "Standings",
+              "Player Profile",
+              "Team Profile",
+              "Seasonal Statistics",
+              "Seasonal Splits",
+              "Seasonal Pitch Metrics",
+              "Statcast Leaders",
+              "Injuries",
+              "Free Agents",
+              "Daily Transactions",
+              "Series Schedule",
+              "Series Statistics"
+            ]
+          },
+          "global_baseball": {
+            "overview": "https://developer.sportradar.com/baseball/reference/global-baseball-overview"
+          }
+        },
+        "racing": {
+          "leagues": [
+            "NASCAR",
+            "IndyCar",
+            "Formula 1",
+            "Formula E",
+            "MotoGP",
+            "Indy NXT",
+            "Rally"
+          ],
+          "nascar": {
+            "overview": "https://developer.sportradar.com/racing/reference/nascar-overview",
+            "integration_guide": "https://developer.sportradar.com/racing/docs/nascar-ig-overview",
+            "coverage": "https://developer.sportradar.com/racing/reference/nascar-overview#coverage"
+          },
+          "formula1": {
+            "overview": "https://developer.sportradar.com/racing/reference/f1-overview"
+          },
+          "indycar": {
+            "overview": "https://developer.sportradar.com/racing/reference/indycar-overview"
+          },
+          "formula_e": {
+            "overview": "https://developer.sportradar.com/racing/reference/formula-e-overview"
+          },
+          "motogp": {
+            "overview": "https://developer.sportradar.com/racing/reference/motogp-overview"
+          }
+        },
+        "soccer": {
+          "overview": "https://developer.sportradar.com/soccer/reference/soccer-api-overview",
+          "integration_guide": "https://developer.sportradar.com/soccer/docs/soccer-ig-overview"
+        },
+        "tennis": {
+          "overview": "https://developer.sportradar.com/tennis/reference/overview",
+          "integration_guide": "https://developer.sportradar.com/tennis/docs/ig-overview"
+        },
+        "golf": {
+          "overview": "https://developer.sportradar.com/golf/reference/golf-overview",
+          "coverage": "https://developer.sportradar.com/golf/reference/golf-overview#tour-coverage"
+        },
+        "cricket": {
+          "overview": "https://developer.sportradar.com/cricket/reference/cricket-overview"
+        },
+        "rugby": {
+          "overview": "https://developer.sportradar.com/rugby/reference/rugby-overview"
+        },
+        "handball": {
+          "overview": "https://developer.sportradar.com/handball/reference/handball-overview"
+        },
+        "mma": {
+          "overview": "https://developer.sportradar.com/mma/reference/mma-overview"
+        },
+        "aussie_rules": {
+          "overview": "https://developer.sportradar.com/aussie-rules-football/reference/aussie-rules-overview"
+        },
+        "badminton": {
+          "overview": "https://developer.sportradar.com/badminton/reference/badminton-overview"
+        },
+        "bandy": {
+          "overview": "https://developer.sportradar.com/bandy/reference/bandy-overview"
+        },
+        "darts": {
+          "overview": "https://developer.sportradar.com/darts/reference/darts-overview"
+        },
+        "field_hockey": {
+          "overview": "https://developer.sportradar.com/field-hockey/reference/field-hockey-overview"
+        },
+        "futsal": {
+          "overview": "https://developer.sportradar.com/futsal/reference/futsal-overview"
+        },
+        "snooker": {
+          "overview": "https://developer.sportradar.com/snooker/reference/snooker-overview"
+        },
+        "squash": {
+          "overview": "https://developer.sportradar.com/squash/reference/squash-overview"
+        },
+        "table_tennis": {
+          "overview": "https://developer.sportradar.com/table-tennis/reference/overview"
+        },
+        "volleyball": {
+          "indoor": "https://developer.sportradar.com/volleyball/reference/indoor-volleyball-overview",
+          "beach": "https://developer.sportradar.com/volleyball/reference/beach-volleyball-overview"
+        },
+        "more_sports": [
+          "Beach Soccer",
+          "Curling",
+          "Cycling",
+          "Floorball",
+          "Olympics",
+          "Pesapallo",
+          "Waterpolo",
+          "Winter Sports"
+        ]
+      }
+    },
+    "odds_api": {
+      "description": "US and Global odds APIs covering live odds, prematch, player props, futures, and probabilities.",
+      "products": {
+        "live_odds": {
+          "overview": "https://developer.sportradar.com/odds/reference/oc-live-odds-overview",
+          "description": "Real-time live in-game odds from US and global sportsbooks"
+        },
+        "prematch": {
+          "overview": "https://developer.sportradar.com/odds/reference/oc-prematch-overview",
+          "description": "Pre-match odds across competitions and sports"
+        },
+        "player_props": {
+          "overview": "https://developer.sportradar.com/odds/reference/oc-player-props-overview",
+          "description": "Player prop odds from multiple bookmakers"
+        },
+        "futures": {
+          "overview": "https://developer.sportradar.com/odds/reference/oc-futures-overview",
+          "description": "Outright/futures odds"
+        },
+        "probabilities": {
+          "overview": "https://developer.sportradar.com/odds/reference/probabilities-overview",
+          "description": "Pre-match and live win probabilities"
+        },
+        "odds_core": {
+          "overview": "https://developer.sportradar.com/odds/reference/oc-core-overview"
+        },
+        "mapping": {
+          "overview": "https://developer.sportradar.com/odds/reference/mapping-overview",
+          "description": "Maps between external bookmaker IDs and Sportradar IDs"
+        }
+      }
+    },
+    "insights": {
+      "description": "AI-powered insights including highs, milestones, leaderboards, expert picks, predictions, scoring updates, and betting trends.",
+      "sports_covered": [
+        "NFL",
+        "NBA",
+        "MLB",
+        "NHL",
+        "WNBA",
+        "NCAAFB",
+        "NCAAMB",
+        "Soccer"
+      ],
+      "insight_types": [
+        "Expert Picks",
+        "Highs",
+        "Leaderboards",
+        "Milestones",
+        "Predictions",
+        "Scoring",
+        "Player Betting Trends",
+        "Team Betting Trends",
+        "Lineup Changes"
+      ],
+      "betting_splits": {
+        "description": "Real-time betting split data aggregated from 150+ bookmakers",
+        "overview": "https://developer.sportradar.com/insights/reference/betting-splits-overview",
+        "sports_covered": [
+          "NFL",
+          "NBA",
+          "MLB",
+          "NHL",
+          "WNBA",
+          "NCAAFB",
+          "NCAAMB",
+          "NCAAWB",
+          "Soccer"
+        ],
+        "deprecation_note": "Insights v2 & Betting Splits v2 deprecated September 30, 2026. Use v3."
+      },
+      "overview": "https://developer.sportradar.com/insights/reference/insights-overview"
+    },
+    "images_editorial": {
+      "description": "Player headshots, action shots, coach images, team logos, venue images, and editorial articles/news.",
+      "overview": "https://developer.sportradar.com/images-and-editorials/reference/images-overview",
+      "content_types": [
+        "Player Headshots",
+        "Action Shots",
+        "Coach Images",
+        "Team Logos",
+        "Venue Images",
+        "Editorial News",
+        "Editorial Analysis"
+      ],
+      "api_version": "v3"
+    },
+    "widgets": {
+      "description": "Hosted, customizable frontend widgets maintained by Sportradar.",
+      "sports_covered": [
+        "NFL",
+        "NBA",
+        "MLB",
+        "NHL",
+        "WNBA",
+        "NCAAFB",
+        "NCAAMB",
+        "Soccer",
+        "Golf"
+      ],
+      "showcase": "https://widgets.media.sportradar.com/usdemo",
+      "overview": "https://developer.sportradar.com/widgets/docs"
+    },
+    "broadcast": {
+      "description": "Suite of broadcast tools: Radar360 (analytics platform), OnAir (stats-to-graphics), SRDI (graphics integration), AI Researcher (AI-driven insights).",
+      "products": {
+        "radar360": {
+          "overview": "https://developer.sportradar.com/broadcast/reference/radar360-intro",
+          "description": "Deep analytics and research platform for broadcasters"
+        },
+        "onair": {
+          "overview": "https://developer.sportradar.com/broadcast/reference/onair-getting-started",
+          "description": "Real-time stats-to-graphics integration"
+        },
+        "srdi": {
+          "overview": "https://developer.sportradar.com/broadcast/reference/srdi-installation-and-setup",
+          "description": "Seamless API connectivity for broadcast graphics systems (Chyron, Ross, Viz)"
+        },
+        "ai_researcher": {
+          "overview": "https://developer.sportradar.com/broadcast/reference/ai-researcher-overview",
+          "description": "AI-driven research and insights for broadcasters; synchronous agent API"
+        }
+      }
+    }
+  },
+  "common_endpoint_patterns": {
+    "general_sport_endpoints": [
+      "Competitions",
+      "Competition Info",
+      "Competition Seasons",
+      "Seasons",
+      "Season Info",
+      "Season Competitors",
+      "Season Players",
+      "Season Summaries",
+      "Season Standings",
+      "Season Probabilities",
+      "Season Links",
+      "Season Lineups",
+      "Competitor Profile",
+      "Competitor Summaries",
+      "Competitor vs Competitor",
+      "Competitor Merge Mappings",
+      "Player Profile",
+      "Player Merge Mappings",
+      "Sport Event Summary",
+      "Sport Event Timeline",
+      "Sport Event Lineups",
+      "Daily Summaries",
+      "Live Summaries",
+      "Live Timelines",
+      "Live Timelines Delta",
+      "Sport Events Created",
+      "Sport Events Updated",
+      "Sport Events Removed",
+      "Push Events",
+      "Push Statistics",
+      "Push Feeds",
+      "Statistics Summary",
+      "FAQs"
+    ],
+    "push_feeds": "Real-time streaming updates available for most sports. Complement polling endpoints.",
+    "probabilities": "Pre-match win probabilities available for most sports; live probabilities for some.",
+    "mapping_endpoints": "Available to cross-reference IDs between League Specific and General Sport API formats."
+  },
+  "integration_guides_available": [
+    "NFL",
+    "NCAAFB",
+    "NBA",
+    "WNBA",
+    "NCAAMB",
+    "NCAAWB",
+    "Soccer",
+    "Tennis",
+    "NHL",
+    "Unrivaled",
+    "NASCAR",
+    "MLB"
+  ],
+  "getting_started": {
+    "authentication_url": "https://developer.sportradar.com/getting-started/docs/authentication",
+    "first_call_url": "https://developer.sportradar.com/getting-started/docs/make-your-first-call",
+    "account_url": "https://developer.sportradar.com/getting-started/docs/your-account",
+    "response_codes_url": "https://developer.sportradar.com/getting-started/docs/response-codes",
+    "simulations_url": "https://developer.sportradar.com/getting-started/docs/simulations",
+    "versioning_url": "https://developer.sportradar.com/getting-started/docs/versioning",
+    "marketplace": "https://marketplace.sportradar.com/login",
+    "mcp_server": "https://developer.sportradar.com/getting-started/docs/mcp-server"
+  },
+  "metadata": {
+    "source": "https://developer.sportradar.com/llms.txt + https://developer.sportradar.com/getting-started/docs/get-started",
+    "crawled_date": "2026-05-22",
+    "notes": "Sportradar is a B2B service. API keys required. Direct browser/client calls not supported officially."
+  }
+}

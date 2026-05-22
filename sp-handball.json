@@ -1,0 +1,1549 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Handball",
+  "file": "sp-handball.json",
+  "openapi": {
+    "title": "SDAPI - Handball",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/handballdata",
+    "endpoint_count": 10,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandings",
+        "tags": [
+          "TM2 - Team Standings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squads/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquads",
+        "tags": [
+          "TM3 - Squads"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonalStats",
+        "tags": [
+          "TM4 - Seasonal Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStats",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Fixtures and Results",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Squads",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Statistics",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Handball API- Tournament Calendars feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-tournament-calendars.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Handball API- Tournament Calendars feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament Calendars (OT2) Guide",
+        "Endpoints",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tournament Calendars",
+            "/handballdata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET Tournament Calendar information according to specified parameter values",
+            "/handballdata/tournamentcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "GET the active (usually the current/most recent) tournament calendars only.",
+            "/handballdata/tournamentcalendar/{outletAuthKey}/ active"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "Get tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "/active endpoint + comp",
+            "Get information only for active tournament calendars and for the specified competition . Pass the competition UUID to co"
+          ],
+          [
+            "/active + /authorized",
+            "Get information only for active and authorized tournament calendars. GET https://api.performfeeds.com/handballdata/tourn"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for tournament calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:handballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for a competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataHandball API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-coverage-tiers.htm",
+      "sport": "handball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataHandball API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Score",
+            "Delivers goals per match."
+          ],
+          [
+            "Lineups",
+            "Delivers the lineup player names per match."
+          ],
+          [
+            "Player Stats",
+            "Delivers available player stats for Goals, Warnings, 2minutes, 7meters, DQ's."
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Results (A)",
+            "Score",
+            "",
+            "2-12 hours post-match"
+          ],
+          [
+            "3",
+            "Results (A)",
+            "Line-ups & Basic Events",
+            "Post-match results, lineups & player stats",
+            "Different intervals"
+          ],
+          [
+            "Lineups (A)"
+          ],
+          [
+            "Player Stats (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Results (L)",
+            "Score",
+            "From Olympic Feed",
+            "Updated every quarter"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Handball API- Match Statistics feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-match-statistics.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Handball API- Match Statistics feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "Match Statistics (MA2) Guide",
+        "Statistic Types",
+        "Contestant/Team Stats",
+        "Player Stats",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match statistics for a team from the /matchstats feed Required: fixture/match UUID as a path parameter (as the resou",
+            "/handballdata/matchstats/{outletAuthKey}/{fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "appearances",
+            "Total number of player appearances in the match"
+          ],
+          [
+            "goals",
+            "Total number of goals scored by the contestant in the match"
+          ],
+          [
+            "twoMinutes",
+            "Total number of two-minute suspensions accrued by the contestant in the match"
+          ],
+          [
+            "warnings",
+            "Total number of warnings accrued by the contestant in the match"
+          ],
+          [
+            "disqualifications",
+            "Total number of disqualifications accrued by the contestant in the match"
+          ],
+          [
+            "gkWarnings",
+            "Total number of goal keeper warnings accrued by the contestant in the match"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "twoMinutes",
+            "Number of two-minute penalties/suspensions served by the player in the match"
+          ],
+          [
+            "sixMetreGoals",
+            "Number of goals scored from the 6-metre line"
+          ],
+          [
+            "sixMetreAttempts",
+            "Number of attempts at goal from the 6-metre line"
+          ],
+          [
+            "sevenMetreGoals",
+            "Number of goals scored from 7 metres"
+          ],
+          [
+            "sevenMetreAttempts",
+            "Number of attempts at goal from 7 metres"
+          ],
+          [
+            "nineMetreGoals",
+            "Number of goals scored from the 9-metre line"
+          ],
+          [
+            "nineMetreAttempts",
+            "Number of attempts at goal from the 9-metre line"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "Get detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match statistics"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:handballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/handballdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Handball API- Seasonal Statistics feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-seasonal-statistics.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data Handball API- Seasonal Statistics feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "Seasonal Statistics (TM4) Guide",
+        "Statistic Types",
+        "Contestant/Team Stats",
+        "Player Stats",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET seasonal statistics for a team from the /seasonstats feed Required: tournament calendar UUID and contestant UUID",
+            "/handballdata/seasonstats/{outletAuthKey}?tmcl={tournamentCalendarUuid}& ctst={contestantUuid}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "appearances",
+            "Total number of player appearances in the match"
+          ],
+          [
+            "goals",
+            "Total number of goals scored by the contestant in the match"
+          ],
+          [
+            "twoMinutes",
+            "Total number of two-minute suspensions accrued by the contestant in the match"
+          ],
+          [
+            "warnings",
+            "Total number of warnings accrued by the contestant in the match"
+          ],
+          [
+            "disqualifications",
+            "Total number of disqualifications accrued by the contestant in the match"
+          ],
+          [
+            "gkWarnings",
+            "Total number of goal keeper warnings accrued by the contestant in the match"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "twoMinutes",
+            "Number of two-minute penalties/suspensions served by the player in the match"
+          ],
+          [
+            "sixMetreGoals",
+            "Number of goals scored from the 6-metre line"
+          ],
+          [
+            "sixMetreAttempts",
+            "Number of attempts at goal from the 6-metre line"
+          ],
+          [
+            "sevenMetreGoals",
+            "Number of goals scored from 7 metres"
+          ],
+          [
+            "sevenMetreAttempts",
+            "Number of attempts at goal from 7 metres"
+          ],
+          [
+            "nineMetreGoals",
+            "Number of goals scored from the 9-metre line"
+          ],
+          [
+            "nineMetreAttempts",
+            "Number of attempts at goal from the 9-metre line"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl + ctst",
+            "Get seasonal statistics only for a specific contestant in a tournament calendar (of a competition). Pass the contestant "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to seasonal statistics"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:handballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/handballdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Handball API- Team Standings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-team-standings.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Handball API- Team Standings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values - you must specify a tournament calendar UUID",
+            "/handballdata/standings/{outletAuthKey}?tmcl={tournamentCalendarUuid} &{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get team standings information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmc"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "standings"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for team standings"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:handballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "standings/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for a competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "standings/tournamentCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournament calendar. Value: tournament calendar name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Handball API- Squads feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-squads.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Handball API- Squads feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squads data according to specified parameter values",
+            "/handballdata/squads/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get squads information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl parame"
+          ],
+          [
+            "ctst + tmcl",
+            "Get squads information only for a specific contestant in a tournament calendar (of a competition). Pass the contestant U"
+          ],
+          [
+            "detailed",
+            "Get an extended list of (detailed) statistics . Pass a value of yes or no (default) to the detailed parameter. You must "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for team squads"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:handballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for a competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/tournamentCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the tournament calendar related fields. Value: tournament calendar name, value: String"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataHandball API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/index.htm",
+      "sport": "handball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataHandball API Index and User Guide",
+        "Required Compliance:",
+        "Handball API - Overview",
+        "Handball API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type\u00a0available."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Handball API: handballdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource, in the case of the Handball API. For example: standings"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Calendars (OT2) Tournament Calendars (OT2) Get basic information about the tournament calendars - the individ",
+            "/handballdata/tournamentcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Fixtures and Results (MA1) Fixtures and Results (MA1) Get a fixture or fixture list with match details, date, start time",
+            "/handballdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Statistics (MA2) Match Statistics (MA2) Get detailed match statistics for teams and each individual player, includ",
+            "/handballballdata/matchstats/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Team Standings (TM2) Team Standings (TM2) Get data points to create a standings table - tournament position, points, mat",
+            "/handballdata/standings/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Squads (TM3) Squads (TM3) Get squad details, including individual personal information, for a current squad of a specifi",
+            "/handballdata/squads/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Seasonal Statistics (TM4) Seasonal Statistics (TM4) Get cumulative performance statistics for every player and contestan",
+            "/handballdata/seasonstats/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Handball API- Fixtures and Results feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-fixtures-and-results.htm",
+      "sport": "handball",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Handball API- Fixtures and Results feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "Fixtures And Results (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a specific fixture",
+            "/handballdata/match/{outletAuthKey}/{fixtureUuid}?{queryParameters}"
+          ],
+          [
+            "GET detailed fixtures and results data according to specified parameter values",
+            "/handballdata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "GET detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ],
+          [
+            "live",
+            "GET only live data (such as score, goals, cards, attendance, officials, and more) for fixtures. If there is no live data"
+          ],
+          [
+            "tmcl",
+            "GET information about fixtures and results only for the specified tournament calendar . Pass the tournament calendar UUI"
+          ],
+          [
+            "tmcl + live",
+            "GET only live data for fixtures for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl pa"
+          ],
+          [
+            "comp",
+            "GET information about fixtures and results only for a specific competition . Pass the competition UUID to the comp param"
+          ],
+          [
+            "comp + live",
+            "GET only live data for fixtures for the specified competition . Pass the competition UUID to the comp parameter, and a p"
+          ],
+          [
+            "tmcl + ctst + live",
+            "GET information about fixtures and results only for a specific contestant of a specified tournament calendar . Pass the "
+          ]
+        ],
+        [
+          [
+            "Parameter",
+            "Live Access",
+            "Basic Access",
+            "Match Status"
+          ],
+          [
+            "live=yes",
+            "matchInfo + liveData",
+            "10313",
+            "During Live Match"
+          ],
+          [
+            "live=no",
+            "matchInfo",
+            "matchInfo",
+            "During Live Match"
+          ],
+          [
+            "Parameter not provided",
+            "matchInfo + liveData",
+            "matchInfo + liveData",
+            "Post Match Only"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to matches"
+          ],
+          [
+            "If call specifies match UUID to fx parameter: Attributes list is empty. If call specifies match UUID as path parameter/a"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataHandball API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/handball/opta-sdapi-handball-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Score",
+          "Delivers goals per match."
+        ],
+        [
+          "Lineups",
+          "Delivers the lineup player names per match."
+        ],
+        [
+          "Player Stats",
+          "Delivers available player stats for Goals, Warnings, 2minutes, 7meters, DQ's."
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Results (A)",
+          "Score",
+          "",
+          "2-12 hours post-match"
+        ],
+        [
+          "3",
+          "Results (A)",
+          "Line-ups & Basic Events",
+          "Post-match results, lineups & player stats",
+          "Different intervals"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results (L)",
+          "Score",
+          "From Olympic Feed",
+          "Updated every quarter"
+        ],
+        [
+          "6",
+          "Results (L)",
+          "Line-ups & Basic Events",
+          "Live scores & line-ups Post-match player stats",
+          "Live Post -match: Different intervals"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Player Stats (A)"
+        ]
+      ]
+    ]
+  }
+}

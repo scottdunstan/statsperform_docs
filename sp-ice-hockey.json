@@ -1,0 +1,5019 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Ice Hockey",
+  "file": "sp-ice-hockey.json",
+  "openapi": {
+    "title": "SDAPI - Ice Hockey",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/icehockeydata",
+    "endpoint_count": 35,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentschedule/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentSchedule",
+        "tags": [
+          "MA0 - Tournament Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/team/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeams",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "srs",
+            "in": "query",
+            "required": false,
+            "description": "Series"
+          },
+          {
+            "name": "ctry",
+            "in": "query",
+            "required": false,
+            "description": "Country"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/team/{outletAuthKey}/{contestantId}",
+        "summary": "",
+        "operationId": "getTeam",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "contestantId",
+            "in": "path",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standingsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "TM2 - Team Standings (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Table type"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandings",
+        "tags": [
+          "TM2 - Team Standings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Table type"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squadsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_1",
+        "tags": [
+          "TM3 - Team Squads (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squads/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquads",
+        "tags": [
+          "TM3 - Team Squads"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstatsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_2",
+        "tags": [
+          "TM4 - Seasonal Statistics (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "people",
+            "in": "query",
+            "required": false,
+            "description": "Include players statistics"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_3",
+        "tags": [
+          "TM4 - Seasonal Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonsimulations/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getByParam",
+        "tags": [
+          "TM11 - Season Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonsimulations/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "get_4",
+        "tags": [
+          "TM11 - Season Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "statsId",
+            "in": "query",
+            "required": false,
+            "description": "Stats id"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_1",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerBio",
+        "tags": [
+          "PE9 - NLG Dynamic Player Bios"
+        ],
+        "parameters": [
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": true,
+            "description": "Person uuid or stats id"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getPlayerBio_1",
+        "tags": [
+          "PE9 - NLG Dynamic Player Bios"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_5",
+        "tags": [
+          "MA1 - Match (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getByMatchId",
+        "tags": [
+          "MA1 - Match (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchtvlisting/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchesTvListing",
+        "tags": [
+          "MA31 - TV Listing"
+        ],
+        "parameters": [
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "ctry",
+            "in": "query",
+            "required": false,
+            "description": "Country"
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "Week number"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchtvlisting/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchTvListing",
+        "tags": [
+          "MA31 - TV Listing"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstatsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_6",
+        "tags": [
+          "MA2 - Match Statistics (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstatsv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_7",
+        "tags": [
+          "MA2 - Match Statistics (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_8",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_9",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_10",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_11",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheventv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_12",
+        "tags": [
+          "MA3 - Match Events (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheventv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_13",
+        "tags": [
+          "MA3 - Match Events (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}",
+        "summary": "",
+        "operationId": "noResourceGet",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_14",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_15",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "lineups",
+            "in": "query",
+            "required": false,
+            "description": "Is lineups data"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getByMatchId_1",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "lineups",
+            "in": "query",
+            "required": false,
+            "description": "Is lineups data"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA0 - Tournament Schedule",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Match (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Match",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events",
+        "description": ""
+      },
+      {
+        "name": "MA21 - Live Win Probability",
+        "description": ""
+      },
+      {
+        "name": "MA22 - NLG Match Preview",
+        "description": ""
+      },
+      {
+        "name": "MA31 - TV Listing",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "PE9 - NLG Dynamic Player Bios",
+        "description": ""
+      },
+      {
+        "name": "TM1 - Teams",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Team Squads (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Team Squads",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Statistics (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Statistics",
+        "description": ""
+      },
+      {
+        "name": "TM11 - Season Simulations",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Ice Hockey API- Team Standings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-team-standings.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Team Standings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values - you must specify a tournament calendar UUID",
+            "/icehockeydata/standings/{outletAuthKey}?tmcl={tournamentCalendarUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get team standings information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmc"
+          ],
+          [
+            "type + tmcl",
+            "Get only a certain type of division/table from the team standings information. In the team standings feed, you must use "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for team standings"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/sport"
+          ],
+          [
+            "Description",
+            "Root element of sport related fields. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID of sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/ruleset"
+          ],
+          [
+            "Description",
+            "Root element of ruleset related fields. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match Events feed (MA3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-match-events.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Match Events feed (MA3)",
+        "Overview",
+        "Required Compliance:",
+        "Match Events (MA3) Guide",
+        "Event Type IDs/Names And Qualifier IDs/Descriptions",
+        "Match Events and Qualifiers",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events data for a match by fixture UUID. Required: Fixture UUID. See the query parameters table below.",
+            "/icehockeydata/matchevent/{outletAuthKey} {restOfQueryString}"
+          ]
+        ],
+        [
+          [
+            "matchEvent",
+            "matchEventQualifier"
+          ],
+          [
+            "typeId",
+            "Name",
+            "qualifierId",
+            "Description"
+          ],
+          [
+            "1",
+            "Start Game",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "End Game",
+            "90",
+            "Ended after OT"
+          ],
+          [
+            "91",
+            "Ended after PS"
+          ],
+          [
+            "3",
+            "Start Period",
+            "6",
+            "Home team right"
+          ],
+          [
+            "4",
+            "End Period",
+            "61",
+            "To Extra Period"
+          ],
+          [
+            "89",
+            "Penalty shootout"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid",
+            "GET match events for a match by the specified fixture UUID (path parameter method) . The fixture UUID in the request URL"
+          ],
+          [
+            "fx",
+            "Get match events for a fixture by passing the fixture/match UUID to the fx query parameter in the URL. GET https://api.p"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for match events"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Live Win Probability Feed (MA21)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-live-win-probability.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA21"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Live Win Probability Feed (MA21)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Live Win Probability (MA21) Guide",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Live Win Probability information by fixture inline path URL.",
+            "/icehockeydata/matchlivewinprobability/{outletAuthKey}/{fixtureUUID} ?_fmt={format} &_rt={mode}"
+          ],
+          [
+            "GET Live Win Probability information by fixture id.",
+            "/icehockeydata/matchlivewinprobability/{outletAuthKey}?fx=urn:perform:stats: fixture:{stats fixture ID}&_fmt={format}&_r"
+          ],
+          [
+            "GET Live Win Probability information by fixture UUID.",
+            "/icehockeydata/matchlivewinprobability/{outletAuthKey}?{fx=fixtureUUID}& _fmt={format}&_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "GET Live Win Probability information by fixture inline path URL GET https://api.performfeeds.com/icehockeydata/matchlive"
+          ],
+          [
+            "fx (Legacy stats id)",
+            "GET Live Win Probability formation by stats fixture id GET https://api.performfeeds.com/icehockeydata/matchlivewinprobab"
+          ],
+          [
+            "fx",
+            "GET Live Win Probability formation by fixture UUID GET https://api.performfeeds.com/icehockeydata/matchlivewinprobabilit"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the win live probability (XML only) Note: Not present in JSO"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataIce HockeyAPI- Season Simulations feed (TM11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-season-simulations.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM11"
+      ],
+      "headings": [
+        "Sports DataIce HockeyAPI- Season Simulations feed (TM11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Season Simulations (TM11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once 7 days prior to the fixture start date/time and then once every 30 seconds upon KO thereafter."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Season Simulations data according to specified parameter values",
+            "/icehockeydata/seasonsimulations/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET Season Simulations list by tournament calendar\u00a0UUID GET https://api.performfeeds.com/icehockeydata/seasonsimulations"
+          ],
+          [
+            "tmcl + date",
+            "GET Season Simulations list by tournament calendar\u00a0UUID andspecific date GET https://api.performfeeds.com/icehockeydata/"
+          ],
+          [
+            "tmcl + ctst",
+            "GET Season Simulations information only for a specific contestant in a tournament calendar . GET https://api.performfeed"
+          ],
+          [
+            "tmcl and ctst (Legacy stats ids)",
+            "GET season Simulations list by stats ID GET https://api.performfeeds.com/icehockeydata/seasonsimulations/{outletAuthKey}"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonSimulations"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournament simulations"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonSimulations/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Tournament Schedule feed (MA0)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-tournament-schedule.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA0"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Tournament Schedule feed (MA0)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament Schedule (MA0) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET basic information about tournament schedules including matches associated with a tournament calendar UUID Required: ",
+            "/icehockeydata/tournamentschedule/{outletAuthKey}? tmcl={tournamentCalendarUuid}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get match information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramet"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule"
+          ],
+          [
+            "Description",
+            "Required / Optional . The root element of the related fields for tournament schedule"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for a competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule/tournamentCalendar"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for a tournament calendar"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match Statistics feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-match-statistics.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Match Statistics feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "Match Statistics (MA2) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Statistics for a team from the /matchstats feed",
+            "/icehockeydata/matchstats/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Statistic name/Description",
+            "Feed Output name"
+          ],
+          [
+            "Goal",
+            "goals"
+          ],
+          [
+            "Powerplay goals",
+            "ppGoals"
+          ],
+          [
+            "Shorthanded goals",
+            "shGoals"
+          ],
+          [
+            "Penalties in minutes",
+            "penalties"
+          ],
+          [
+            "Shots on goal",
+            "shotsOnGoal"
+          ],
+          [
+            "Hits",
+            "hits"
+          ],
+          [
+            "Blocks",
+            "blocks"
+          ]
+        ],
+        [
+          [
+            "Statistic name/Description",
+            "Feed Output name"
+          ],
+          [
+            "Goal",
+            "goals"
+          ],
+          [
+            "Powerplay goals",
+            "ppGoals"
+          ],
+          [
+            "Shorthanded goals",
+            "shGoals"
+          ],
+          [
+            "Points",
+            "points"
+          ],
+          [
+            "Penalties in minutes",
+            "penalties"
+          ],
+          [
+            "Shots on goal",
+            "shotsOnGoal"
+          ],
+          [
+            "Missed shots",
+            "missedShots"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid Fixture UUID",
+            "GET match statistics for a match by the specified fixture UUID (path parameter method) .the fixture UUID in the request "
+          ],
+          [
+            "fx",
+            "Get match statistics for a fixture by passing the fixture/match UUID to the fx query parameter in the URL. GET https://a"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats"
+          ],
+          [
+            "Description",
+            "Optional. Root element of the related fields for match statistics"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- TV Listing feed (MA31)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/Opta-sdapi-icehockey-api-tv-listing.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA31"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- TV Listing feed (MA31)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "TV Listing (MA31) Guide",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Twice in a day to find updated information."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET TV Listing information by fixture",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}?fx={fixtureUUID}/&_fmt={dataFormat}& _rt={mode}"
+          ],
+          [
+            "GET TV Listing information by fixture inline path URL",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}/{fixtureUUID}?_fmt={dataFormat}& _rt={mode}"
+          ],
+          [
+            "GET TV Listing information by contestant",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}?ctst={contestantUUID}& _fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET TV Listing information by contestant & week",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}?ctst={contestantUUID}& week={week number}&_fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET TV Listing information by contestant & week & country",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}&ctst={contestantUUID}& week={week number}&ctry={countryUUID}?_fmt={dataFor"
+          ],
+          [
+            "GET TV Listing information by contestant & week & tmcl & country",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}?ctst={contestantUUID}&week ={week number}&ctry={countryUUID}&tmcl={tournam"
+          ],
+          [
+            "GET TV Listing information by contestant & week & tmcl & country & matchDate",
+            "/icehockeydata/matchtvlisting/{outletAuthKey}?ctst={contestantUUID}&week= {week number}&ctry={countryUUID}&tmcl={tournam"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fx",
+            "GET match broadcasting information by fixture . Pass the fixture UUID to the fx parameter. https://api.performfeeds.com/"
+          ],
+          [
+            "fixture/match UUID",
+            "GET match broadcasting information about one fixture by passing the fixture/match UUID as a path parameter (the asset/re"
+          ],
+          [
+            "ctst",
+            "GET match broadcasting information by contestant . Pass the contestant UUID to the contestant parameter. https://api.per"
+          ],
+          [
+            "ctst + week",
+            "GET match broadcasting information by contestant and week . https://api.performfeeds.com/icehockeydata/matchtvlisting/{o"
+          ],
+          [
+            "ctst + week + ctry",
+            "GET match broadcasting information by contestant and week and country https://api.performfeeds.com/matchtvlisting/{outle"
+          ],
+          [
+            "ctst + week + ctry + tmcl",
+            "GET match broadcasting information by contestant and week and tmcl and country . https://api.performfeeds.com/icehockeyd"
+          ],
+          [
+            "ctst + week + ctry + tmcl + mt.mDt",
+            "GET match broadcasting information by contestant and week and tmcl and country and matchDate . https://api.performfeeds."
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchTvListing"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match tv listing (XML only)"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchTvListing/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            "JSON/JSONP: This element is the first to be returned for all matches. XML: This element is returned for all matches."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- NLG Match Preview feed (MA22)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-match-preview.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA22"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- NLG Match Preview feed (MA22)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "NLG Match Preview (MA22) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "Previews should be available up to 72 hours before a game, with a minimum expectation of 48 hours for an individual matc"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a match preview by fixture UUID (path parameter method) in XML or JSON.",
+            "/icehockeydata/nlgmatchpreview/{outletAuthKey}/{fixtureUuid} ?{queryParameters}"
+          ],
+          [
+            "GET a match preview by fixture UUID",
+            "/icehockeydata/nlgmatchpreview/{outletAuthKey}?fx={fixtureUUID} &{queryParameters}"
+          ],
+          [
+            "GET a match preview by stats ID",
+            "/icehockeydata/nlgmatchpreview/{outletAuthKey}?statsId={fixtureStatsId} &{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} + _lcl Fixture UUID",
+            "GET Match Preview NLG data by the specified fixture UUID (path parameter method) . Pass the fixture UUID in the request "
+          ],
+          [
+            "fx + _lcl (UUID only)",
+            "GET Match Preview NLG data by the specified UUID \"fx\" ID (query parameter method) . Pass the match UUID to the fx parame"
+          ],
+          [
+            "statsId + _lcl",
+            "GET Match Preview NLG data by the specified Stats ID (query parameter method) . Pass the stats match Id to the statsId p"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the match preview information (XML only) Note: Not present i"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Tournament Calendars feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-tournament-calendars.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Tournament Calendars feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament Calendars (OT2) Guide",
+        "Endpoints",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tournament Calendars",
+            "/icehockeydata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET Tournament Calendar information according to specified parameter values",
+            "/icehockeydata/tournamentcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "GET the active (usually the current/most recent) tournament calendars only.",
+            "/icehockeydata/tournamentcalendar/{outletAuthKey}/ active"
+          ],
+          [
+            "GET authorized tournament calendars only (those that you have access to view).",
+            "/icehockeydata/tournamentcalendar/{outletAuthKey}/ authorized"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "Get tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "/active endpoint + comp",
+            "Get information only for active tournament calendars and for the specified competition . Pass the competition UUID to co"
+          ],
+          [
+            "/authorized endpoint + comp",
+            "Get information only for authorized tournament calendars and specified competition . Pass the competition UUID to comp ."
+          ],
+          [
+            "/active + /authorized endpoints",
+            "Get information only for active and authorized tournament calendars. GET https://api.performfeeds.com/icehockeydata/tour"
+          ],
+          [
+            "comp + /active + /authorized",
+            "Get information only for active and authorized tournament calendars. GET https://api.performfeeds.com/icehockeydata/tour"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars"
+          ],
+          [
+            "Description",
+            "The root element of the related fields for tournament calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars/competition"
+          ],
+          [
+            "Description",
+            "The root element of the related fields for competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataIce Hockey API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-ice-hockey-api-coverage-tiers.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataIce Hockey API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Results & Period Scores",
+            "Delivers goals and period scores per match."
+          ],
+          [
+            "Scorers",
+            "Delivers the goal scoring player names per match (minute+second) for\u00a0 Goals, Power-Play Goals, Shorthanded Goals, Shooto"
+          ],
+          [
+            "Lineups",
+            "Delivers the lineup player names per match."
+          ],
+          [
+            "Player Stats",
+            "Delivers player stats for Box Score: Offense, Defensive, Goalkeeper stats and Ice Time per player."
+          ],
+          [
+            "Team Stats",
+            "Delivers team stats: Shots on Goal, Powerplay Stats, Hits, Face-off Wins, Giceaways, Takeaways, Blocks & Penalty Minutes"
+          ],
+          [
+            "Play-by-Play",
+            "Event coordinates in real time."
+          ],
+          [
+            "Match Events",
+            "Penalties."
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Results & Period Scores (A)",
+            "Score",
+            "",
+            "Within 2-12 hours"
+          ],
+          [
+            "3",
+            "Results & Period Scores (A)",
+            "Line-ups & Basic Events",
+            "Post-match result, scorers, line-ups, penalties & player stats",
+            "Different intervals"
+          ],
+          [
+            "Scorers (A)"
+          ],
+          [
+            "Lineups (A)"
+          ],
+          [
+            "Player Stats (A)"
+          ],
+          [
+            "Match Events (A)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Seasonal Statistics feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-seasonal-stats.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Seasonal Statistics feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "Seasonal Stats (TM4) Guide",
+        "Statistic Types - Contestant and Player",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET seasonal statistics according to specified parameter values",
+            "/icehockeydata/seasonstats/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Description",
+            "Feed Output Attribute Name"
+          ],
+          [
+            "appearances",
+            "blocks"
+          ],
+          [
+            "assists",
+            "faceoffs"
+          ],
+          [
+            "Shots Blocked",
+            "faceOffsWon"
+          ],
+          [
+            "Blocks",
+            "goals"
+          ],
+          [
+            "Hits",
+            "hits"
+          ],
+          [
+            "Penalties",
+            "penalties"
+          ],
+          [
+            "Powerplay Goals",
+            "ppGoals"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl + ctst",
+            "Get seasonal statistics only for a specific contestant in a tournament calendar (of a competition). Pass the contestant "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "DEScription",
+            "Required / Optional .\u00a0The root element of the related fields for season statistics."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Teams feed (TM1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-teams.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM1"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Teams feed (TM1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Teams (TM1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Feed Polling Frequency"
+          ],
+          [
+            "Once every 24 hours."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team data according to specified parameter values",
+            "/icehockeydata/team/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET team information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramete"
+          ],
+          [
+            "ctry",
+            "GET team information only for a specific country . Pass the country UUID to the ctry parameter. GET https://api.performf"
+          ],
+          [
+            "ctst",
+            "Get team information only for a specific contestant . Pass the contestant UUID to the ctst parameter. GET https://api.pe"
+          ],
+          [
+            "detailed",
+            "Get detailed team information for a specific contestant/tournament calendar. GET https://api.performfeeds.com/icehockeyd"
+          ],
+          [
+            "stg",
+            "Get team information only for a specific stage . Pass the stage\u00a0UUID to the stg parameter. GET https://api.performfeeds."
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "contestants"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the contestant/s associated with the query criteria in the c"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Last modification date and time in UTC - returned for XML only"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "contestants/contestant"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a contestant associated with the query criteria in the call"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a contestant associated with the query criteria in the call"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataIce HockeyAPI- Depth Chart Feed (TM6)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-depth-chart.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM6"
+      ],
+      "headings": [
+        "Sports DataIce HockeyAPI- Depth Chart Feed (TM6)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Depth Charts (TM6) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method)",
+            "/icehockeydata/depthcharts/{outletAuthKey}? tmcl={tournamentCalendarUuid}&{queryParameters}"
+          ],
+          [
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method) and contestant UUID (ctst query parameter",
+            "/icehockeydata/depthcharts/{outletAuthKey}? tmcl={tournamentCalendarUuid}&ctst={contestantUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get team depth chart information only for the specified tournament calendar . Pass the tournament calendar UUID to the t"
+          ],
+          [
+            "tmcl + ctst",
+            "Get team depth chart information by contestant and tournament calendar . Pass the contestant UUID to the ctst and tourna"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the team depth charts (XML only) Note: Not present in JSON/JSONP feed "
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Team depth charts last updated date and time in UTC"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated sport"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated ruleset"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataIce Hockey API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/index.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataIce Hockey API Index and User Guide",
+        "Required Compliance:",
+        "Ice Hockey API - Overview",
+        "Ice Hockey API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Ice Hockey API: icehockeydata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Ice Hockey API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Schedule (MA0) Tournament Schedule (MA0) Get schedule information for a tournament, including individual matc",
+            "/icehockeydata/tournamentschedule/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA1) Match (MA1) Get details of a match or matches, such as date, match time, contestants, competition, season, v",
+            "/icehockeydata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA1_v2) Match (MA1_v2) Get exclusive details of a match or matches, such as date, match time, contestants, compet",
+            "/icehockeydata/matchv2/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Statistics (MA2) Match Statistics (MA2) Get detailed match statistics for teams and each of the individual players",
+            "/icehockeydata/matchstats/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Statistics (MA2_v2) Match Statistics (MA2_v2) Get exclusive detailed match statistics for teams and each of the in",
+            "/icehockeydata/matchstatsv2/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3) Match Events (MA3) Get all events in a game, including team, event, type, timestamp, and qualifiers, ",
+            "/icehockeydata/matchevent/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3_v2) Match Events (MA3_v2) Get all events in a game, including team, event, type, timestamp, and qualif",
+            "/icehockeydata/matcheventv2/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Squads feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-squads.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Squads feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squads data according to specified parameter values",
+            "/icehockeydata/squads/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get squads information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl parame"
+          ],
+          [
+            "ctst",
+            "Get squads information only for a specific contestant . Pass the contestant UUID to the ctst . GET https://api.performfe"
+          ],
+          [
+            "tmcl + ctst",
+            "Get squads information only for a specific contestant in a tournament calendar (of a competition). Pass the contestant U"
+          ],
+          [
+            "detailed",
+            "Get an extended list of (detailed) personal attributes about each person in a team . Pass a value of yes or no (default)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for team squads"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the ruleset. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-match.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Ice Hockey API- Match feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "Match (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a single fixture",
+            "/icehockeydata/match/{outletAuthKey}/{fixtureUuid}?{queryParameters}"
+          ],
+          [
+            "GET detailed information for a single fixture and live scores data",
+            "/icehockeydata/match/{outletAuthKey}/{fixtureUuid}?&live=yes"
+          ],
+          [
+            "GET information for a list of matches according to the specified query parameters",
+            "/icehockeydata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fx (fixture/match UUID)",
+            "Get detailed information about a fixture by passing the fixture/match UUID to the fx query parameter in the URL. GET htt"
+          ],
+          [
+            "tmcl",
+            "Get information for several fixtures only for the specified tournament calendar . Pass the tournament calendar UUID to t"
+          ],
+          [
+            "tmcl + stg",
+            "Get information for several fixtures only for the specified stage of a tournament calendar . Pass the stage UUID to the "
+          ],
+          [
+            "ctst + tmcl",
+            "Get information about matches only for a specific contestant (team/squad) in a tournament calendar. Pass the contestant "
+          ],
+          [
+            "comp + ctst",
+            "Get information about matches of a specified team in a competition . Pass the contestant UUID to the ctst parameter, and"
+          ],
+          [
+            "ctst",
+            "Get information about matches only for a specific contestant (team/squad). Pass the contestant UUID to the ctst paramete"
+          ],
+          [
+            "mt.mDt + ctst",
+            "Get matches only for a specific contestant within the specified date range - the maximum span of the date range is one y"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for matches"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "totalResultSize"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for matches"
+          ],
+          [
+            "Values",
+            "Integer"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataIce HockeyAPI- NLG Dynamic Player Bios\u00a0feed (PE9)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-icehockey-api-nlg-dynamic-player-bios.htm",
+      "sport": "icehockey",
+      "feed_codes": [
+        "PE9"
+      ],
+      "headings": [
+        "Sports DataIce HockeyAPI- NLG Dynamic Player Bios\u00a0feed (PE9)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "NLG Dynamic Player Bios (PE9) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "The bios will be updated after every game."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a dynamic player bio by person UUID by (path parameter method).",
+            "/icehockeydata/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}? {queryParameters}"
+          ],
+          [
+            "GET a dynamic player bio by person UUID (prsn query parameter method).",
+            "/icehockeydata/nlgdynamicplayerbio/{outletAuthKey}? prsn={personUuid}&{queryParameters}"
+          ],
+          [
+            "GET a dynamic player bio by person legacy Stats ID (prsn query parameter method by {urn}).",
+            "/icehockeydata/nlgdynamicplayerbio/{outletAuthKey}? fx={urn:perform:stats:Stats person Id}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "personUuid",
+            "GET dynamic Player Bio data by the specified person\u00a0(inline parameter url) . GET https://api.performfeeds.com/icehockeyd"
+          ],
+          [
+            "Stats person id",
+            "GET dynamic Player Bio data by the specified stats person ID . GET https://api.performfeeds.com/icehockeydata/nlgdynamic"
+          ],
+          [
+            "prsn + _lcl",
+            "GET dynamic Player Bio data by the specified by person UUID (query parameter method) . Pass the person UUID to the prsn "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the NLG Dynamic Player Bio"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required (XML). Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the given person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the person/player"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "statsId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match Statistics feed (MA2_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-match-statistics-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Match Statistics feed (MA2_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Match Statistics (MA2) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Statistics information by fixture UUID (path parameter method)",
+            "/icehockeydata/matchstatsv2/{outletAuthKey}/{fixtureUuid}?_fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET Match Statistics information by fixture UUID (using fx parameter)",
+            "/icehockeydata/matchstatsv2/{outletAuthKey}/?fx={fixtureUuid}&_fmt={dataFormat}&_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Statistic name",
+            "Feed Output name",
+            "Description"
+          ],
+          [
+            "Goal",
+            "goals",
+            ""
+          ],
+          [
+            "Powerplay goals",
+            "ppGoals",
+            ""
+          ],
+          [
+            "Shorthanded goals",
+            "shGoals",
+            ""
+          ],
+          [
+            "Penalties in minutes",
+            "penalties",
+            ""
+          ],
+          [
+            "Shots on goal",
+            "shotsOnGoal",
+            ""
+          ],
+          [
+            "Hits",
+            "hits",
+            ""
+          ],
+          [
+            "Blocks",
+            "blocks",
+            ""
+          ]
+        ],
+        [
+          [
+            "Statistic Name",
+            "Feed Output Name",
+            "Description"
+          ],
+          [
+            "Goal",
+            "goals",
+            ""
+          ],
+          [
+            "Powerplay goals",
+            "ppGoals",
+            ""
+          ],
+          [
+            "Shorthanded goals",
+            "shGoals",
+            ""
+          ],
+          [
+            "Points",
+            "points",
+            ""
+          ],
+          [
+            "Penalties in minutes",
+            "penalties",
+            ""
+          ],
+          [
+            "Shots on goal",
+            "shotsOnGoal",
+            ""
+          ],
+          [
+            "Missed shots",
+            "missedShots",
+            ""
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid Fixture UUID",
+            "GET match statistics for a match by the specified fixture UUID (path parameter method) .the fixture UUID in the request "
+          ],
+          [
+            "fx",
+            "Get match statistics for a fixture by passing the fixture/match UUID to the fx query parameter in the URL. GET https://a"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "match"
+          ],
+          [
+            "Description",
+            "Optional. Root element of the related fields for match statistics"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match Events feed (MA3_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-match-events-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Match Events feed (MA3_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Match Events (MA3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events info by fixture UUID (path parameter method)",
+            "/icehockeydata/matcheventv2/{outletAuthKey}/{fixtureUuid}? _fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET match events info by fixture UUID (using fx parameter)",
+            "/icehockeydata/matcheventv2/{outletAuthKey}/?fx={fixtureUuid} &_fmt={dataFormat}&_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid",
+            "GET match events for a match by the specified fixture UUID (path parameter method) . https://api.performfeeds.com/icehoc"
+          ],
+          [
+            "fx",
+            "Get match events for a fixture by passing the fixture/match UUID to the fx query parameter in the URL. https://api.perfo"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for match events"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:icehockeydata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/icehockeydata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Required . Match description. Value: Match description, such as the Contestant names"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (Only in JSON)"
+          ],
+          [
+            "Description",
+            "Required . Name of the contestants"
+          ],
+          [
+            "Values",
+            "String"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Match feed (MA1_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-match-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Match feed (MA1_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Match (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match information by fixture UUID (path parameter method)",
+            "/icehockeydata/matchv2/{outletAuthKey}/{fixtureUuid}?&{queryParameters}"
+          ],
+          [
+            "GET match information by fixture UUID (using fx parameter)",
+            "/footballdata/matchv2/{outletAuthKey}/? fx={fixtureUuid}&{queryParameters}"
+          ],
+          [
+            "GET live match information by fixture UUID (path parameter method)",
+            "/icehockeydata/matchv2/{outletAuthKey}/ {fixtureUuid}?&{queryParameters}"
+          ],
+          [
+            "GET match information by competition and date range",
+            "/icehockeydata/matchv2/{outletAuthKey}/? comp={competitionUuid}&mt.mDt=[YYYY-MM-TOYYYY-MM-DDThh:mm:ssZ]&{queryParameters"
+          ],
+          [
+            "GET live match information by contestant and date range",
+            "/icehockeydata/matchv2/{outletAuthKey}/? ctst={contestantUuid}&mt.mDt=[YYYY-MM-TOYYYY-MM-DDThh:mm:ssZ]&{queryParameters}"
+          ],
+          [
+            "GET live match information by tournament calendar UUID",
+            "/icehockeydata/matchv2/{outletAuthKey}/? tmcl={tournamentCalendarUuid}&live={yes|no}&{queryParameters}"
+          ],
+          [
+            "GET live match information by tournament calendar and status type",
+            "/icehockeydata/matchv2/{outletAuthKey}/? tmcl={tournamentCalendarUuid}&status={statusType}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fx (fixture/match UUID)",
+            "Get detailed information about a fixture by passing the fixture/match UUID to the fx query parameter in the URL. GET htt"
+          ],
+          [
+            "tmcl",
+            "Get information for several fixtures only for the specified tournament calendar . Pass the tournament calendar UUID to t"
+          ],
+          [
+            "tmcl + stg",
+            "Get information for several fixtures only for the specified stage of a tournament calendar . Pass the stage UUID to the "
+          ],
+          [
+            "ctst + tmcl",
+            "Get information about matches only for a specific contestant (team/squad) in a tournament calendar. Pass the contestant "
+          ],
+          [
+            "comp + ctst",
+            "Get information about matches of a specified team in a competition . Pass the contestant UUID to the ctst parameter, and"
+          ],
+          [
+            "ctst",
+            "Get information about matches only for a specific contestant (team/squad). Pass the contestant UUID to the ctst paramete"
+          ],
+          [
+            "mt.mDt + ctst",
+            "Get matches only for a specific contestant within the specified date range - the maximum span of the date range is one y"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the fields related to matches (XML only). Note: Not present in JSON feed response, w"
+          ],
+          [
+            "Attributes list is empty JSON/JSONP: This element is not returned for any calls - the first element is either match or m"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match or: match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a match"
+          ],
+          [
+            "Attributes list is empty XML: If the call specifies a match/fixture UUID as the path parameter, this is the first elemen"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo or: match/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information (matchInfo)"
+          ],
+          [
+            "XML: This element is returned for all matches. JSON/JSONP: This element is the first to be returned when the call specif"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required. Unique ID (UUID) of the match/fixture"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Team Standings feed (TM2_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-team-standings-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Team Standings feed (TM2_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values - you must specify a tournament calendar UUID",
+            "/icehockeydata/standingsv2/{outletAuthKey}/?tmcl={tournamentCalendarUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get team standings information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmc"
+          ],
+          [
+            "tmcl + type",
+            "Get standings information by tournament calendar and type. The available values for the type parameter are: division (sh"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for team standings"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of sport related fields. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID of sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of ruleset related fields. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            "",
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Seasonal Statistics feed (TM4_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-seasonal-stats-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Seasonal Statistics feed (TM4_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Seasonal Statistics (TM4) Guide",
+        "Statistic Types - Contestant and Player",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET seasonal statistics information by contestant and fixture",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/ ?ctst={contestantUuid}&fx={fixtureUuid} &_fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET seasonal statistics information by contestant and fixture and people",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/ ?ctst={contestantUuid}&fx={fixtureUuid} &people={yes|no}&_fmt={dataFormat}"
+          ],
+          [
+            "GET seasonal statistics information by contestant and tournament calendar",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/? tmcl={tournamentCalendarUuid}&ctst={contestantUuid} &_fmt={dataFormat}&_r"
+          ],
+          [
+            "GET detailed season statistics information by contestant and tournament calendar",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/ ?tmcl={tournamentCalendarUuid}&ctst={contestantUuid} &detailed={yes|no}&_f"
+          ],
+          [
+            "GET seasonal statistics information by contestant and tournament calendar and people",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/ ?tmcl={tournamentCalendarUuid}&ctst={contestantUuid} &people={yes|no}&_fmt"
+          ],
+          [
+            "GET detailed season statistics information by contestant and tournament calendar and people",
+            "/icehockeydata/seasonstatsv2/{outletAuthKey}/ ?tmcl={tournamentCalendarUuid}&ctst={contestantUuid} &detailed={yes|no}&pe"
+          ]
+        ],
+        [
+          [
+            "Description",
+            "Feed Output attribute name"
+          ],
+          [
+            "Appearances",
+            "appearances"
+          ],
+          [
+            "Assists",
+            "assists"
+          ],
+          [
+            "Assists against",
+            "assistAgainst"
+          ],
+          [
+            "Attempts against",
+            "attemptsAgainst"
+          ],
+          [
+            "Blocks",
+            "blocks"
+          ],
+          [
+            "Empty net",
+            "emptyNet"
+          ],
+          [
+            "Empty net against",
+            "emptyNetAgainst"
+          ]
+        ],
+        [
+          [
+            "Description",
+            "Feed attribute output name"
+          ],
+          [
+            "Appearances",
+            "appearances"
+          ],
+          [
+            "Assists",
+            "assists"
+          ],
+          [
+            "Blocks",
+            "blocks"
+          ],
+          [
+            "Corsi",
+            "corsi"
+          ],
+          [
+            "Cumulative record",
+            "cumulativeRecord"
+          ],
+          [
+            "Defensive faceoffs",
+            "defensiveFaceoffs"
+          ],
+          [
+            "",
+            "evMinutes"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fx + ctst",
+            "GET seasonal statistics information by contestant and fixture GET https://api.performfeeds.com//icehockeydata/seasonstat"
+          ],
+          [
+            "fx + ctst + poeple",
+            "GET seasonal statistics information by contestant and fixture and people GET https://api.performfeeds.com/icehockeydata/"
+          ],
+          [
+            "tmcl + ctst + Detailed",
+            "GET detailed seasonal statistics information by contestant and tournament calendar GET https://api.performfeeds.com/iceh"
+          ],
+          [
+            "tmcl + ctst",
+            "GET seasonal statistics information by contestant and tournament calendar GET https://api.performfeeds.com/i/icehockeyda"
+          ],
+          [
+            "tmcl + ctst + people",
+            "GET seasonal statistics information by contestant and tournament calendar and people GET https://api.performfeeds.com/ic"
+          ],
+          [
+            "tmcl + ctst + Detailed + People",
+            "GET detailed season statistics information by contestant and tournament calendar and people GET https://api.performfeeds"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "Description",
+            "Required / Optional .\u00a0The root element of the related fields for season statistics."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Ice Hockey API- Squads feed (TM3_v2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/NHL/opta-sdapi-icehockey-api-squads-v2.htm",
+      "sport": "icehockey",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Ice Hockey API- Squads feed (TM3_v2)",
+        "Overview",
+        "Required Compliance:",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squads information by tournament calendar UUID",
+            "/icehockeydata/squadsv2/{outletAuthKey}/? tmcl={tournamentCalendarUuid}&{queryParameters}}"
+          ],
+          [
+            "GET squads information by contestant UUID",
+            "/icehockeydata/squadsv2/{outletAuthKey}/? ctst={contestantUuid}&{queryParameters}"
+          ],
+          [
+            "GET squads information by tournament calendar and contestant UUID",
+            "/icehockeydata/squadsv2/{outletAuthKey}/? tmcl={tournamentCalendarUuid}&ctst={contestantUuid}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get squads information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl parame"
+          ],
+          [
+            "ctst",
+            "Get squads information only for a specific contestant . Pass the contestant UUID to the ctst . GET https://api.performfe"
+          ],
+          [
+            "tmcl + ctst",
+            "Get squads information only for a specific contestant in a tournament calendar (of a competition). Pass the contestant U"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for team squads"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the ruleset. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataIce Hockey API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/icehockey/opta-sdapi-ice-hockey-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Results & Period Scores",
+          "Delivers goals and period scores per match."
+        ],
+        [
+          "Scorers",
+          "Delivers the goal scoring player names per match (minute+second) for\u00a0 Goals, Power-Play Goals, Shorthanded Goals, Shootout Goal(s)."
+        ],
+        [
+          "Lineups",
+          "Delivers the lineup player names per match."
+        ],
+        [
+          "Player Stats",
+          "Delivers player stats for Box Score: Offense, Defensive, Goalkeeper stats and Ice Time per player."
+        ],
+        [
+          "Team Stats",
+          "Delivers team stats: Shots on Goal, Powerplay Stats, Hits, Face-off Wins, Giceaways, Takeaways, Blocks & Penalty Minutes."
+        ],
+        [
+          "Play-by-Play",
+          "Event coordinates in real time."
+        ],
+        [
+          "Match Events",
+          "Penalties."
+        ],
+        [
+          "Fast Data",
+          "Delivers real-time data for Fast Data products."
+        ],
+        [
+          "Expanded BoxScore",
+          "Delivers Play by Play, Time on Ice, Face Offs and\u00a0Shift Charts"
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Results & Period Scores (A)",
+          "Score",
+          "",
+          "Within 2-12 hours"
+        ],
+        [
+          "3",
+          "Results & Period Scores (A)",
+          "Line-ups & Basic Events",
+          "Post-match result, scorers, line-ups, penalties & player stats",
+          "Different intervals"
+        ],
+        [
+          "Scorers (A)"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "Match Events (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results & Period Scores (L)",
+          "Score",
+          "Live Scores",
+          "Live"
+        ],
+        [
+          "6",
+          "Results & Period Scores (L)",
+          "Line ups & Basic Events",
+          "Live Scores Post-match lineups, player stats & match events",
+          "Live Post-match: Within 3-24 hours."
+        ],
+        [
+          "Scorers (A)"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Match Events (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "7",
+          "Results & Period Scores (L)",
+          "Line-ups & Basic Events",
+          "Live scores, line-ups, scorers & penalties Post-match player stats",
+          "Live Post-match: Within 1-6 hours."
+        ],
+        [
+          "Scorers (L)"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Match Events (L)"
+        ],
+        [
+          "Player Stats (A)"
+        ]
+      ]
+    ]
+  }
+}

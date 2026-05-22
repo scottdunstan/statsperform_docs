@@ -1,0 +1,5706 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Cricket",
+  "file": "sp-cricket.json",
+  "openapi": {
+    "title": "SDAPI - Cricket",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/cricketdata",
+    "endpoint_count": 44,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/wagonwheel/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getByParams",
+        "tags": [
+          "MA11 - Wagon Wheel Graphic"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/wagonwheel/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getById",
+        "tags": [
+          "MA11 - Wagon Wheel Graphic"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendarByParams",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/{type}",
+        "summary": "",
+        "operationId": "getTournamentCalendarByParams_1",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/{type1}/{type2}",
+        "summary": "",
+        "operationId": "getTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "type1",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "type2",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/topperformers/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonTopPerformersByParams",
+        "tags": [
+          "PE6 - Top Performers"
+        ],
+        "parameters": [
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/topperformers/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getSeasonTopPerformersById",
+        "tags": [
+          "PE6 - Top Performers"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandingsByParams",
+        "tags": [
+          "TM2 - Standings"
+        ],
+        "parameters": [
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getStandingsById",
+        "tags": [
+          "TM2 - Standings"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squads/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquadsByparams",
+        "tags": [
+          "TM3 - Squads"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "description": "Type"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonStatsByParams",
+        "tags": [
+          "TM4 - Player and Competition Stats"
+        ],
+        "parameters": [
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getSeasonStatsById",
+        "tags": [
+          "TM4 - Player and Competition Stats"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerCareers",
+        "tags": [
+          "PE2 - Player Career"
+        ],
+        "parameters": [
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person"
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "description": "Active"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getCareerForPerson",
+        "tags": [
+          "PE2 - Player Career"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person"
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "description": "Active"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playerbattingpredictions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerBattingPredictionByParams",
+        "tags": [
+          "MA13 - Player Batting Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playerbattingpredictions/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getPlayerBattingPredictionById",
+        "tags": [
+          "MA13 - Player Batting Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nextballpredictions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getNextBallPredictionByParams",
+        "tags": [
+          "MA12 - Next Ball Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nextballpredictions/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getNextBallPredictionById",
+        "tags": [
+          "MA12 - Next Ball Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchByparams",
+        "tags": [
+          "MA2 - Scorecard"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchById",
+        "tags": [
+          "MA2 - Scorecard"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchpreview/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchPreviewByParams",
+        "tags": [
+          "MA8 - Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchpreview/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchPreviewById",
+        "tags": [
+          "MA8 - Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchpredictions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchPredictionByParams",
+        "tags": [
+          "MA4 - Match Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchpredictions/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchPredictionById",
+        "tags": [
+          "MA4 - Match Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchLiveWinProbabilityByParams",
+        "tags": [
+          "MA21 - Match Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchLiveWinProbabilityById",
+        "tags": [
+          "MA21 - Match Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings number"
+          },
+          {
+            "name": "overs",
+            "in": "query",
+            "required": false,
+            "description": "Over number"
+          },
+          {
+            "name": "ball",
+            "in": "query",
+            "required": false,
+            "description": "Ball number"
+          },
+          {
+            "name": "_iPP",
+            "in": "query",
+            "required": false,
+            "description": "Include pre game"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivescore/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchLiveScoreByParams",
+        "tags": [
+          "MA5 - Match Live Score"
+        ],
+        "parameters": [
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings ids"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivescore/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchLiveScoreById",
+        "tags": [
+          "MA5 - Match Live Score"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings ids"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchinsights/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchInsights",
+        "tags": [
+          "MA23 - Automated Insights"
+        ],
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchinsights/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchInsights_1",
+        "tags": [
+          "MA23 - Automated Insights"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchfacts/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchFactsByParams",
+        "tags": [
+          "MA9 - Match Facts"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchfacts/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchFactsById",
+        "tags": [
+          "MA9 - Match Facts"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchEventsByParams",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings id"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchEventsById",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings id"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchByParams",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "gameType",
+            "in": "query",
+            "required": false,
+            "description": "Game type"
+          },
+          {
+            "name": "ingl",
+            "in": "query",
+            "required": false,
+            "description": "International league"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/manhattan/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getByParams_1",
+        "tags": [
+          "MA10 - Manhattan Graph"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/manhattan/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getById_1",
+        "tags": [
+          "MA10 - Manhattan Graph"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/commentary/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getCommentaryByParams",
+        "tags": [
+          "MA6 - Commentary"
+        ],
+        "parameters": [
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings id"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/commentary/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getCommentaryById",
+        "tags": [
+          "MA6 - Commentary"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "innings",
+            "in": "query",
+            "required": false,
+            "description": "Innings id"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/bowlingheatmap/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getByParams_2",
+        "tags": [
+          "MA15 - Bowling Heat Map Graph"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/bowlingheatmap/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getById_2",
+        "tags": [
+          "MA15 - Bowling Heat Map Graph"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/advancedmatchstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getAdvancedMatchStatsByParams",
+        "tags": [
+          "MA7 - Advanced Scorecard"
+        ],
+        "parameters": [
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/advancedmatchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getAdvancedMatchStatsById",
+        "tags": [
+          "MA7 - Advanced Scorecard"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Fixtures and Results",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Scorecard",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events",
+        "description": ""
+      },
+      {
+        "name": "MA4 - Match Predictions",
+        "description": ""
+      },
+      {
+        "name": "MA5 - Match Live Score",
+        "description": ""
+      },
+      {
+        "name": "MA6 - Commentary",
+        "description": ""
+      },
+      {
+        "name": "MA7 - Advanced Scorecard",
+        "description": ""
+      },
+      {
+        "name": "MA8 - Match Preview",
+        "description": ""
+      },
+      {
+        "name": "MA9 - Match Facts",
+        "description": ""
+      },
+      {
+        "name": "MA10 - Manhattan Graph",
+        "description": ""
+      },
+      {
+        "name": "MA11 - Wagon Wheel Graphic",
+        "description": ""
+      },
+      {
+        "name": "MA12 - Next Ball Predictions",
+        "description": ""
+      },
+      {
+        "name": "MA13 - Player Batting Predictions",
+        "description": ""
+      },
+      {
+        "name": "MA15 - Bowling Heat Map Graph",
+        "description": ""
+      },
+      {
+        "name": "MA21 - Match Live Win Probability",
+        "description": ""
+      },
+      {
+        "name": "MA23 - Automated Insights",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "PE2 - Player Career",
+        "description": ""
+      },
+      {
+        "name": "PE6 - Top Performers",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Standings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Squads",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Player and Competition Stats",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports DataCricket API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-coverage-tiers.htm",
+      "sport": "cricket",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataCricket API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail",
+        "Coverage Level In The Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Results",
+            "Delivers scores per match."
+          ],
+          [
+            "Lineups",
+            "Delivers the lineup player names per match."
+          ],
+          [
+            "Scorecard",
+            "Batsmen, runs, balls faced, fours and sixes, fall of wickets, bowlers, overs, maidens, runs conceded, wickets, dismissal"
+          ],
+          [
+            "Fast Data",
+            "Wicket alerts and boundary alerts."
+          ],
+          [
+            "Basic Ball By Ball Details",
+            "Length, shot type, batting connection, runs and dismissal."
+          ],
+          [
+            "Advanced Ball by Ball Details",
+            "Length\u00a0and line, ball details, batting connection, shot type, foot movement, fielder and fielding actions, runs and dism"
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Results(A)",
+            "Score",
+            "Post-match result of the match",
+            "Different intervals"
+          ],
+          [
+            "3",
+            "Results(A)",
+            "Post-match Line-ups & Scorecard",
+            "Post-match scorecards",
+            "Most often within 1 hour"
+          ],
+          [
+            "Lineups (A)"
+          ],
+          [
+            "Scorecard (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Results(L)",
+            "Score",
+            "Delayed Live Scores",
+            "Live Delay: 30 minutes"
+          ]
+        ],
+        [
+          [
+            "Attribute",
+            "Description",
+            "Data Type",
+            "Values"
+          ],
+          [
+            "coverageLevel",
+            "Unique ID related to the analysis level of each competition or match",
+            "Integer",
+            "0 1 2 3"
+          ],
+          [
+            "name",
+            "The collection level name related to the unique ID above denoting the analysis level for that competition or match. Note",
+            "String",
+            "0 - unknown 1 - All Balls, All Details 2 - Scorecard 3 - All Balls, Reduced Details"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Player Batting Predictions (MA13)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-player-batting-predictions.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA13"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Player Batting Predictions (MA13)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player Batting Predictions (MA13) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every delivery for a T20 match in case a match that\u2019s queried for is \"live\""
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Player Batting Predictions information by fixture (if the match hasn\u2019t started yet, pregame node will be available, ",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Player Batting Predictions information by legacy Opta fixture ID (if the match hasn\u2019t started yet, pregame node will",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}/ fx=urn:perform:opta:fixture:{legacy fixture ID}? {queryParameters"
+          ],
+          [
+            "GET Player Batting Predictions information by fixture (using iPP )",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}?{fx=fixtureUUID}?& {queryParameters}&_iPP=yes;"
+          ],
+          [
+            "GET Player Batting Predictions information by fixture and innings",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}&innings={innings number};"
+          ],
+          [
+            "GET Player Batting Predictions information by fixture and innings and overs",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}&innings={innings number}&overs"
+          ],
+          [
+            "GET Player Batting Predictions information by fixture and innings and overs and ball",
+            "/cricketdata/playerbattingpredictions/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}&innings={innings number}&overs"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get Player Batting Predictions information by fixture by passing the fixture/match UUID as a path parameter (the asset/r"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get Player Batting Predictions information for a fixture by passing the legacy Opta fixture ID (if the match hasn\u2019t star"
+          ],
+          [
+            "fx + iPP",
+            "Get Player Batting Predictions information by fixture (using iPP ). The output contains pre-game predictions as well. If"
+          ],
+          [
+            "fx + innings",
+            "Get Player Batting Predictions information by fixture and for specific innings in a match. Possible value: 1 | 2 | 3 | 4"
+          ],
+          [
+            "fx + innings + overs",
+            "Get Player Batting Predictions information by fixture and innings and for a specific over (or multiple overs) of an inni"
+          ],
+          [
+            "fx + innings + overs + ball",
+            "Get Player Batting Predictions information by fixture and innings and overs and for a specific ball (or multiple balls) "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerBattingPredictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Player Batting Predictions"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerBattingPredictions/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Live Win Probability (MA21)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-match-live-win-probability.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA21"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Live Win Probability (MA21)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Live Win Probability (MA21) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every delivery for a T20 match in case a match that\u2019s queried for is \"live\""
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Live Win Probability information by fixture (if the match hasn\u2019t started yet, pregame node will be available, if the",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}/ {fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Live Win Probability information by legacy Opta fixture ID (if the match hasn\u2019t started yet, pregame node will be av",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}/ fx=urn:perform:opta:fixture:{legacy fixture ID}?{queryParameters}"
+          ],
+          [
+            "GET Live Win Probability information by fixture (using iPP )",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}? {fixtureUUID}?& {queryParameters}&_iPP=yes"
+          ],
+          [
+            "GET Live Win Probability information by fixture and innings",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}? {fixtureUUID}& {queryParameters}&innings={innings number}"
+          ],
+          [
+            "GET Live Win Probability information by fixture and innings and overs",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}? {fixtureUUID}& {queryParameters}&innings={innings number}& overs={"
+          ],
+          [
+            "GET Live Win Probability information by fixture and innings and overs and ball",
+            "/cricketdata/matchlivewinprobability/{outletAuthKey}? {fixtureUUID}& {queryParameters}&innings={innings number}& overs={"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get Live Win Probability information by fixture by passing the fixture/match UUID as a path parameter (the asset/resourc"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get Live Win Probability information for a fixture by passing the legacy Opta fixture ID (if the match hasn\u2019t started ye"
+          ],
+          [
+            "fx + iPP",
+            "Get Live Win Probability information by fixture (using iPP ). GET https://api.performfeeds.com/cricketdata/matchlivewinp"
+          ],
+          [
+            "fx + innings",
+            "Get Live Win Probability information by fixture and innings . GET https://api.performfeeds.com/cricketdata/matchlivewinp"
+          ],
+          [
+            "fx + innings + overs",
+            "Get Live Win Probability information by fixture and innings and overs . GET https://api.performfeeds.com/cricketdata/mat"
+          ],
+          [
+            "fx + innings + overs + ball",
+            "Get Live Win Probability information by fixture and innings and overs and ball . GET https://api.performfeeds.com/cricke"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Match Live Win Probability"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Predictions feed (MA4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-predictions.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA4"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Predictions feed (MA4)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Match Predictions (MA4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "",
+            "Once every delivery for a T20 match in case a match that\u2019s queried for is \"live\"."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Predictions information by fixture (if the match hasn\u2019t started yet, pregame node will be available, if the ma",
+            "/cricketdata/matchpredictions/{outletAuthKey}/ {fixtureUUID}?queryparameters;"
+          ],
+          [
+            "GET Pre Game and Live Game Match Predictions information by fixture (using iPP )",
+            "/cricketdata/matchpredictions/{outletAuthKey}/ {fixtureUUID}?queryparameters _iPP=yes;"
+          ],
+          [
+            "GET Match Predictions information by fixture and innings",
+            "/cricketdata/matchpredictions/{outletAuthKey}/ {fixtureUUID}?queryparameters& innings={innings number}; For more than on"
+          ],
+          [
+            "GET Match Predictions information by fixture and innings and overs",
+            "/cricketdata/matchpredictions/{outletAuthKey}/ {fixtureUUID}?queryparameters& innings={innings number}&overs={over numbe"
+          ],
+          [
+            "GET Match Predictions information by fixture and innings and overs and ball",
+            "/cricketdata/matchpredictions/{outletAuthKey}/ {fixtureUUID}?queryparameters& innings={innings number}&overs={over numbe"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "_iPP",
+            "Include Pre Game Parameter: To be used when clients want the API output to contain pre-game predictions as well. This qu"
+          ],
+          [
+            "innings",
+            "To be used when clients want the API output to contain prediction information only related to a specific innings in the "
+          ],
+          [
+            "overs",
+            "To be used when clients want the API output to contain prediction information only related to a specific over (or multip"
+          ],
+          [
+            "ball",
+            "To be used when clients want the API output to contain prediction information only related to a specific ball (or multip"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchpredictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match stats (Match Predictions) data"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchpredictions/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Facts feed (MA9)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-match-facts.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA9"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Facts feed (MA9)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Facts (MA9) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Once before the start of a match or competition."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Facts information by fixture UUID inline path URL",
+            "/cricketdata/matchfacts/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Match Facts information by using the legacy Opta ID .",
+            "/cricketdata/matchfacts/{outletAuthKey}?{queryParameters}& fx=urn:perform:opta:fixture:{optaId}"
+          ],
+          [
+            "GET Match Facts information by fixture UUID",
+            "/cricketdata/matchfacts/{outletAuthKey}?{fx=fixtureUUID} {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get match facts by passing the fixture/match UUID inline URL path. GET https://api.performfeeds.com/cricketdata/matchfac"
+          ],
+          [
+            "fx",
+            "Get match facts by passing the fixture/match. Pass the fixture UUID to the fx parameter GET https://api.performfeeds.com"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get match facts by using the legacy Opta ID. GET https://api.performfeeds.com/cricketdata/matchfacts/{outletAuthKey}?_rt"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchFacts"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Match Facts"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchFacts/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataCricket API - Legacy IDs",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-legacy-ids.htm",
+      "sport": "cricket",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataCricket API - Legacy IDs",
+        "How to use URNs in requests",
+        "Example requests - querying by URN",
+        "MA1 Fixtures and Results (Match)/match",
+        "MA2 Scorecard/matchstats",
+        "TM2 Standings/standings"
+      ],
+      "tables": [
+        [
+          [
+            "Entity",
+            "Available providers"
+          ],
+          [
+            "Fixture/Match",
+            "Opta"
+          ],
+          [
+            "Competition",
+            "Opta"
+          ],
+          [
+            "Tournament Calendar",
+            "Opta"
+          ]
+        ],
+        [
+          [
+            "ID Provider",
+            "Entity type",
+            "Query parameter(s)",
+            "Example request"
+          ],
+          [
+            "Opta - SDAPI",
+            "fixture",
+            "fx",
+            "http://api.performfeeds.com/cricketdata/match/{outletAuthKey}? fx=urn:perform:opta:fixture:45011 &_rt={mode}"
+          ],
+          [
+            "Opta - SDAPI",
+            "competition",
+            "comp",
+            "http://api.performfeeds.com/cricketdata/match/{outletAuthKey}? comp=urn:perform:opta:competition:57 &_rt={mode}"
+          ],
+          [
+            "Opta - SDAPI",
+            "tournament calendar",
+            "tmcl",
+            "http://api.performfeeds.com/cricketdata/match/{outletAuthKey}? tmcl=urn:perform:opta:tournamentcalendar:2286 &_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "ID Provider",
+            "Entity type",
+            "Query parameter(s)",
+            "Example request"
+          ],
+          [
+            "Opta - SDAPI",
+            "fixture",
+            "fx",
+            "http://api.performfeeds.com/cricketdata/matchstats/{outletAuthKey}? fx=urn:perform:opta:fixture:45009 &_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "ID Provider",
+            "Entity type",
+            "Query parameter(s)",
+            "Example request"
+          ],
+          [
+            "Opta - SDAPI",
+            "tournamentcalendar",
+            "tmcl",
+            "http://api.performfeeds.com/cricketdata/standings/{outletAuthKey}? tmcl=urn:perform:opta:tournamentcalendar:2258 &_rt={m"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Squads feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-squads.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Squads feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squads data according to specified parameter values",
+            "/cricketdata/squads/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "type",
+            "Get squads information only for the specified type . Pass the 'type' value to the type parameter. GET https://api.perfor"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to team squads Note: Not present in JSON feed response, where t"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Squads feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/squad"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the squad"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "contestantId"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the contestant that the squad members belong to"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opContestantId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Advanced Scorecard feed (MA7)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-advanced-scorecard.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA7"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Advanced Scorecard feed (MA7)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Advanced Scorecard (MA7) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Once every 30 seconds",
+            "Once every 20-30 minutes",
+            "Once per hour"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET advanced match stats for a fixture/match from the /advancedmatchstats feed",
+            "/cricketdata/advancedmatchstats/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ],
+          [
+            "GET advanced match stats for a fixture/match from the /advancedmatchstats endpoint using the legacy Opta ID",
+            "/cricketdata/advancedmatchstats/{outletAuthKey}? {queryParameters}&fx=urn:perform:opta: fixture:{optaId}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid",
+            "GET advanced scorecard data for a match by the specified fixture UUID using the path parameter method. Pass the fixture "
+          ],
+          [
+            "fx",
+            "GET match advanced scorecard data for a match by the specified fixture UUID using the query parameter method. Pass the f"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "GET match advanced scorecard data for a match by the specified \u00a0Opta legacy ID and query parameter method. Pass the Opta"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "advancedMatchStats"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the advanced match stats (scorecard) data"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "advancedMatchStats/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Tournament Calendars feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-tournament-calendars.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Tournament Calendars feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament Calendars (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of tournament calendars",
+            "/cricketdata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET an individual tournament calendar by tournament calendar UUID",
+            "/cricketdata/tournamentcalendar/{outletAuthKey}/{tournamentCalendarUuid}"
+          ],
+          [
+            "GET tournament calendar information according to specified parameter values",
+            "/cricketdata/tournamentcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "Get tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "active",
+            "GET the active (usually the current/most recent) tournament calendars only. GET https://api.performfeeds.com/cricketdata"
+          ],
+          [
+            "active + authorized",
+            "GET the authorized and active tournament calendars only. GET https://api.performfeeds.com/cricketdata/tournamentcalendar"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournament calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars/competition"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Scorecard feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-scorecard.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Scorecard feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Scorecard (MA2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "",
+            "Once every 30 seconds",
+            "Once every 20-30 minutes",
+            "Once per hour"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET scorecard data for a fixture/match from the /matchstats feed",
+            "/cricketdata/matchstats/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ],
+          [
+            "GET scorecard data for a fixture/match from the /matchstats endpoint using the legacy Opta ID",
+            "/cricketdata/matchstats/{outletAuthKey}? {queryParameters}&fx=urn:perform:opta: fixture:{optaId}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid",
+            "GET match scorecard data for a match by the specified fixture UUID using the path parameter method. Pass the fixture UUI"
+          ],
+          [
+            "fx",
+            "GET match scorecard data for a match by the specified fixture UUID using the query parameter method. Pass the fixture UU"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "GET match scorecard data for a match by the specified fixture UUID using the Opta legacy ID and query parameter method. "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match stats (scorecard) data"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Bowling Heat Map Graph\u00a0feed (MA15)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-bowling-heat-map-graph.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA15"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Bowling Heat Map Graph\u00a0feed (MA15)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Bowling Heat Map Graph (MA15) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 15 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Bowling Heat Map Graph information for a fixture by passing the fixture/match UUID as a path parameter (the asset/re",
+            "/cricketdata/bowlingheatmap/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Bowling Heat Map Graph information for a fixture by passing the legacy Opta fixture ID .",
+            "/cricketdata/bowlingheatmap/{outletAuthKey}?{queryParameters}& fx=urn:perform:opta:fixture:{optaId}"
+          ],
+          [
+            "GET Bowling Heat Map Graph information for a fixture by passing a fixture UUID to the fx parameter.",
+            "/cricketdata/bowlingheatmap/{outletAuthKey}?{fx=fixtureUUID} {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get Bowling Heat Map Graph by passing the fixture/match UUID inline URL path. GET https://api.performfeeds.com/cricketda"
+          ],
+          [
+            "fx",
+            "Get Bowling Heat Map Graph by passing the fixture/match. Pass the fixture UUID to the fx parameter GET https://api.perfo"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get Bowling Heat Map Graph by using the legacy Opta ID. GET https://api.performfeeds.com/cricketdata/bowlingheatmap/{out"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "bowlingHeatMap"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Bowling Heat Map Graph data"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "bowlingHeatMap/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields to the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Player and Competition Stats feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-player-and-competition-stats.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Player and Competition Stats feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player And Competition Stats (TM4)",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Example call and response",
+        "Feed Output",
+        "Player Stat Types"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Once every 5 minutes"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player season statistics according to specified parameter and value (tournament calendar UUID or legacy ID)",
+            "/cricketdata/seasonstats/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournamentCalendarUuid",
+            "GET seasonal statistics only for the specified tournament calendar (season of a competition) using the path parameter me"
+          ],
+          [
+            "tmcl",
+            "GET seasonal statistics only for the specified tournament calendar (season of a competition) using the query parameter m"
+          ],
+          [
+            "tmcl Opta ID (legacy ID query parameter method)",
+            "GET seasonal statistics only for the specified tournament calendar (season of a competition) using the Opta legacy ID an"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the season stats information (XML only) Note: The seasonStat"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics/competition"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Manhattan Graph feed (MA10)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-manhattan-graph.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA10"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Manhattan Graph feed (MA10)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Manhattan Graph (MA10) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 15 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET manhattan data by fixture UUID (path parameter method)",
+            "/cricketdata/manhattan/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET manhattan data by fixture UUID\u00a0(fx query parameter method)",
+            "/cricketdata/manhattan/{outletAuthKey}?fx={fixtureUuid}& {queryParameters}"
+          ],
+          [
+            "GET manhattan data by legacy Opta ID (fx query parameter method by {{urn}})",
+            "/cricketdata/manhattan/{outletAuthKey}? fx=urn:perform:opta:fixture:{optaId}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get manhattan by passing the fixture/match UUID inline URL path. GET https://api.performfeeds.com/cricketdata/manhattan/"
+          ],
+          [
+            "fx",
+            "Get manhattan by passing the fixture/match. Pass the fixture UUID to the fx parameter. GET https://api.performfeeds.com/"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get manhattan by using the legacy Opta ID. GET https://api.performfeeds.com/cricketdata/manhattan/{outletAuthKey}?_rt={m"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "manhattan"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Manhattan Graph."
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "manhattan/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Commentary feed (MA6)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-commentary.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA6"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Commentary feed (MA6)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10"
+          ],
+          [
+            "",
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUUID",
+            "Get detailed information about one fixture by passing the fixture as a path parameter (the asset/resource) in the URL. G"
+          ],
+          [
+            "fx",
+            "Get detailed information about the specified fixture . Pass the fixture UUID or legacy Opta match ID to the fx parameter"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "commentary"
+          ],
+          [
+            "Description",
+            "Root element of the related fields for the match stats (scorecard) data"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "commentary/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "commentary/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Required . Description of the fixture/match. Value: name of each contestant participating in the match ( String )"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Live Score feed (MA5)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-match-live-scores.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA5"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Live Score feed (MA5)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Live Score (MA5) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Once in 15 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match live scores for a fixture by fixture UUID",
+            "/cricketdata/matchlivescore/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET match live scores by using the legacy Opta ID .",
+            "/cricketdata/matchlivescore/{outletAuthKey}?{queryParameters}& fx=urn:perform:opta:fixture:{optaId}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get match live scores by passing the fixture/match UUID inline URL path. GET https://api.performfeeds.com/cricketdata/ma"
+          ],
+          [
+            "fx",
+            "Get match live scores by passing the fixture/match. Pass the fixture UUID to the fx parameter GET https://api.performfee"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get match live scores by using the legacy Opta ID. Note : fx also supports a UUID value (non-Opta UUID), but you can pas"
+          ],
+          [
+            "fx + innings",
+            "Get match live scores by fixture UUID & innings. GET https://api.performfeeds.com/cricketdata/matchlivescore/{outletAuth"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveScore"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Match Live Score"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveScore/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Standings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-standings.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Standings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "",
+            "Once every 5 minutes"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values",
+            "/cricketdata/standings/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournamentCalendarUuid",
+            "Get team standings information only for the specified tournament calendar . GET https://api.performfeeds.com/cricketdata"
+          ],
+          [
+            "tmcl (legacy Opta ID)",
+            "Get team standings information only for a specific stage of a specified tournament calendar . Pass the {stageUuid} to th"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "standings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the standings Note: Not present in JSON feed response, where"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "standings/competition"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Next Ball Predictions feed (MA12)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-next-ball-predictions.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA12"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Next Ball Predictions feed (MA12)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Next Ball Predictions (MA12) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "",
+            "Once every delivery for a T20 match in case a match that\u2019s queried for is \"live\"."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Next Ball Predictions information by fixture (if the match hasn\u2019t started yet, pregame node will be available, if th",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ {fixtureUUID}?{queryparameters};"
+          ],
+          [
+            "GET Next Ball Predictions information by legacy fixture id (if the match hasn\u2019t started yet, pregame node will be availa",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ /fx=urn:perform:opta:fixture:{legacy fixture ID}?{queryparameters};"
+          ],
+          [
+            "GET Next Ball Predictions information by fixture (using iPP )",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ {fixtureUUID}?{queryparameters}_iPP=yes;"
+          ],
+          [
+            "GET Next Ball Predictions information by fixture and innings",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ {fixtureUUID}?{queryparameters}&innings={innings number}; For more tha"
+          ],
+          [
+            "GET Next Ball Predictions information by fixture and innings and overs",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ {fixtureUUID}?{queryparameters}&innings={innings number} &overs={over "
+          ],
+          [
+            "GET Next Ball Predictions information by fixture and innings and overs and ball",
+            "/cricketdata/nextballpredictions/{outletAuthKey}/ {fixtureUUID}?{queryparameters}&innings={innings number} &overs={over "
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "_iPP",
+            "Include Pre Game Parameter: To be used when clients want the API output to contain pre-game predictions as well. This qu"
+          ],
+          [
+            "innings",
+            "To be used when clients want the API output to contain prediction information only related to a specific innings in the "
+          ],
+          [
+            "overs",
+            "To be used when clients want the API output to contain prediction information only related to a specific over (or multip"
+          ],
+          [
+            "ball",
+            "To be used when clients want the API output to contain prediction information only related to a specific ball (or multip"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nextBallPredictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related to Next Ball Predictions"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nextBallPredictions/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Top Performers feed (PE6)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-top-performers.html",
+      "sport": "cricket",
+      "feed_codes": [
+        "PE6"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Top Performers feed (PE6)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Top Performers (PE6) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Season Top Performer information by tournament calendar UUID inline path URL",
+            "/cricketdata/topperformers/{outletAuthKey}/{tmclUUID}? _fmt={format}&_rt={mode}"
+          ],
+          [
+            "GET Season Top Performer information by tournament calendar ID",
+            "/cricketdata/topperformers/{outletAuthKey}?tmcl=urn:perform:opta: tournamentcalendar:{legacy tmcl ID}&_rt={mode}&_fmt={d"
+          ],
+          [
+            "GET Season Top Performer information by tournament calendar UUID",
+            "/cricketdata/topperformers/{outletAuthKey}?{tmcl=tmclUUID} &_fmt={format}&_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournament calendar\u00a0UUID",
+            "Get Season Top Performer by passing the tournament calendar UUID inline URL path. GET https://api.performfeeds.com/crick"
+          ],
+          [
+            "tmcl",
+            "Get Season Top Performer by passing the tournament calendar. Pass the tournament calenda\u00a0UUID to the tmcl parameter GET "
+          ],
+          [
+            "tmcl Opta ID (legacy ID query parameter method)",
+            "Get Season Top Performer by using the legacy tournament calendar ID. GET https://api.performfeeds.com/cricketdata/topper"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonTopPerformers"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a season top performers"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the top performer information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonTopPerformers/competition"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Wagon Wheel Graphic (MA11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-wagon-wheel-graphic.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA11"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Wagon Wheel Graphic (MA11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Wagon Wheel Graphic (MA11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 15 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Wagon Wheel data by fixture UUID (path parameter method)",
+            "/cricketdata/wagonwheel/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET Wagon Wheel data by fixture UUID (fx query parameter method)",
+            "/cricketdata/wagonwheel/{outletAuthKey}?{fx=fixtureUUID} {queryParameters}"
+          ],
+          [
+            "GET Wagon Wheel data by legacy Opta ID (fx query parameter method by{{urn}})",
+            "/cricketdata/wagonwheel/{outletAuthKey}?{queryParameters}& fx={urn:perform:opta:fixture:opta:fixture:optaId}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get Wagon Wheel by passing the fixture/match UUID inline URL path. GET https://api.performfeeds.com/cricketdata/wagonwhe"
+          ],
+          [
+            "fx",
+            "Get Wagon Wheel by passing the fixture/match. Pass the fixture UUID to the fx parameter GET https://api.performfeeds.com"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get Wagon Wheel by using the legacy Opta ID. GET https://api.performfeeds.com/cricketdata/wagonwheel/{outletAuthKey}?_rt"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "wagonWheel"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Wagon Wheel"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "wagonWheel/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataCricket API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/index.htm",
+      "sport": "cricket",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataCricket API Index and User Guide",
+        "Required Compliance:",
+        "Cricket API - Overview",
+        "Cricket API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "http is the default request type; https is also available."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Cricket API: cricketdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource, in the case of the Cricket API. For example: standings"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Calendars (OT2) Tournament Calendars (OT2) Get basic information about the tournament calendars - the individ",
+            "/cricketdata/tournamentcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Fixtures and Results (MA1) Fixtures and Results (MA1) Get a detailed fixture list including match details such as date, ",
+            "/cricketdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Scorecard (MA2) Scorecard (MA2) Get detailed information about contesting teams, scores, innings, and key match data",
+            "/cricketdata/matchstats/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3) Match Events (MA3) Get all events in a game - including the player, team, event, type, time (minute a",
+            "/cricketdata/matchevent/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Predicitions (MA4) Match Predicitions (MA4) Get Pre Game and Live Game Predictions for a Cricket Fixture",
+            "/cricketdata/matchpredictions/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Live Score (MA5) Match Live Score (MA5) Get low latent fast information about basic scores during a live match",
+            "/cricketdata/matchlivescore/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Commentary (MA6) Commentary (MA6) Get detailed information about cricket commentary feed",
+            "/cricketdata/commentary/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Player Career feed (PE2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-player-career.html",
+      "sport": "cricket",
+      "feed_codes": [
+        "PE2"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Player Career feed (PE2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player Career (PE2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "Updated on any change to player, team, season, season stats, area, competition or transfer",
+            "Updated once a day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player career information according to specified parameter values",
+            "/cricketdata/playercareer/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET player career information for the specified person UUID only (path parameter/resource ID method)",
+            "/cricketdata/playercareer/{outletAuthKey}/{personUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "prsn",
+            "Get player career data for a specific person (a player). Pass the person UUID to the prsn parameter. GET https://api.per"
+          ],
+          [
+            "{personUuid} (path parameter)",
+            "Get player career data for a specific person (a player). Pass the person UUID to the prsn parameter. GET https://api.per"
+          ],
+          [
+            "ctst",
+            "Get all player career data for the specified contestant - the feed returns careers for all players that have/had members"
+          ],
+          [
+            "ctst + active",
+            "Get player careers either for players that: have an active membership at the specified contestant (pass a value of yes ("
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to a player career Note: Not present in JSON feed response, whe"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a person/player"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Fixtures and Results feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-fixtures-and-results.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Fixtures and Results feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Fixtures And Results (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10",
+            "Tier 7",
+            "Tier 3"
+          ],
+          [
+            "",
+            "For fixture schedule information: Once per 24 hours For information on a live match or series of match: Once every 30 se",
+            "For fixture schedule information: Once per 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a list of fixtures and results according to specified parameter values",
+            "/cricketdata/match/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET detailed information for a specific fixture by UUID",
+            "/cricketdata/match/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET detailed information for a specific fixture, tournament calendar, or competition by legacy parameter and Opta ID (se",
+            "/cricketdata/match/{outletAuthKey}?{queryParameters}& {legacyParameter}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "Get detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ],
+          [
+            "fx",
+            "Get detailed information about the specified fixture . Pass the fixture/match UUID or legacy Opta match ID to the fx par"
+          ],
+          [
+            "comp",
+            "Get information about fixtures and results only for a specific competition . Pass the competition UUID or legacy Opta co"
+          ],
+          [
+            "tmcl",
+            "Get information about fixtures and results only for the specified tournament calendar . Pass the tournament calendar UUI"
+          ],
+          [
+            "gameType",
+            "Get information about fixtures and results only for the specified game type . Pass the game type ID to the gameType para"
+          ],
+          [
+            "gameType + comp",
+            "Get information about fixtures and results only for the specified game type and competition . Pass a game type ID to gam"
+          ],
+          [
+            "gameType + tmcl",
+            "Get information about fixtures and results only for the specified game type and tournament calendar . Pass a game type I"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to matches (XML only) JSON/JSONP: This element is not returned for any cal"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:soccerdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to a match. Note: 'match' is the first element in a JSON response"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Preview feed (MA8)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-match-preview.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA8"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Preview feed (MA8)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Preview (MA8) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "7 days prior to the match start time"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Preview information by fixture UUID inline path URL",
+            "/cricketdata/matchpreview/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Match Preview information by using the legacy Opta fixture ID .",
+            "/cricketdata/matchpreview/{outletAuthKey}?{queryParameters}& fx=urn:perform:opta:fixture:{optaId}"
+          ],
+          [
+            "GET Match Preview information by fixture UUID",
+            "/cricketdata/matchpreview/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get Match Preview information for a fixture by passing the fixture/match UUID as a path parameter (the asset/resource) i"
+          ],
+          [
+            "fx",
+            "Get Match Preview information for a fixture by passing a fixture UUID\u00a0to the fx parameter. GET https://api.performfeeds."
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get Match Preview information for a fixture by passing the legacy Opta fixture ID. GET https://api.performfeeds.com/cric"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchPreview"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Match Preview"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchPreview/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Automated Insights feed (MA23)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-automated-insights.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA23"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Automated Insights feed (MA23)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Automated Insights(MA23) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET automated insights by fixture UUID (path parameter method) and for the specified language/locale",
+            "/cricketdata/matchinsights/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET automated insights by fixture UUID ( fx query parameter method) and for the specified language/locale .",
+            "/cricketdata/matchinsights/{outletAuthKey}?fx={fixtureUuid} {queryParameters}"
+          ],
+          [
+            "GET automated insights by legacy Opta ID ( fx query parameter method by urn ) .",
+            "/cricketdata/matchinsights/{outletAuthKey}?fx={urn:perform: opta:fixture:Opta fixture Id}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get automated insights by fixture UUID (path parameter method) and for the specified language/locale. GET https://api.pe"
+          ],
+          [
+            "fx",
+            "Get automated insights by fixture UUID ( fx query parameter method) and for the specified language/locale. GET https://a"
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "Get automated insights by legacy Opta ID ( fx query parameter method by urn ). GET https://api.performfeeds.com/cricketd"
+          ],
+          [
+            "state",
+            "GET automated insights by the specified state . The states that can be passed to this query parameter are pre , post , l"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchinsights"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Match Insights"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchinsights/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields to the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Cricket API- Match Events feed (MA3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-match-events.htm",
+      "sport": "cricket",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data Cricket API- Match Events feed (MA3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Events (MA3)",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11",
+            "Tier 10"
+          ],
+          [
+            "",
+            "Once every 60 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events data for a match by fixture UUID (path parameter method), and according to specified parameters and val",
+            "/cricketdata/matchevent/{outletAuthKey}/{fixtureUuid}/? {queryParameters}"
+          ],
+          [
+            "GET match events for a match by fixture UUID or legacy Opta ID ( fx query parameter method), and according to specified ",
+            "/cricketdata/matchevent/{outletAuthKey}?fx={id}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid",
+            "GET match events data for a match by the specified fixture UUID using the path parameter method. Pass the fixture UUID i"
+          ],
+          [
+            "fx",
+            "GET match events data for a match by the specified fixture UUID using the query parameter method. Pass the fixture UUID "
+          ],
+          [
+            "fx Opta ID (legacy ID query parameter method)",
+            "GET match events data for a match by the specified fixture UUID using the Opta legacy ID and query parameter method. Pas"
+          ],
+          [
+            "fixtureUuid + innings",
+            "GET match events data for the specified match and the specified innings using the innings query parameter. This will ret"
+          ],
+          [
+            "fx + innings",
+            "GET match events data for the specified match and the specified innings using the innings query parameter. This will ret"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the match penalties preview information (XML only) Note: Not"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:cricketdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/cricketdata"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "opId"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataCricket API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/cricket/opta-sdapi-cricket-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Results",
+          "Delivers scores per match."
+        ],
+        [
+          "Lineups",
+          "Delivers the lineup player names per match."
+        ],
+        [
+          "Scorecard",
+          "Batsmen, runs, balls faced, fours and sixes, fall of wickets, bowlers, overs, maidens, runs conceded, wickets, dismissal type."
+        ],
+        [
+          "Fast Data",
+          "Wicket alerts and boundary alerts."
+        ],
+        [
+          "Basic Ball By Ball Details",
+          "Length, shot type, batting connection, runs and dismissal."
+        ],
+        [
+          "Advanced Ball by Ball Details",
+          "Length\u00a0and line, ball details, batting connection, shot type, foot movement, fielder and fielding actions, runs and dismissals and manual commentary."
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Results(A)",
+          "Score",
+          "Post-match result of the match",
+          "Different intervals"
+        ],
+        [
+          "3",
+          "Results(A)",
+          "Post-match Line-ups & Scorecard",
+          "Post-match scorecards",
+          "Most often within 1 hour"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Scorecard (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results(L)",
+          "Score",
+          "Delayed Live Scores",
+          "Live Delay: 30 minutes"
+        ],
+        [
+          "7",
+          "Results(L)",
+          "Delayed Live Results, Line-ups & Scorecard",
+          "",
+          "Live Delay: 20-30 minutes"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Scorecard (L)"
+        ],
+        [
+          "9",
+          "Results(L)",
+          "Live Basic Ball by Ball Details",
+          "In-office collection Manual commentary on every ball Batsman/Bowler/Runs Scored",
+          "Live"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Scorecard(L)"
+        ],
+        [
+          "Basic Ball by Ball Details (L)"
+        ],
+        [
+          "10",
+          "Results (L)",
+          "Live Basic Ball by Ball Details",
+          "In-ground collection Ball by Ball. Fewer updates on each ball (e.g. length, runs, shot type etc.)",
+          "Live"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Scorecard (L)"
+        ],
+        [
+          "Basic Ball by Ball Details"
+        ],
+        [
+          "Fast Data (L) (L)"
+        ]
+      ],
+      [
+        [
+          "Attribute",
+          "Description",
+          "Data Type",
+          "Values"
+        ],
+        [
+          "coverageLevel",
+          "Unique ID related to the analysis level of each competition or match",
+          "Integer",
+          "0 1 2 3"
+        ],
+        [
+          "name",
+          "The collection level name related to the unique ID above denoting the analysis level for that competition or match. Note : The scorecard is produced post match",
+          "String",
+          "0 - unknown 1 - All Balls, All Details 2 - Scorecard 3 - All Balls, Reduced Details"
+        ]
+      ]
+    ]
+  },
+  "push_feeds": [
+    {
+      "title": "C3 - Live Text Commentary Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C3_Live_Text_Commentary.htm",
+      "codes": [
+        "C3"
+      ]
+    },
+    {
+      "title": "C5 - Player Statistics Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C5_Player_Statistics.htm",
+      "codes": [
+        "C5"
+      ]
+    },
+    {
+      "title": "C6 - Manhattan Graph Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C6_-_Manhattan_Graph.htm",
+      "codes": [
+        "C6"
+      ]
+    },
+    {
+      "title": "C10 - Player/Team Rankings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C10_Player_Team_Rankings_Feed.htm",
+      "codes": [
+        "C10"
+      ]
+    },
+    {
+      "title": "C1 - Fixtures Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C1_Fixtures_Feed.htm",
+      "codes": [
+        "C1"
+      ]
+    },
+    {
+      "title": "C51 - Event Notification Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C51_Event_Notification_Feed.htm",
+      "codes": [
+        "C51"
+      ]
+    },
+    {
+      "title": "C40 - Squads Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C40_Squads_Feed_Specification.htm",
+      "codes": [
+        "C40"
+      ]
+    },
+    {
+      "title": "C1 - Fixtures Split Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C1_Fixtures_Split.htm",
+      "codes": [
+        "C1"
+      ]
+    },
+    {
+      "title": "C2 - Live Scorecard Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C2_Live_Scorecard.htm",
+      "codes": [
+        "C2"
+      ]
+    },
+    {
+      "title": "C7 -\u00a0Wagon wheel Graphic Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C7_Wagonwheel_Graph.htm",
+      "codes": [
+        "C7"
+      ]
+    },
+    {
+      "title": "Cricket\u00a0Feed Specifications",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/Cricket_Feed_Specifications.htm",
+      "codes": []
+    },
+    {
+      "title": "C29 - Betting Overview Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C29_Betting_Oveview_Feed_Specification.htm",
+      "codes": [
+        "C29"
+      ]
+    },
+    {
+      "title": "C12 - Match Facts Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C12_Match_Facts_Feed_Specification.htm",
+      "codes": [
+        "C12"
+      ]
+    },
+    {
+      "title": "C51a - Anticipated Runs Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C51a_Anticipated_Runs_Feed.htm",
+      "codes": []
+    },
+    {
+      "title": "C9 - Results Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C9_-_Results.htm",
+      "codes": [
+        "C9"
+      ]
+    },
+    {
+      "title": "C30 - Player + Competition Statistics Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C30_Player_+_Competition_Statistics_Feed.htm",
+      "codes": [
+        "C30"
+      ]
+    },
+    {
+      "title": "C50a - Notification Of Retirements/Subs/Penalties/Status Changes Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C50_Notification_of_retirements_subs_penalties_status_changes.htm",
+      "codes": []
+    },
+    {
+      "title": "C14 - Advanced Scorecard Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C14_-_Adavnced_Scoreboard.htm",
+      "codes": [
+        "C14"
+      ]
+    },
+    {
+      "title": "Information on the transmission of Opta online services via FTP push",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/Guidelines_for_Opta_FTP_Push.htm",
+      "codes": []
+    },
+    {
+      "title": "C11 - ICC World Test Championship Tables Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C11_ICC_World_Test_Championship_Tables_Feed_Specification.htm",
+      "codes": [
+        "C11"
+      ]
+    },
+    {
+      "title": "C11 - Tables Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C11_Tables_Feed_Specification.htm",
+      "codes": [
+        "C11"
+      ]
+    },
+    {
+      "title": "C4 - Live Text Commentary Round-up Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C4_Live_Text_Commentary_Round-up.htm",
+      "codes": [
+        "C4"
+      ]
+    },
+    {
+      "title": "C9 - Results Split Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C9_Results_Split.htm",
+      "codes": [
+        "C9"
+      ]
+    },
+    {
+      "title": "C8 - Bowling Heatmap Graph Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C8_-_Bowling_Heatmap_Graph.htm",
+      "codes": [
+        "C8"
+      ]
+    },
+    {
+      "title": "C50 - Ball-By-Ball Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C50_Ball-By-Ball_Feed.htm",
+      "codes": [
+        "C50"
+      ]
+    },
+    {
+      "title": "Cricket Product Offering",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/Cricket_Product_Offering_2019.htm",
+      "codes": []
+    },
+    {
+      "title": "C24 - Ball Event Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/CricketFeedSpec/C24_Ball_Event_Feed.htm",
+      "codes": [
+        "C24"
+      ]
+    }
+  ]
+}

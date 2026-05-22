@@ -1,0 +1,4872 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Basketball",
+  "file": "sp-basketball.json",
+  "openapi": {
+    "title": "SDAPI - Basketball",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/basketballdata",
+    "endpoint_count": 34,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getByTournamentCalendarId",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentschedule/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentSchedule",
+        "tags": [
+          "MA0 - Tournament Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentschedule/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getTournamentSchedule_1",
+        "tags": [
+          "MA0 - Tournament Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "stages",
+            "in": "query",
+            "required": false,
+            "description": "Series and Stage"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/teamlog/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamLogs",
+        "tags": [
+          "TM5 - Team Logs"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/team/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeams",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/team/{outletAuthKey}/{contestantUuid}",
+        "summary": "",
+        "operationId": "getTeams_1",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "contestantUuid",
+            "in": "path",
+            "required": true,
+            "description": "Contestant uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandings",
+        "tags": [
+          "TM2 - Team Standings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Standings type"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squads/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquads",
+        "tags": [
+          "TM3 - Squads"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonalStats",
+        "tags": [
+          "TM4 - Seasonal Stats"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/polls/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getPolls",
+        "tags": [
+          "TM7 - Polls"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playerrankings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerRankings",
+        "tags": [
+          "PE4 - Player Rankings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playerlog/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerLog",
+        "tags": [
+          "PE5 - Player Logs"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerCareer",
+        "tags": [
+          "PE2 - Player Career"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person uuid"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "required": false,
+            "description": "Active"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPreview",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "statsId",
+            "in": "query",
+            "required": false,
+            "description": "Fixture Stats ID"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getPreview_1",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getNlgPlayerBioByParam",
+        "tags": [
+          "PE9 - NLG Dynamic Player Bios"
+        ],
+        "parameters": [
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": true,
+            "description": "Person uuid or stats person ID"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getNlgPlayerBio",
+        "tags": [
+          "PE9 - NLG Dynamic Player Bios"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstream/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTypeMatchStream",
+        "tags": [
+          "MA53 - Match Stream"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Stream Content Type"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstream/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStream",
+        "tags": [
+          "MA53 - Match Stream"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Stream Content Type"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchesStats",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_dlt",
+            "in": "query",
+            "required": false,
+            "description": "Delta"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStats",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchLiveWinProbability",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_1",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches_1",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "srs",
+            "in": "query",
+            "required": false,
+            "description": "Series"
+          },
+          {
+            "name": "lineups",
+            "in": "query",
+            "required": false,
+            "description": "Lineups"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid(s)"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competitions"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_2",
+        "tags": [
+          "MA1 - Fixtures and Results"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/head2head/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getHead2Head",
+        "tags": [
+          "MA10 - Head-2-Head"
+        ],
+        "parameters": [
+          {
+            "name": "h2h",
+            "in": "query",
+            "required": true,
+            "description": "Other contestant"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/depthcharts/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getDepthCharts",
+        "tags": [
+          "TM6 - Depth Charts"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA0 - Tournament Schedule",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Fixtures and Results",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events",
+        "description": ""
+      },
+      {
+        "name": "MA10 - Head-2-Head",
+        "description": ""
+      },
+      {
+        "name": "MA21 - Live Win Probability",
+        "description": ""
+      },
+      {
+        "name": "MA22 - NLG Match Preview",
+        "description": ""
+      },
+      {
+        "name": "MA53 - Match Stream",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "PE2 - Player Career",
+        "description": ""
+      },
+      {
+        "name": "PE4 - Player Rankings",
+        "description": ""
+      },
+      {
+        "name": "PE5 - Player Logs",
+        "description": ""
+      },
+      {
+        "name": "PE9 - NLG Dynamic Player Bios",
+        "description": ""
+      },
+      {
+        "name": "TM1 - Teams",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Squads",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Stats",
+        "description": ""
+      },
+      {
+        "name": "TM5 - Team Logs",
+        "description": ""
+      },
+      {
+        "name": "TM6 - Depth Charts",
+        "description": ""
+      },
+      {
+        "name": "TM7 - Polls",
+        "description": ""
+      },
+      {
+        "name": "TM11 - Tournament Simulations",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports DataBasketball API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-coverage-tiers.htm",
+      "sport": "basketball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataBasketball API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Results & Half/Quarter Scores",
+            "Delivers scores per match within each quarter/half for post-match coverage. Point by point for live coverage."
+          ],
+          [
+            "Line-ups",
+            "Delivers the lineup (Starting 5) player names per match and subs on bench."
+          ],
+          [
+            "Player Stats",
+            "Delivers player stats for Box Score: Offense and Defensive stats per player"
+          ],
+          [
+            "Team Stats",
+            "Delivers team stats. For example Points off turnover, 2nd chance points and fast-break points."
+          ],
+          [
+            "AutoStats",
+            "An AI product that provides player tracking using Broadcast video"
+          ],
+          [
+            "Play-by-Play",
+            "Event coordinates in real time."
+          ],
+          [
+            "Fast Data",
+            "Delivers real-time data for Fast Data products."
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Results & Half/Quarter Scores (A)",
+            "Score",
+            "Post-match result of the match",
+            "Within 1-48 hours"
+          ],
+          [
+            "2",
+            "Results & Half/Quarter Scores (A)",
+            "Line-ups & Player Box Score",
+            "Post-match result, line-ups & player stats",
+            "Different intervals"
+          ],
+          [
+            "Lineups (A)"
+          ],
+          [
+            "Player Stats (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Results & Half/Quarter Scores (L)",
+            "Score",
+            "Live scores",
+            "Live"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Translations feed (TR1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-translations.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TR1"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Translations feed (TR1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Translations (TR1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Entity endpoints",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Updated Polling frequency The feed is updated on a change to any competition, tournament calendar, contestant, zone type",
+            "You can poll the feed once an hour."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET translations according to specified parameter values",
+            "/translations/{outletAuthKey}/basketball/{entityType}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "_lcl",
+            "Required . Get translations only for the specified locale (language). Pass the locale value to the _lcl parameter. See G"
+          ]
+        ],
+        [
+          [
+            "Entity type name",
+            "Description"
+          ],
+          [
+            "/competitions",
+            "Get translations for competitions GET https://api.performfeeds.com/translations/{outletAuthKey}/basketball/ competitions"
+          ],
+          [
+            "/tournamentcalendars",
+            "Get translations for tournament calendars GET https://api.performfeeds.com/translations/{outletAuthKey}/basketball/ tour"
+          ],
+          [
+            "/contestants",
+            "Get translations for contestants GET https://api.performfeeds.com/translations/{outletAuthKey}/basketball/ contestants ?"
+          ],
+          [
+            "Single Team (Contestant) /contestants/{contestantUuid}",
+            "Get translations only for the specified team (contestant). Pass the contestant UUID in the URL as a path parameter. GET "
+          ],
+          [
+            "/zonetypes",
+            "Get translations for zone types GET https://api.performfeeds.com/translations/{outletAuthKey}/basketball/ zonetypes ?_rt"
+          ],
+          [
+            "/people",
+            "Get translations for people GET https://api.performfeeds.com/translations/{outletAuthKey}/basketball/ people ?_rt={mode}"
+          ],
+          [
+            "/people/{personUuid}",
+            "Get translations only for the specified person . Pass the person UUID in the URL as a path parameter. GET https://api.pe"
+          ]
+        ],
+        [
+          [
+            "/competitions",
+            "XML | JSON"
+          ],
+          [
+            "/contestants",
+            "XML | JSON"
+          ],
+          [
+            "/people",
+            "XML | JSON"
+          ],
+          [
+            "/areas",
+            "XML | JSON"
+          ],
+          [
+            "/series",
+            "XML | JSON"
+          ],
+          [
+            "/stages",
+            "XML | JSON"
+          ],
+          [
+            "/venues",
+            "XML | JSON"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Player Logs feed (PE5)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-player-logs.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "PE5"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Player Logs feed (PE5)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Player Logs (PE5) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "Once every day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player logs data according to specified parameter values",
+            "/basketballdata/playerlog/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "pointsScored",
+            "Points scored"
+          ],
+          [
+            "fieldGoalsMade",
+            "Field goals made"
+          ],
+          [
+            "fieldGoalsAttempts",
+            "Field goals attempts"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ],
+          [
+            "freeThrowsMade",
+            "Free throws made"
+          ],
+          [
+            "freeThrowsAttempts",
+            "Free throws attempts"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl + prsn",
+            "Get the game logs of a specific player in a specified tournament calendar . Pass a valid personId value to the prsn para"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerLogs"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for player logs. Note: Not present in JSON/JSONP feed response,"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Player Logs feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Depth Chart Data feed (TM6)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-depth-chart-data.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM6"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Depth Chart Data feed (TM6)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Depth Chart Data (TM6) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls (Coming Soon)",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "O nce in 30 seconds before the start of match and once in minute during live match"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team depth chart by tournament calendar UUID",
+            "/basketballdata/depthcharts/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method). GET https://api.performfeeds.com/basketb"
+          ],
+          [
+            "tmcl + ctst",
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method) and contestant UUID (ctst query parameter"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to depth charts\u00a0(XML only) Note: Not present in JSON/JSONP feed"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the team chart feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts/sport"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Team Logs feed (TM5)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-team-logs.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM5"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Team Logs feed (TM5)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Team Logs (TM5) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "Once every day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team logs data according to specified parameter values",
+            "/basketballdata/teamlog/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "pointsScored",
+            "Points scored"
+          ],
+          [
+            "fieldGoalsMade",
+            "Field goals made"
+          ],
+          [
+            "fieldGoalsAttempts",
+            "Field goals attempts"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ],
+          [
+            "freeThrowsMade",
+            "Free throws made"
+          ],
+          [
+            "freeThrowsAttempts",
+            "Free throws attempts"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl + ctst",
+            "GET the game logs of a specific contestant (team) in a specified tournament calendar . Pass a valid contestant ID value "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "contestantLogs"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for contestant (team) logs"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Team Logs information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- NLG Match Preview feed (MA22)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-nlg-match-preview.html",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA22"
+      ],
+      "headings": [
+        "Sports Data Basketball API- NLG Match Preview feed (MA22)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "NLG Match Preview (MA22)",
+        "Sample Calls",
+        "Example Responses",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "Previews should be available up to 72 hours before a game, with a minimum expectation of 48 hours for an individual matc"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a match preview by fixture UUID (path parameter method) in XML or JSON.",
+            "/basketballdata/nlgmatchpreview/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} + _lcl Fixture UUID",
+            "GET Match Preview NLG data by the specified fixture UUID\u00a0 'fx' ID (path parameter method) . Pass the fixture UUID in the"
+          ],
+          [
+            "fx + _lcl (UUID only)",
+            "GET Match Preview NLG data by the specified UUID 'fx' ID\u00a0(query parameter method) . Pass the match UUID to the fx parame"
+          ],
+          [
+            "statsId + _lcl",
+            "GET Match Preview NLG data by the specified Stats ID (query parameter method) . Pass the stats match Id to the statsId p"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the match preview information (XML only) Note: Not present i"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Tournament Schedule feed (MA0)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-tournament-schedule.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA0"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Tournament Schedule feed (MA0)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Tournament Schedule (MA0) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "On any update on a match time, date, teams, round, season, or competition",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET basic information about tournament schedules including matches associated with a tournament calendar UUID Required: ",
+            "/basketballdata/tournamentschedule/{outletAuthKey}/ {tournamentCalendarUuid}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET match information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramet"
+          ],
+          [
+            "{tournamentCalendarUuid} Tournament Calendar UUID",
+            "GET match information only for the specified tournament calendar . Pass the tournament calendar UUID in the request URL "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule"
+          ],
+          [
+            "Description",
+            "Root element of the fields related to the tournament schedule information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Tournament Schedule feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule/competition"
+          ],
+          [
+            "Description",
+            "Root element of the fields related to the competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Player Rankings feed (PE4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-player-rankings.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "PE4"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Player Rankings feed (PE4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player Rankings (PE4) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7"
+          ],
+          [
+            "Once a day at the end of the given match day",
+            "Updated once a day at the end of the given match day",
+            "Updated once a day at the end of the given match day",
+            "Updated once a day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Player Rankings from the /playerrankings feed",
+            "/basketballdata/playerrankings/{outletAuthKey}/ {tournamentCalendarUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "+/-",
+            "Plus or minus"
+          ],
+          [
+            "+/-PerGame",
+            "Plus or minus per game"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts per game"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointMadePerGame",
+            "3-point shot made per game"
+          ],
+          [
+            "assists",
+            "Assists"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get player rankings for a specified tournament calendar . Pass a valid tournament calendar UUID to the tmcl parameter. G"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerRankings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for player rankings. Note: Not present in JSON/JSONP feed respo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Player Rankings feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Fixtures and Results feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-fixtures-and-results.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Fixtures and Results feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Fixtures And Results (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7",
+            "Tier 4+5",
+            "Tier 1+2+3"
+          ],
+          [
+            "On any update on a match time, date, teams, competition, round, season, or key event (line-up, card, goal, substitution,",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "One poll ~12-24 hours from each the end of each game (it can vary)"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a list of fixtures and results",
+            "/basketballdata/match/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET information for one or more individual fixtures and results by UUID ( fx parameter - see below)",
+            "/basketballdata/match/{outletAuthKey}?fx={fixtureUuid}, {fixtureUuid}&{queryParameters}"
+          ],
+          [
+            "GET detailed information for a specific fixture",
+            "/basketballdata/match/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET detailed fixtures and results data according to specified parameter values",
+            "/basketballdata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "Get detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ],
+          [
+            "fx (one game)",
+            "Get detailed information about the specified fixture . Pass the fixture/match UUID to the fx parameter. GET https://api."
+          ],
+          [
+            "fx (multiple)",
+            "Get detailed information for several fixtures . Pass each fixture/match UUID in a comma-separated list to the fx paramet"
+          ],
+          [
+            "tmcl",
+            "Get information about fixtures and results only for the specified tournament calendar . Pass the tournament calendar UUI"
+          ],
+          [
+            "stg",
+            "Get information about fixtures and results only for a specific stage of a tournament calendar. Pass the stage UUID to th"
+          ],
+          [
+            "comp",
+            "Get information about fixtures and results only for a competition or multiple competitions . Pass the competition UUID t"
+          ],
+          [
+            "ctst",
+            "Get information about fixtures and results only for a specific contestant (team/squad). Pass the contestant UUID to the "
+          ]
+        ],
+        [
+          [
+            "Node",
+            "XML Object",
+            "XML Type",
+            "Appearance",
+            "Data Type",
+            "Example Value",
+            "Description"
+          ],
+          [
+            "matches",
+            "xmlns: basketball data",
+            "attribute",
+            "Required",
+            "URL",
+            "https://www.perform group.com/schema/ basketball data",
+            "Root element if the request specifies a fixture UUID as the value of the fx parameter (example: {outletAuthKey}? fx={fix"
+          ],
+          [
+            "match",
+            "xmlns: basketball data",
+            "attribute",
+            "Required",
+            "URL",
+            "https://www.perform group.com /schema/ basketball data",
+            "Root element if the request specifies a fixture UUID as a path parameter (example: {outletAuthKey}/ {fixtureUuid} ) or a"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the fields related to matches (XML only)"
+          ],
+          [
+            "Attributes list is empty JSON/JSONP: This element is not returned for any calls - the first element is either match or m"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Seasonal Stats feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-seasonal-stats.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Seasonal Stats feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Seasonal Stats (TM4) Guide",
+        "Statistic types - Contestant and Player",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "At Full Time in each game, with feeds delivered for the two teams involved in that match only - this is usually within 1",
+            "Once every day at the end of the given match day",
+            "Once every day at the end of the given match day",
+            "Once every day at the end of the given match day",
+            "n/a",
+            "n/a"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET seasonal statistics according to specified parameter values",
+            "/basketballdata/seasonstats/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "gamesPlayed",
+            "Games Played"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ],
+          [
+            "assists",
+            "Assists"
+          ],
+          [
+            "blocks",
+            "Blocks"
+          ],
+          [
+            "blocksAgainst",
+            "Blocks against"
+          ],
+          [
+            "defensiveRebounds",
+            "Defensive rebounds"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ],
+          [
+            "assists",
+            "Assists"
+          ],
+          [
+            "blocks",
+            "Blocks"
+          ],
+          [
+            "blocksAgainst",
+            "Blocks against"
+          ],
+          [
+            "defensiveRebounds",
+            "Defensive rebounds"
+          ],
+          [
+            "fieldGoalsAttempts",
+            "Field goals attempt"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "Following list of stats will be present only for the competitions CBK/WCBK and NBA/WNBA"
+          ],
+          [
+            "biggestLead",
+            "Biggest lead of the lineup"
+          ],
+          [
+            "appearances",
+            "Number of appearances of the lineup"
+          ],
+          [
+            "3PointMade",
+            "3 points made by the lineup"
+          ],
+          [
+            "3PointAttempts",
+            "3 points attempts by the lineup"
+          ],
+          [
+            "3PointPercentage",
+            "3 points percentage of the lineup"
+          ],
+          [
+            "assists",
+            "Number of assists by the lineup"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Live Win Probability feed (MA21)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-live-win-probability.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA21"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Live Win Probability feed (MA21)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Live Win Probability (MA21) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Pre-match and live during the game",
+            "Once in every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET live win probability data according to specified parameter values",
+            "/basketballdata/matchlivewinprobability/{outletAuthKey}? {queryParameters}"
+          ],
+          [
+            "GET live win probability data for a specific fixture",
+            "/basketballdata/matchlivewinprobability/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ],
+          [
+            "GET live win probability data by a fixture by UUID (fx parameter - see the Query parameters below)",
+            "/basketballdata/matchlivewinprobability/{outletAuthKey}? fx={fixtureUuid}&{queryParameters}"
+          ],
+          [
+            "GET Live Win Probability list by stats ID",
+            "/basketballdata/matchlivewinprobability/{outletAuthKey} ?fx=urn:perform:stats:fixture:fixtureStatsId&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fx",
+            "Get live win probability list for the specified fixture. Pass the fixture/match UUID to the fx parameter. GET https://ap"
+          ],
+          [
+            "fixture/match UUID",
+            "Get live win probability list for a match by the fixture UUID (as specified, URL path parameter). GET https://api.perfor"
+          ],
+          [
+            "statsId",
+            "Get live win probability list by legacy stats fixture ID GET https://api.performfeeds.com/basketballdata/matchlivewinpro"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match win probability predictions (XML only) Note: Not present in J"
+          ],
+          [
+            "Attributes list is empty"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Head-2-Head feed (MA10)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-head2head.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA10"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Head-2-Head feed (MA10)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Head-2-Head (MA10) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "Once every 24 hours and once at the end of each match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET head-to-head historial results for two specified contestant UUIDs Required: A contestant UUID passed to the ctst que",
+            "/basketballdata/head2head/outletAuthKey? ctst={contestantUuid}&h2h={contestantUuid}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "ctst",
+            "Required . Get historical results for the specified contestant (the primary team) to compare against the other contestan"
+          ],
+          [
+            "h2h",
+            "Required . Get historical results for the specified contestant (the second team) to compare against the other contestant"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "head2head"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the head-2-head information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "head2head/contestants"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the contestants"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Player Career feed (PE2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-player-career.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "PE2"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Player Career feed (PE2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player Career (PE2) Guide",
+        "Coverage",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "On any change to player, team, season, season stats, area, competition or transfer",
+            "Updated once a day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player career information according to specified parameter values",
+            "/basketballdata/playercareer/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET player career information for the specified person UUID only (path parameter/resource ID method)",
+            "/basketballdata/playercareer/{outletAuthKey}/{personUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "prsn",
+            "Get player career data for a specific person (a player). Pass the person UUID to the prsn parameter. GET https://api.per"
+          ],
+          [
+            "{personUuid} (path parameter)",
+            "Get player career data for a specific person (a player). Pass the person UUID to the prsn parameter. GET https://api.per"
+          ],
+          [
+            "ctst",
+            "Get all player career data for the specified contestant - the feed returns careers for all players that have/had members"
+          ],
+          [
+            "ctst + active",
+            "Get player careers either for players that: Have an active membership at the specified contestant (pass a value of yes ("
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer"
+          ],
+          [
+            "Description",
+            "Required / Optional . The root element of the fields related to the player career. Note: Not present in JSON/JSONP feed "
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer/person"
+          ],
+          [
+            "Description",
+            "Required . The root element of the fields related to a person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the person"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "firstName"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Polls feed (TM7)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-polls.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM7"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Polls feed (TM7)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Polls (TM7) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "Once every day at the end of the given match day"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET polls data by tournament calendar UUID (path parameter)",
+            "/basketballdata/polls/{outletAuthKey}/{tournamentcalendarUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "polls"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the related fields for polls. Note: Not present in JSON/JSONP feed response, where t"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Polls feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date and time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "polls/sport"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "polls/ruleset"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for the ruleset. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Tournament Simulations feed (TM11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-tournament-simulation.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM11"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Tournament Simulations feed (TM11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament Simulations (TM11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Tournament Simulations data according to specified parameter values",
+            "/basketballdata/tournamentsimulations/{outletAuthKey}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET Tournament Simulations list by tournament calendar UUID GET https://api.performfeeds.com/basketballdata/tournamentsi"
+          ],
+          [
+            "tmcl/uuid",
+            "GET Tournament Simulations list by tournament calendar UUID inline path URL GET https://api.performfeeds.com/basketballd"
+          ],
+          [
+            "statsId = id",
+            "GET Tournament Simulations list by stats ID GET https://api.performfeeds.com/basketballdata/tournamentsimulations/{outle"
+          ],
+          [
+            "tmcl & contestant",
+            "GET Tournament Simulations list by tournament calendar UUID and contestant UUID GET https://api.performfeeds.com/basketb"
+          ],
+          [
+            "tmcl & date range",
+            "GET Tournament Simulations list by tournament calendar UUID and date GET https://api.performfeeds.com/basketballdata/tou"
+          ],
+          [
+            "Stats tmcl id & team id",
+            "GET Tournament Simulations list by stats ID GET https://api.performfeeds.com/basketballdata/tournamentsimulations/{outle"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Tournament Simulations"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Tournament Calendars feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-tournament-calendars.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Tournament Calendars feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament Calendars (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Endpoints",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "On any update on seasons, teams, rounds, groups, areas",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tournament Calendars",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET an individual Tournament Calendar by tournament calendar UUID",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}/{tournamentCalendarUuid}"
+          ],
+          [
+            "GET Tournament Calendar information according to specified parameter values",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "GET tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "ctst",
+            "GET tournament calendar information only for the specified contestant . Pass the competition UUID to the ctst parameter."
+          ],
+          [
+            "stages",
+            "GET a list of tournament calendars with series and stage information. Pass the parameter-value pair stage=yes in the cal"
+          ]
+        ],
+        [
+          [
+            "GET the active (usually the current/most recent) tournament calendars only.",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}/ active"
+          ],
+          [
+            "GET authorized tournament calendars only (those that you have access to view).",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}/ authorized"
+          ],
+          [
+            "GET authorized and active tournament calendars only.",
+            "/basketballdata/tournamentcalendar/{outletAuthKey}/ authorized/active"
+          ]
+        ],
+        [
+          [
+            "Endpoint + Query parameter",
+            "Value and description"
+          ],
+          [
+            "/active + comp",
+            "GET the active (usually the current/most recent) tournament calendars only for the specified competition UUID . GET http"
+          ],
+          [
+            "/authorized + comp",
+            "GET the authorized tournament calendars only for the specified competition UUID . Pass the competition UUID to the comp "
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Match Statistics feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-match-statistics.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Match Statistics feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Get updated data and make streamlined requests using the Delta parameter",
+        "Match Statistics (MA2) Guide",
+        "Statistic Types",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Example XML responses - '_dlt' parameter:",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "On every line-up, goal, card, substitution (sub), assist event Note: Please consider using the Delta parameter feature b",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "N/A",
+            "N/A",
+            "N/A"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Statistics for a team from the /matchstats feed Required: fixture/match UUID as a path parameter (as the resou",
+            "/basketballdata/matchstats/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "pointsScored",
+            "Points scored"
+          ],
+          [
+            "fieldGoalsMade",
+            "Field goals made"
+          ],
+          [
+            "fieldGoalsAttempts",
+            "Field goals attempts"
+          ],
+          [
+            "2PointMade",
+            "2-point shot made"
+          ],
+          [
+            "2PointAttempts",
+            "2-point shot attempts"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ]
+        ],
+        [
+          [
+            "Attribute name (in feed output)",
+            "Description"
+          ],
+          [
+            "pointsScored",
+            "Points scored"
+          ],
+          [
+            "fieldGoalsMade",
+            "Field goals made"
+          ],
+          [
+            "fieldGoalsAttempts",
+            "Field goals attempt"
+          ],
+          [
+            "2PointMade",
+            "2-point shot made"
+          ],
+          [
+            "2PointAttempts",
+            "2-point shot attempts"
+          ],
+          [
+            "3PointMade",
+            "3-point shot made"
+          ],
+          [
+            "3PointAttempts",
+            "3-point shot attempts"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp + _dlt",
+            "Get statistics information only for a competition . Pass the competition UUID to the comp parameter, and specify the dat"
+          ],
+          [
+            "tmcl + _dlt",
+            "Get statistics information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl pa"
+          ],
+          [
+            "mt.mDt + _dlt",
+            "Get statistics only from the specified date range - the maximum span of the date range is one year. Pass the date range "
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Match Events feed (MA3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-match-events.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Match Events feed (MA3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Events (MA3) Guide",
+        "Event Type IDs/Names And Qualifier IDs/Descriptions",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "On every line-up, goal, card, substitution (sub), or assist event",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "n/a",
+            "n/a",
+            "n/a",
+            "n/a"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events data for a match by fixture UUID. Required: Fixture UUID. See the query parameters table below.",
+            "/basketballdata/matchevent/{outletAuthKey} {restOfQueryString}"
+          ]
+        ],
+        [
+          [
+            "Event type",
+            "Associated Qualifier IDs"
+          ],
+          [
+            "event typeId",
+            "Name",
+            "Description",
+            "qualifierId",
+            "Description"
+          ],
+          [
+            "1",
+            "Start Game",
+            "Start of the game/match (main event)",
+            "",
+            ""
+          ],
+          [
+            "2",
+            "End Game",
+            "End of the game/match (main event)",
+            "10",
+            "Ended after OT (overtime)"
+          ],
+          [
+            "3",
+            "Start Period",
+            "A period has started (main event). Refer to the period ID on the event and OT number (if applicable) to identify the per",
+            "7",
+            "Related event 1. Value: UUID of the related event"
+          ],
+          [
+            "4",
+            "End Period",
+            "A period ends (main event). Information about the next period is determined by the period ID on the event and the OT num",
+            "",
+            ""
+          ],
+          [
+            "5",
+            "Team Setup",
+            "Lineup (main event). Defines the players in the starting five and those on the bench",
+            "1",
+            "Involved players. Value: csv of players' UUIDs"
+          ],
+          [
+            "2",
+            "Starting five. Value: csv of players' UUIDs"
+          ]
+        ],
+        [
+          [
+            "Event type",
+            "Associated Qualifier IDs"
+          ],
+          [
+            "event typeId",
+            "Name",
+            "Description",
+            "qualifierId",
+            "Description"
+          ],
+          [
+            "1",
+            "Free Throw Made (FTM)",
+            "A free throw was scored (main event). Short name: FTM",
+            "0",
+            "Other"
+          ],
+          [
+            "8",
+            "Free Throw 1st of 1-and-11"
+          ],
+          [
+            "9",
+            "Free Throw 2nd of 1-and-1"
+          ],
+          [
+            "10",
+            "Free Throw 1 of 1"
+          ],
+          [
+            "11",
+            "Free Throw 1 of 2"
+          ],
+          [
+            "12",
+            "Free Throw 2 of 2"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match events for a match by the specified fixture UUID (path parameter method) . Pass the fixture UUID in the reques"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataBasketballAPI- NLG Dynamic Player Bios feed (PE9)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-nlg-dynamic-player-bios.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "PE9"
+      ],
+      "headings": [
+        "Sports DataBasketballAPI- NLG Dynamic Player Bios feed (PE9)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "NLG Dynamic Player Bios (PE9) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Example Response",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "The bios will be updated after every game."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a dynamic player bio by person UUID by (path parameter method).",
+            "/basketballdata/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}? {queryParameters}"
+          ],
+          [
+            "GET a dynamic player bio by person UUID (prsn query parameter method).",
+            "/basketballdata/nlgdynamicplayerbio/{outletAuthKey}? prsn={personUuid}&{queryParameters}"
+          ],
+          [
+            "GET a dynamic player bio by person legacy Stats ID (prsn query parameter method by {urn}).",
+            "/basketballdata/nlgdynamicplayerbio/{outletAuthKey}? fx={urn:perform:stats:Stats person Id}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "personUuid",
+            "GET dynamic Player Bio data by the specified person\u00a0(inline parameter url) . GET https://api.performfeeds.com/basketball"
+          ],
+          [
+            "Stats person id",
+            "GET dynamic Player Bio data by the specified stats person ID . GET https://api.performfeeds.com/basketballdata/nlgdynami"
+          ],
+          [
+            "prsn + _lcl",
+            "GET dynamic Player Bio data by the specified by person UUID (query parameter method) . Pass the person UUID to the prsn "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the NLG Dynamic Player Bio"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the person/player"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "statsId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Teams feed (TM1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-teams.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM1"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Teams feed (TM1)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Teams (TM1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 15",
+            "Tier 12+14",
+            "Tier 4",
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7",
+            "Tier 5",
+            "Tier 1+2+3"
+          ],
+          [
+            "Updated on any change/update to a team's basic data ( E.g. name, type, officialName, shortName, and so on) and connectio",
+            "Once every hour (same as Tier 13)",
+            "Post-match/ once every 24 hours",
+            "Once every 24 hours",
+            "Once every hour",
+            "Once every hour",
+            "Once every 24 hours",
+            "Once every 24 hours",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team related information by team",
+            "/basketballdata/team/{outletAuthKey}?ctst={ctstUUID}& _fmt={dataFormat}& _rt={mode}"
+          ],
+          [
+            "GET team related information by team inline path URL",
+            "/basketballdata/team/{outletAuthKey}?{ctstUUID}& _fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET team related information by tournament calendar",
+            "/basketballdata/team/{outletAuthKey}?tmcl={tmclUUID}& _fmt={dataFormat}& _rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "ctst",
+            "Get team information only for a specific team . Pass the team UUID to the ctst parameter. GET https://api.performfeeds.c"
+          ],
+          [
+            "detailed",
+            "Get detailed team information for a specific team/ tournament calendar. GET https://api.performfeeds.com/basketballdata/"
+          ],
+          [
+            "tmcl",
+            "Get team information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramete"
+          ],
+          [
+            "_pgNm + _pgSz",
+            "GET data only in the specified page size and/or page number . All results are returned in pages and these parameters hel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teams"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the team associated with the query criteria in the call. Note: Not pres"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:soccerdata (XML only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teams/team"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a team associated with the query criteria in the call"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a team associated with the query criteria in the call"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataBasketball API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/index.htm",
+      "sport": "basketball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataBasketball API Index and User Guide",
+        "Required Compliance:",
+        "Basketball API - Overview",
+        "Basketball API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type"
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Basketball API: basketballdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Basketball API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Calendars (OT2) Tournament Calendars (OT2) Get basic information about the tournament calendars - the individ",
+            "/basketballdata/tournamentcalendar/ {outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Tournament Schedule (MA0) Tournament Schedule (MA0) Get schedule information for a tournament, with the individual match",
+            "/basketballdata/tournamentschedule/ {outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Fixtures and Results (MA1) Fixtures and Results (MA1) Provides a detailed fixture list including match details such as d",
+            "/basketballdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Statistics (MA2) Match Statistics (MA2) Provides detailed match statistics for teams and each individual player",
+            "/basketballdata/matchstats/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3) Match Events (MA3) Provides all player events in a game, including player, team, event, type, minute,",
+            "/basketballdata/matchevent/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Head-2-Head (MA10) Head-2-Head (MA10) Get and compare historical results for two opposing teams, including total/home/aw",
+            "/basketballdata/head2head/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Live Win Probability (MA21) Live Win Probability (MA21) Get match-win probability data for each team including pre-match",
+            "/basketballdata/matchlivewinprobability/ {outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Match Stream\u00a0feed (MA53)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-match-stream.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "MA53"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Match Stream\u00a0feed (MA53)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Stream (MA53) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls (Coming Soon)",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 13"
+          ],
+          [
+            "Once in 30 secs during the match. Feed is available only <24 hours before the start of the game."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match stream events by fixture UUID",
+            "/basketballdata/matchstream/{outletAuthKey}/{fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match stream events fixture UUID (path parameter method) with all match stream content types and en-us language code"
+          ],
+          [
+            "fx",
+            "GET match stream events fixture UUID (fx query parameter method) with all match stream content types. GET https://api.pe"
+          ],
+          [
+            "_lcl",
+            "GET match stream events by fixture UUID and language code . GET https://api.performfeeds.com/basketballdata/matchstream/"
+          ],
+          [
+            "type",
+            "GET match stream events by fixture UUID and event content type . GET https://api.performfeeds.com/basketballdata/matchst"
+          ],
+          [
+            "type + _lcl",
+            "GET match stream events by fixture UUID, language code and event content type . GET https://api.performfeeds.com/basketb"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStream"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to match facts (XML only) Note: Not present in JSON feed respon"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:basketballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStream/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Squads feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-squads.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Squads feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "On any change to competition, area, player, season, team or venue update",
+            "Once every hour",
+            "Once every hour",
+            "Once every 24 hours",
+            "Once every 24 hours",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squads data according to specified parameter values",
+            "/basketballdata/squads/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET squads information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl parame"
+          ],
+          [
+            "ctst",
+            "GET squads information only for a specific contestant . Pass the contestant UUID to the ctst . GET https://api.performfe"
+          ],
+          [
+            "detailed",
+            "GET an extended list of (detailed) personal attributes about each person in a team . Pass a value of yes or no (default)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for team squads"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Squads feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/sport"
+          ],
+          [
+            "Description",
+            "Root element of the sport related fields. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Basketball API- Team Standings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-team-standings.htm",
+      "sport": "basketball",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Basketball API- Team Standings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7 and above comps",
+            "Tier 4+5 and above comps",
+            "Tier 1+2+3 and above comps"
+          ],
+          [
+            "On any change to season, competition, area, round, group, match, status, venue, round Note: Only the TM2 feed will trigg",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "No more frequently than one URL poll every 30 seconds",
+            "No more frequently than one URL poll every 30 seconds",
+            "n/a"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values",
+            "/basketballdata/standings/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET team standings information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmc"
+          ],
+          [
+            "type + tmcl",
+            "GET only a certain type of division/table from the team standings information. In the team standings feed, you must use "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to team standings\u00a0(XML only) Note: Not present in JSON/JSONP fe"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the Standings feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:basketballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/sport"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataBasketball API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/basketball/opta-sdapi-basketball-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Results & Half/Quarter Scores",
+          "Delivers scores per match within each quarter/half for post-match coverage. Point by point for live coverage."
+        ],
+        [
+          "Line-ups",
+          "Delivers the lineup (Starting 5) player names per match and subs on bench."
+        ],
+        [
+          "Player Stats",
+          "Delivers player stats for Box Score: Offense and Defensive stats per player"
+        ],
+        [
+          "Team Stats",
+          "Delivers team stats. For example Points off turnover, 2nd chance points and fast-break points."
+        ],
+        [
+          "AutoStats",
+          "An AI product that provides player tracking using Broadcast video"
+        ],
+        [
+          "Play-by-Play",
+          "Event coordinates in real time."
+        ],
+        [
+          "Fast Data",
+          "Delivers real-time data for Fast Data products."
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Results & Half/Quarter Scores (A)",
+          "Score",
+          "Post-match result of the match",
+          "Within 1-48 hours"
+        ],
+        [
+          "2",
+          "Results & Half/Quarter Scores (A)",
+          "Line-ups & Player Box Score",
+          "Post-match result, line-ups & player stats",
+          "Different intervals"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results & Half/Quarter Scores (L)",
+          "Score",
+          "Live scores",
+          "Live"
+        ],
+        [
+          "5",
+          "Results & Half/Quarter Scores (L)",
+          "Line-ups & Player Box Score",
+          "Live scores Post-match line-ups and player stats",
+          "Live Post match: Within 3-24 hours"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "6",
+          "Results & Half/Quarter Scores (L)",
+          "Live scores and line-ups Post-match player stats",
+          "Live Post-match goal scorers, line-ups, bookings, and substitutions",
+          "Live Post match: Within 1-3 hours"
+        ],
+        [
+          "Lineups (A)"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "7",
+          "Results & Half/Quarter Scores (L)",
+          "Line-ups & Full Box Score",
+          "Live scores and line-ups Player stats updated at the end of each period",
+          "Live scores Live Delayed player stats"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Player Stats (L)"
+        ],
+        [
+          "8",
+          "Results & Half/Quarter Scores (L)",
+          "LLine-ups & Full Box Score",
+          "Live scores and line-ups Player stats updated live",
+          "Live scores & Live player stats"
+        ],
+        [
+          "Lineups (L)"
+        ],
+        [
+          "Player Stats (L)"
+        ]
+      ]
+    ]
+  }
+}

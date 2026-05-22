@@ -1,0 +1,4729 @@
+{
+  "provider": "Stats Perform",
+  "sport": "American Football",
+  "file": "sp-american-football.json",
+  "openapi": {
+    "title": "SDAPI - American Football",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/footballdata",
+    "endpoint_count": 38,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getByTournamentCalendarId",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestants",
+            "schema_type": "array"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentschedule/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentSchedule",
+        "tags": [
+          "MA0 - Tournament Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentschedule/{outletAuthKey}/{tournamentCalendarUuid}",
+        "summary": "",
+        "operationId": "getTournamentSchedule_1",
+        "tags": [
+          "MA0 - Tournament Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tournamentCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActiveTournamentCalendars",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/teams/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeams",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/teams/{outletAuthKey}/{contestantUuid}",
+        "summary": "",
+        "operationId": "getTeams_1",
+        "tags": [
+          "TM1 - Teams"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "contestantUuid",
+            "in": "path",
+            "required": true,
+            "description": "Contestant uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standingsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamStandings",
+        "tags": [
+          "TM2 - Team Standings (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Type",
+            "schema_type": ""
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandings",
+        "tags": [
+          "TM2 - Team Standings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Type",
+            "schema_type": ""
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squadsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquads",
+        "tags": [
+          "TM3 - Squads (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/squads/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTeamSquads_1",
+        "tags": [
+          "TM3 - Squads"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstatsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonStats",
+        "tags": [
+          "TM4 - Seasonal Stats (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "people",
+            "in": "query",
+            "required": false,
+            "description": "People",
+            "schema_type": ""
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonalStats",
+        "tags": [
+          "TM4 - Seasonal Stats"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": true,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "statsId",
+            "in": "query",
+            "required": false,
+            "description": "StatsId",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgmatchpreview/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA22 - NLG Match Preview"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerBio",
+        "tags": [
+          "PE9 - NLG Dynamic Player BIOS"
+        ],
+        "parameters": [
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getPlayerBio_1",
+        "tags": [
+          "PE9 - NLG Dynamic Player BIOS"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches_1",
+        "tags": [
+          "MA1 - Match (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live",
+            "schema_type": ""
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "Week number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets",
+            "schema_type": "string"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage",
+            "schema_type": "string"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status",
+            "schema_type": "array"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_1",
+        "tags": [
+          "MA1 - Match (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstream/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTypeMatchStream",
+        "tags": [
+          "MA53 - Match Stream"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Stream Content Type",
+            "schema_type": "string"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstream/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStream",
+        "tags": [
+          "MA53 - Match Stream"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Stream Content Type",
+            "schema_type": "string"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstatsv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchStats",
+        "tags": [
+          "MA2 - Match Statistics (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstatsv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStats_1",
+        "tags": [
+          "MA2 - Match Statistics (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchStat",
+        "tags": [
+          "MA2 - Match Statistics"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches_2",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchlivewinprobability/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_2",
+        "tags": [
+          "MA21 - Live Win Probability"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheventv2/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchEvents",
+        "tags": [
+          "MA3 - Match Events (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": "string"
+          },
+          {
+            "name": "drivechart",
+            "in": "query",
+            "required": false,
+            "description": "Drive charts",
+            "schema_type": "string"
+          },
+          {
+            "name": "xinfo",
+            "in": "query",
+            "required": false,
+            "description": "XInfo",
+            "schema_type": "string"
+          },
+          {
+            "name": "playerparticipation",
+            "in": "query",
+            "required": false,
+            "description": "Player participation",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheventv2/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchEvents_1",
+        "tags": [
+          "MA3 - Match Events (v2)"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "",
+            "schema_type": "string"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed",
+            "schema_type": "string"
+          },
+          {
+            "name": "drivechart",
+            "in": "query",
+            "required": false,
+            "description": "Drive charts",
+            "schema_type": "string"
+          },
+          {
+            "name": "xinfo",
+            "in": "query",
+            "required": false,
+            "description": "XInfo",
+            "schema_type": "string"
+          },
+          {
+            "name": "playerparticipation",
+            "in": "query",
+            "required": false,
+            "description": "Player participation",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchEvents_2",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatches_3",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar",
+            "schema_type": "string"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant",
+            "schema_type": "string"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition",
+            "schema_type": "string"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live",
+            "schema_type": ""
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "Week number",
+            "schema_type": "integer"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets",
+            "schema_type": "string"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage",
+            "schema_type": "string"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status",
+            "schema_type": "array"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch_3",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live",
+            "schema_type": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/gofortwopredictions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getGoForTwoByParameter",
+        "tags": [
+          "MA4 - Go For Two Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/gofortwopredictions/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getGoForTwo",
+        "tags": [
+          "MA4 - Go For Two Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/fourthdownpredictions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getFixture",
+        "tags": [
+          "MA5 - Fourth Down Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": true,
+            "description": "Fixture uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/fourthdownpredictions/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getAsset",
+        "tags": [
+          "MA5 - Fourth Down Predictions"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key",
+            "schema_type": "string"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid",
+            "schema_type": "string"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format",
+            "schema_type": ""
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode",
+            "schema_type": ""
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function",
+            "schema_type": "string"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA0 - Tournament Schedule",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Match (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Match",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Statistics",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events (v2)",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events",
+        "description": ""
+      },
+      {
+        "name": "MA4 - Go For Two Predictions",
+        "description": ""
+      },
+      {
+        "name": "MA5 - Fourth Down Predictions",
+        "description": ""
+      },
+      {
+        "name": "MA21 - Live Win Probability",
+        "description": ""
+      },
+      {
+        "name": "MA22 - NLG Match Preview",
+        "description": ""
+      },
+      {
+        "name": "MA53 - Match Stream",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "PE9 - NLG Dynamic Player BIOS",
+        "description": ""
+      },
+      {
+        "name": "TM1 - Teams",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Squads (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Squads",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Stats (v2)",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Stats",
+        "description": ""
+      },
+      {
+        "name": "TM11 - Tournament Simulations",
+        "description": ""
+      }
+    ],
+    "note_tm6": "TM6 Depth Chart feed exists (documented at /docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-depth-chart.htm) but is absent from the OpenAPI spec \u2014 use sdapi documentation pages for its parameters."
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data American Football API- Go For Two Predictions Feed (MA4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-go-for-two-predictions.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA4"
+      ],
+      "headings": [
+        "Sports Data American Football API- Go For Two Predictions Feed (MA4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Go For Two Predictions (MA4) Guide",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Go For Two predictions information by fixture inline path URL",
+            "/footballdata/gofortwopredictions/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Go For Two predictions information by by stats fixture id",
+            "/footballdata/gofortwopredictions/{outletAuthKey}? fx=urn:perform:stats:fixture:{stats fixture ID}&{queryParameters}"
+          ],
+          [
+            "GET Go For Two predictions information by fixture UUID",
+            "/footballdata/gofortwopredictions/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "GET Go For Two predictions information by fixture inline path URL GET https://api.performfeeds.com/footballdata/gofortwo"
+          ],
+          [
+            "fx (Legacy stats id)",
+            "GET Go For Two predictions formation by stats fixture id GET http://api.performfeeds.com/footballdata/gofortwoprediction"
+          ],
+          [
+            "fx",
+            "GET Go For Two predictions formation by fixture UUID GET http://api.performfeeds.com/footballdata/gofortwopredictions/{o"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "goForTwoPredictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the Go For Two Predictions"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "goForTwoPredictions/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican Football API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-coverage-tiers.htm",
+      "sport": "americanfootball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataAmerican Football API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Results",
+            "Delivers total score"
+          ],
+          [
+            "Quarter Scores",
+            "Delivers quarter scores"
+          ],
+          [
+            "Scorers",
+            "Delivers the point scoring player names per match (including game minute and seconds) for scoring types TD (Touchdown), "
+          ],
+          [
+            "Player Stats",
+            "Delivers player stats for Passing, Rushing, Receiving, Defense and Special Teams stats"
+          ],
+          [
+            "Team Stats",
+            "Delivers team stats: Total Team 1st Downs, Total 1st Downs by Rushing, Total 1st Downs by Passing, Total 1st Downs by Pe"
+          ],
+          [
+            "Play-by-Play",
+            "Event coordinates in real time"
+          ],
+          [
+            "X-Info",
+            "Enhanced play by play information on a team and player level"
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "2",
+            "Results (A)",
+            "Quarter Scores",
+            "Post-match scores",
+            "Within 6 hours"
+          ],
+          [
+            "Quarter Scores (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "5",
+            "",
+            "Live Score",
+            "Score and Time updated every 8 minutes",
+            "Live"
+          ],
+          [
+            ""
+          ],
+          [
+            ""
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Teams Feed (TM1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-teams.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM1"
+      ],
+      "headings": [
+        "Sports Data American Football API- Teams Feed (TM1)",
+        "Overview",
+        "Required Compliance:",
+        "Teams (TM1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team data according to specified parameter values",
+            "/footballdata/teams/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET team information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramete"
+          ],
+          [
+            "ctst",
+            "GET team information only for a specific contestant . Pass the contestant UUID to the ctst parameter. GET https://api.pe"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teams"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the teams"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:ausfootballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/ausfootballdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "Teams/competition"
+          ],
+          [
+            "Description",
+            "Optional . Root element of the related fields for the associated competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required .\u00a0Unique ID (UUID) for the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "Teams/tournamentCalendar"
+          ],
+          [
+            "Description",
+            "Optional . Root element of the related fields for the tournament calendar. Value: tournament calendar name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required .\u00a0Unique ID (UUID) for the tournament calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Seasonal Stats Feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-seasonal-stats.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data American Football API- Seasonal Stats Feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "Seasonal Stats (TM4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET seasonal statistics information by contestant and tournament calendar",
+            "{{/footballdata/seasonstatsv2/{outletAuthKey}/? ctst={contestantUuid}&tmcl={tournamentCalendarUuid} &_fmt={dataFormat}&d"
+          ],
+          [
+            "GET seasonal statistics information by contestant and fixture",
+            "{{/footballdata/seasonstatsv2/{outletAuthKey}/? ctst={contestantUuid}&fx={fixtureUuid}&_fmt={dataFormat} &_rt={mode}}}"
+          ],
+          [
+            "GET seasonal statistics information by contestant and fixture for players",
+            "{{/footballdata/seasonstatsv2/{outletAuthKey}/? ctst={contestantUuid}&fx={fixtureUuid}&people={yes|no}& _fmt={dataFormat"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl + ctst",
+            "GET seasonal statistics only for a specific contestant in a tournament calendar (of a competition). Pass the contestant "
+          ],
+          [
+            "fx + ctst",
+            "GET seasonal statistics only for a specific contestant in a fixture (of a competition). GET https://api.performfeeds.com"
+          ],
+          [
+            "fx + ctst + people",
+            "GET seasonal statistics only for a specific contestant in a tournament calendar (of a competition). Pass the contestant "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the seasonal statistics for the specified competition or season/tournam"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics/sport"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for the associated sport. Value (XML only): String giving the sport name (f"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated ruleset. Value (XML only): String giving the ruleset na"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Live Win Probability Feed (MA21)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-live-win-probability.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA21"
+      ],
+      "headings": [
+        "Sports Data American Football API- Live Win Probability Feed (MA21)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Live Win Probability (MA21) Guide",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Live Win Probability information by fixture inline path URL.",
+            "/footballdata/matchlivewinprobability/{outletAuthKey}/ {fixtureUUID}?_fmt={format}&_rt={mode}"
+          ],
+          [
+            "GET Live Win Probability information by fixture id.",
+            "/footballdata/matchlivewinprobability/{outletAuthKey}? fx=urn:perform:stats: fixture:{stats fixture ID}&_fmt={format}&_r"
+          ],
+          [
+            "GET Live Win Probability information by fixture UUID.",
+            "/footballdata/matchlivewinprobability/{outletAuthKey}? {fx=fixtureUUID}& _fmt={format}&_rt={mode}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "GET Live Win Probability information by fixture inline path URL GET https://api.performfeeds.com/footballdata/matchlivew"
+          ],
+          [
+            "fx (Legacy stats id)",
+            "GET Live Win Probability formation by stats fixture id GET http://api.performfeeds.com/footballdata/matchlivewinprobabil"
+          ],
+          [
+            "fx",
+            "GET Live Win Probability formation by fixture UUID GET http://api.performfeeds.com/footballdata/matchlivewinprobability/"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the win live probability (XML only) Note: Not present in JSO"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchLiveWinProbability/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican FootballAPI- Depth Chart Feed (TM6)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-depth-chart.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM6"
+      ],
+      "headings": [
+        "Sports DataAmerican FootballAPI- Depth Chart Feed (TM6)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Depth Charts (TM6) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method)",
+            "/footballdata/depthcharts/{outletAuthKey}? tmcl={tournamentCalendarUuid}&{queryParameters}"
+          ],
+          [
+            "GET team depth chart by tournament calendar UUID (tmcl query parameter method) and contestant UUID (ctst query parameter",
+            "/footballdata/depthcharts/{outletAuthKey}? tmcl={tournamentCalendarUuid}&ctst={contestantUuid}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET team depth chart information only for the specified tournament calendar . Pass the tournament calendar UUID to the t"
+          ],
+          [
+            "ctst",
+            "GET team depth chart information by contestant and tournament calendar . Pass the contestant UUID to the ctst and tourna"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the team depth charts (XML only) Note: Not present in JSON/JSONP feed "
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Team depth charts last updated date and time in UTC"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated sport"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamDepthCharts/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated ruleset"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Tournament Schedule Feed (MA0)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-tournament-schedule.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA0"
+      ],
+      "headings": [
+        "Sports Data American Football API- Tournament Schedule Feed (MA0)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament Schedule (MA0) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET basic information about tournament schedules including matches associated with a tournament calendar UUID Required: ",
+            "/footballdata/tournamentschedule/{outletAuthKey}?tmcl={tournamentCalendarUuid}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET match information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl paramet"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the tournament schedule Note: Not present in JSON feed respo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute",
+            "xmlns:footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule/competition"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSchedule/tournamentCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a tournament calendar"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican FootballAPI- NLG Dynamic Player BIOS feed (PE9)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-nlg-dynamic-player-bios.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "PE9"
+      ],
+      "headings": [
+        "Sports DataAmerican FootballAPI- NLG Dynamic Player BIOS feed (PE9)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "NLG Dynamic Player BIOS (PE9) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "The bios will be updated after every game."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET dynamic player bio information by person UUID\u00a0(path parameter method) in specific language",
+            "/footballdata/nlgdynamicplayerbio/{outletAuthKey}/{personUuid}? {queryParameters}"
+          ],
+          [
+            "GET dynamic player bio information by person UUID (prsn query parameter method)",
+            "/footballdata/nlgdynamicplayerbio/{outletAuthKey}?prsn={personUuid} &{queryParameters}"
+          ],
+          [
+            "GET dynamic player bio information by person legacy Stats ID (prsn query parameter method by urn)",
+            "/footballdata/nlgdynamicplayerbio/{outletAuthKey}? prsn={urn:perform:stats:person:Stats person Id}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "person UUID",
+            "GET dynamic player bio information by person inline path URL GET https://api.performfeeds.com/footballdata/nlgdynamicpla"
+          ],
+          [
+            "prsn (Legacy stats id)",
+            "GET dynamic player bio information by stats person id GET https://api.performfeeds.com/footballdata/nlgdynamicplayerbio/"
+          ],
+          [
+            "prsn",
+            "GET dynamic player bio information by\u00a0the specified person UUID (query parameter method) . Pass the person UUID to the p"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to NLG Dynamic Player Bio"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgDynamicPlayerBio/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a Person."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a person/player."
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "statsId"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Tournament Calendars\u00a0feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-tournament-calendars.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data American Football API- Tournament Calendars\u00a0feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament Calendars (OT2) Guide",
+        "Endpoints",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Example calls and responses",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tournament Calendars",
+            "/footballdata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET Tournament Calendar information according to specified parameter values",
+            "/footballdata/tournamentcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "GET the active (usually the current/most recent) tournament calendars only.",
+            "/footballdata/tournamentcalendar/{outletAuthKey}/ active"
+          ],
+          [
+            "GET authorized tournament calendars only (those that you have access to view).",
+            "/footballdata/tournamentcalendar/{outletAuthKey}/ authorized"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "GET tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "/active endpoint + comp",
+            "GET information only for active tournament calendars and for the specified competition . Pass the competition UUID to co"
+          ],
+          [
+            "/authorized endpoint + comp",
+            "GET information only for authorized tournament calendars and specified competition . Pass the competition UUID to comp ."
+          ],
+          [
+            "/active + /authorized endpoints",
+            "GET information only for active and authorized tournament calendars. GET https://api.performfeeds.com/footballdata/tourn"
+          ],
+          [
+            "comp + /active + /authorized",
+            "GET information only for active and authorized tournament calendars. GET https://api.performfeeds.com/footballdata/tourn"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentCalendars"
+          ],
+          [
+            "Description",
+            "The root element of the related fields for tournament calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The most recent UTC date a competition in the feed was updated"
+          ],
+          [
+            "Values",
+            "Date and time - in the format: YYYY-DD-MMThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ]
+        ],
+        [
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "ocId"
+          ],
+          [
+            "Description",
+            "Optional . Unique Opta Core competition ID. Returned only if the feed is queried by Opta Core legacy ID; the attribute i"
+          ],
+          [
+            "Values",
+            "String"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- NLG Match Preview Feed (MA22)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-nlg-match-preview.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA22"
+      ],
+      "headings": [
+        "Sports Data American Football API- NLG Match Preview Feed (MA22)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "NLG Match Preview (MA22) Guide",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updates and Polling frequency"
+          ],
+          [
+            "Previews should be available up to 72 hours before a game, with a minimum expectation of 48 hours for an individual matc"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a match preview by fixture UUID (path parameter method) in XML or JSON.",
+            "/footballdata/nlgmatchpreview/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "GET Match Preview NLG data by the specified fixture UUID (path parameter method) . Pass the fixture UUID in the request "
+          ],
+          [
+            "fx (UUID only)",
+            "GET Match Preview NLG data by the specified UUID \"fx\" ID (query parameter method) . Pass the match UUID to the fx parame"
+          ],
+          [
+            "statsId + _lcl",
+            "GET Match Preview NLG data by the specified Stats ID (query parameter method) . Pass the stats match Id to the statsId p"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the match preview information (XML only) Note: Not present i"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "nlgMatchPreview/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Match Stream Feed (MA53)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-match-stream.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA53"
+      ],
+      "headings": [
+        "Sports Data American Football API- Match Stream Feed (MA53)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Stream (MA53) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once in 30 secs during the match. Feed is available only <24 hours before the start of the game."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match stream information by fixture\u00a0UUID (path parameter method)",
+            "/footballdata/matchstream/{outletAuthKey}/{fixtureUuid}? {queryparameters}"
+          ],
+          [
+            "GET match stream information by fixture\u00a0UUID (using fx parameter)",
+            "/footballdata/matchstream/{outletAuthKey}/?fx={fixtureUuid} {queryparameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUUID",
+            "GET detailed information about a match stream by passing the fixture/match UUID as a path parameter in the URL. GET http"
+          ],
+          [
+            "fx",
+            "GET detailed information about a match stream by match UUID\u00a0(using Fx parameter). GET https://api.performfeeds.com/footb"
+          ],
+          [
+            "_lcl",
+            "GET match stream events by match UUID and language code. GET https://api.perform.com/footballdata/matchstream/{outletAut"
+          ],
+          [
+            "type",
+            "Get information for match stream by fixture UUID and event content type. GET https://api.performfeeds.com/footballdata/m"
+          ],
+          [
+            "_lcl + type",
+            "GET information for match stream events by fixture UUID, language code and event content type. GET https://api.performfe"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStream"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the field related to match stream Note: Not present in JSON feed response, where the"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStream/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for match info"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Match Events (MA3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-match-events.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data American Football API- Match Events (MA3)",
+        "Overview",
+        "Required Compliance:",
+        "Match Events (MA3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events information by fixture UUID (path parameter method)",
+            "/footballdata/matcheventv2/{outletAuthKey}/{fixtureUuid}? {queryparameters}"
+          ],
+          [
+            "GET match events information by fixture UUID (using fx parameter)",
+            "/footballdata/matcheventv2/{outletAuthKey}/?fx={fixtureUuid}& {queryparameters}"
+          ],
+          [
+            "GET detailed match events information by fixture UUID (path parameter method)",
+            "/footballdata/matcheventv2/{outletAuthKey}/{fixtureUuid}? detailed={yes|no}&{queryparameters}"
+          ],
+          [
+            "GET detailed match events and player participation information by fixture UUID (path parameter method)",
+            "/footballdata/matcheventv2/{outletAuthKey}/{fixtureUuid}? detailed={yes|no}&{queryparameters}"
+          ],
+          [
+            "GET match events and xInfo information by fixture UUID (path parameter method)",
+            "/footballdata/matcheventv2/{outletAuthKey}/{fixtureUuid}? xinfo={yes|no}&{queryparameters}"
+          ],
+          [
+            "GET match events and drive chart information by fixture UUID (path parameter method).",
+            "/footballdata/matcheventv2/{outletAuthKey}/{fixtureUuid}? &drivechart={yes|no}&{queryparameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match events for a match by the specified fixture UUID (path parameter method) . Pass the fixture UUID in the reques"
+          ],
+          [
+            "fx={fixtureUuid} Fixture UUID",
+            "GET match events for a match by the specified fixture UUID (using fx parameter) . GET http://api.performfeeds.com/footba"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID + Detailed",
+            "GET detailed match events information by fixture UUID (path parameter method). GET http://api.performfeeds.com/footballd"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID\u00a0+ Detailed",
+            "GET detailed match events and player participation information by fixture UUID (path parameter method). GET http://api.p"
+          ],
+          [
+            "{xinfo}",
+            "GET match events and xInfo information by fixture UUID (path parameter method). GET http://api.performfeeds.com/football"
+          ],
+          [
+            "{drivechart}",
+            "GET match events and drive chart information by fixture UUID (path parameter method). GET http://api.performfeeds.com/fo"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for match events"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for match info"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Optional . Match description (the fixture). Value: name of the fixture (contestants)"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican FootballAPI- Tournament Simulations feed (TM11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-tournament-simulations.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM11"
+      ],
+      "headings": [
+        "Sports DataAmerican FootballAPI- Tournament Simulations feed (TM11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament Simulations (TM11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Tournament Simulations data according to specified parameter values",
+            "/footballdata/tournamentsimulations/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET Tournament Simulations list by tournament calendar\u00a0UUID GET https://api.performfeeds.com/footballdata/tournamentsimu"
+          ],
+          [
+            "tmcl/uuid",
+            "GET Tournament Simulations list by tournament\u00a0UUID inline path URL GET https://api.performfeeds.com/footballdata/tournam"
+          ],
+          [
+            "statsId = id",
+            "GET Tournament Simulations list by stats ID GET https://api.performfeeds.com/footballdata/tournamentsimulations/{outletA"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournament simulations"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations/competition"
+          ],
+          [
+            "Description",
+            "Required . The root element of the related fields for competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican FootballAPI- Fourth Down predictions Feed (MA5)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-fourth-down-predictions.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA5"
+      ],
+      "headings": [
+        "Sports DataAmerican FootballAPI- Fourth Down predictions Feed (MA5)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Fourth Down Predictions (MA5) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Fourth Down predictions information by fixture inline path URL",
+            "/footballdata/fourthdownpredictions/{outletAuthKey}/{fixtureUUID}? {queryParameters}"
+          ],
+          [
+            "GET Fourth Down predictions information by by stats fixture id",
+            "/footballdata/fourthdownpredictions/{outletAuthKey}? fx=urn:perform:stats:fixture:{stats fixture ID}&{queryParameters}"
+          ],
+          [
+            "GET Fourth Down predictions information by fixture UUID",
+            "/footballdata/fourthdownpredictions/{outletAuthKey}?{fx=fixtureUUID}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "GET Fourth Down predictions information by fixture inline path URL GET https://api.performfeeds.com/footballdata/fourthd"
+          ],
+          [
+            "fx (Legacy stats id)",
+            "GET Fourth Down predictions information by stats fixture id GET http://api.performfeeds.com/footballdata/fourthdownpredi"
+          ],
+          [
+            "fx",
+            "GET Fourth Down predictions information by fixture UUID GET http://api.performfeeds.com/footballdata/fourthdownpredictio"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "fourthDownPredictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Fourth Down Predictions"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "fourthDownPredictions/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the fixture/match"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Match Statistics (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-match-statistics.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data American Football API- Match Statistics (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "Match Statistics (MA2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output",
+        "Statistic Types",
+        "Contestant/Team Stats",
+        "Player Stats"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Match Statistics information by fixture UUID (path parameter method)",
+            "/footballdata/matchstatsv2/{outletAuthKey}/ {fixtureUuid}?{queryparameters}"
+          ],
+          [
+            "GET Match Statistics information by fixture UUID ( using fx parameter )",
+            "/footballdata/matchstatsv2/{outletAuthKey}/? fx={fixtureUuid}&{queryparameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET Match Statistics information by fixture UUID (path parameter method). GET https://api.performfeeds.com/footballdata/"
+          ],
+          [
+            "fx={fixtureUuid} Fixture UUID",
+            "GET Match Statistics information by fixture UUID (using fx parameter). GET https://api.performfeeds.com/footballdata/mat"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element related fields for match stats"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element related fields for match info"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Optional . Match description (the fixture). Value: name of the fixture (contestants)"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Match Feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-match.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data American Football API- Match Feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "Match (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Example Calls And Responses",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match information by fixture UUID (path parameter method)",
+            "/footballdata/matchv2/{outletAuthKey}/{fixtureUuid}? _fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET match information by fixture UUID (using fx parameter)",
+            "/footballdata/matchv2/{outletAuthKey}/?fx={fixtureUuid} &_fmt={dataFormat}&_rt={mode}"
+          ],
+          [
+            "GET live match information by competition and contestant",
+            "/footballdata/matchv2/{outletAuthKey}/?comp={competitionUuid} &ctst={contestantUuid}&live={yes|no}&_fmt={dataFormat}&_rt"
+          ],
+          [
+            "GET live match information by competition and date range",
+            "/footballdata/matchv2/{outletAuthKey}/?comp={competitionUuid} &mt.mDt=[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ] &li"
+          ],
+          [
+            "GET live match information by contestant and date range",
+            "/footballdata/matchv2/{outletAuthKey}/?comp={competitionUuid} &ctst={contestantUuid}&live={yes|no}&_fmt={dataFormat}&_rt"
+          ],
+          [
+            "GET live match information by contestant and tournament calendar",
+            "/footballdata/matchv2/{outletAuthKey}/?tmcl={tournamentCalendarUuid} &ctst={contestantUuid}&live={yes|no}&_fmt={dataForm"
+          ],
+          [
+            "GET live match information by competition and contestant",
+            "/footballdata/matchv2/{outletAuthKey}/?comp={competitionUuid} &ctst={contestantUuid}&live={yes|no}&_fmt={dataFormat}&_rt"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "GET detailed information about a fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in t"
+          ],
+          [
+            "live (one fixture)",
+            "GET detailed information and live data (scores, match status etc.) about the specified fixture . If there is no live dat"
+          ],
+          [
+            "live + tmcl (get multiple fixtures)",
+            "GET detailed information and live data for matches in the specified tournament calendar . If there is no live data avail"
+          ],
+          [
+            "tmcl",
+            "Get information for fixtures only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl "
+          ],
+          [
+            "tmcl + stg",
+            "GET information for several fixtures only for the specified stage of a tournament calendar . Pass the stage UUID to the "
+          ],
+          [
+            "tmcl + stg + week",
+            "GET information for several fixtures only for a specific week of a specified stage of a tournament calendar . Pass the w"
+          ],
+          [
+            "ctst + tmcl",
+            "GET information about matches only for a specific contestant (team/squad) in a tournament calendar. Pass the contestant "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Optional . Root element of the related fields for matches"
+          ],
+          [
+            "Only present if call does not specify a match UUID as a path parameter, and contains attribute xmlns:footballdata (XML o"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:footballdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for match"
+          ],
+          [
+            "Attribute list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for match info"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataAmerican Football API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/index.htm",
+      "sport": "americanfootball",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataAmerican Football API Index and User Guide",
+        "Required Compliance:",
+        "American Football API - Overview",
+        "American Football API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type"
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Football API: footballdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Football API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Calendars (OT2) Tournament Calendars (OT2) Get basic information about the tournament calendars - the individ",
+            "/footballdata/tournamentcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Tournament Schedule (MA0) Tournament Schedule (MA0) Get schedule information for a tournament, including individual matc",
+            "/footballdata/tournamentschedule/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA1) Match (MA1) Get details of a match or matches, such as date, start time, contestants, competition, season, v",
+            "/footballdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Statistics (MA2) Match Statistics (MA2) Get detailed match statistics for teams and each of the individual players",
+            "/footballdata/matchstatsv2/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3) Match Events (MA3) Get all events in a game, including team, event, type, timestamp, and qualifiers, ",
+            "/footballdata/matcheventv2/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Go For Two Predictions (MA4) Go For Two Predictions (MA4) Get \u2018Go For Two\u2019 predictions during a live American Football m",
+            "/footballdata/gofortwopredictions/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Fourth Down Predictions (MA5) Fourth Down Predictions (MA5) Get \u2018Fourth Down\u2019 predictions during a live American Footbal",
+            "/footballdata/fourthdownpredictions/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Squads Feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-post-consolidation-api-squads.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data American Football API- Squads Feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "Squads (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET squad data according to specified parameter values",
+            "/footballdata/squadsv2/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "ctst",
+            "GET squad information only for a specific contestant . GET https://api.performfeeds.com/footballdata/squadsv2/{outletAut"
+          ],
+          [
+            "tmcl",
+            "GET squad information by tournament calendar GET https://api.performfeeds.com/footballdata/squadsv2/{outletAuthKey}?_rt="
+          ],
+          [
+            "tmcl + ctst",
+            "GET squad information by tournament calendar and contestant . GET https://api.performfeeds.com/footballdata/squadsv2/{ou"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the team squads"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Last modification date and time in UTC"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:footballdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/sport"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for the associated sport. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamSquads/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the associated ruleset."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data American Football API- Team Standings (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-standings.htm",
+      "sport": "americanfootball",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data American Football API- Team Standings (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET standings data according to specified parameter values - you must specify a tournament calendar UUID",
+            "/footballdata/standingsv2/{outletAuthKey}? tmcl={tournamentCalendarUuid}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "GET standings information only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl par"
+          ],
+          [
+            "type + tmcl",
+            "GET standings information by tournament calendar and type . GET http://api.performfeeds.com/footballdata/standingsv2/{ou"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the related fields for team standings"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Last modification date and time in UTC - returned for XML only"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of sport related fields. Value: sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a sport"
+          ],
+          [
+            "Values",
+            "String"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/ruleset"
+          ],
+          [
+            "Description",
+            "Required . Root element of ruleset related fields. Value: ruleset name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the ruleset"
+          ],
+          [
+            "Values",
+            "String"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports Data American Football API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/americanfootball/opta-sdapi-americanfootball-api-coverage-tiers.htm",
+    "legend": "(B) = Before | (L) = Live | (A) = After/Post-match",
+    "coverage_types": {
+      "Results": "Delivers total score",
+      "Quarter Scores": "Delivers quarter scores",
+      "Scorers": "Delivers point scoring player names per match (game minute and seconds) for TD (Touchdown), FG (Field Goal), EP (Extra Points), 2pt Conv (Two-point conversion), Safety (Defensive 2 points)",
+      "Player Stats": "Delivers player stats for Passing, Rushing, Receiving, Defense and Special Teams",
+      "Team Stats": "Total Team 1st Downs, 1st Downs by Rushing/Passing/Penalty, 3rd/4th Down Conversions and Attempts, Total Offensive Yards/Plays, Rushing Yards/Attempts, Passing Yards (Gross), Times Sacked. Note: college football will not have all team stats.",
+      "Play-by-Play": "Event coordinates in real time",
+      "X-Info": "Enhanced play by play information on a team and player level",
+      "Player Participation": "Description of each player on the field for each play",
+      "Basic Positioning & Roles": "Each specific position a player was playing on a given play and their role (Pass Rush, Coverage)",
+      "Advanced Positioning & Roles": "Advanced description including Pass Rush, Coverage, Route Run, Gap Rushed, Type of Coverage"
+    },
+    "coverage_tiers": {
+      "2": {
+        "name": "Post-Match Data",
+        "coverage_types": [
+          "Results (A)",
+          "Quarter Scores (A)"
+        ],
+        "description": "Post-match scores",
+        "timing": "Within 6 hours"
+      },
+      "5": {
+        "name": "Event Data",
+        "coverage_types": [],
+        "description": "Live Score \u2014 Score and Time updated every 8 minutes",
+        "timing": "Live"
+      },
+      "6": {
+        "name": "Event Data",
+        "coverage_types": [],
+        "description": "Live Score \u2014 Score and Time updated every 8 minutes. Post-game team & player stats.",
+        "timing": "Live; Post-match: Within 2 hours"
+      },
+      "7": {
+        "name": "Event Data",
+        "coverage_types": [
+          "Results (L)",
+          "Quarter Scores (L)",
+          "Scorers (L)",
+          "Team Stats (A)",
+          "Player Stats (A)"
+        ],
+        "description": "Live Scores & Basic Events \u2014 Live scores & scoring summary. Post-game team & player stats.",
+        "timing": "Live; Post-match: Within 1-3 hours"
+      },
+      "11": {
+        "name": "Live Play-by-Play Advanced Postgame Data",
+        "coverage_types": [
+          "Results (L)",
+          "Quarter Scores (L)",
+          "Scorers (L)",
+          "Team Stats (L)",
+          "Player Stats (L)",
+          "Play-by-Play (L)",
+          "X-Info (A)",
+          "Player Participation (A)",
+          "Basic Positioning & Roles (A)"
+        ],
+        "description": "Live play by play. Live offensive team & player stats. Live team & player stats on Sacks and Interceptions. Full post-game team and player stats. Full post-game X-Info, Player Participation, Basic Positioning & Roles.",
+        "timing": {
+          "Live": "Live",
+          "Post Box": "Within 2 hours",
+          "X-Info": "Within 72 hours",
+          "Player Participation": "Within 72 hours",
+          "Basic Positioning & Roles": "Within 6 days"
+        }
+      },
+      "12": {
+        "name": "Live Play-by-Play Advanced Postgame Data",
+        "coverage_types": [
+          "Results (L)",
+          "Quarter Scores (L)",
+          "Scorers (L)",
+          "Team Stats (L)",
+          "Player Stats (L)",
+          "Play-by-Play (L)",
+          "X-Info (A)",
+          "Player Participation (A)",
+          "Advanced Positioning & Roles (A)"
+        ],
+        "description": "Live play by play. Live offensive and defensive team & player stats. Full post-game team and player stats. Full post-game X-Info, Player Participation, Advanced Positioning & Roles.",
+        "timing": {
+          "Live": "Live",
+          "Post Box": "Within 2 hours",
+          "X-Info": "Within 24 hours",
+          "Player Participation": "Within 24 hours",
+          "Advanced Positioning & Roles": "Within 4-5 days"
+        }
+      }
+    }
+  }
+}

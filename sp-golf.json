@@ -1,0 +1,2004 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Golf",
+  "file": "sp-golf.json",
+  "openapi": {
+    "title": "SDAPI - Golf",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/golfdata",
+    "endpoint_count": 13,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "tr",
+            "in": "query",
+            "required": false,
+            "description": "Tour uuid"
+          },
+          {
+            "name": "trnDt",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}/{tournamentUuid}",
+        "summary": "",
+        "operationId": "getByTournamentId",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tournamentUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getAll",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuth",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/rankings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_1",
+        "tags": [
+          "TM2 - Rankings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Ranking type"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date. Format: YYYY-MM-DDZ"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerCareer",
+        "tags": [
+          "PE2 - Player career"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getPlayerCareerByPerson",
+        "tags": [
+          "PE2 - Player career"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/people/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getFeed",
+        "tags": [
+          "TM3 - People"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person uuid"
+          },
+          {
+            "name": "tm",
+            "in": "query",
+            "required": false,
+            "description": "Team uuid"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchplay/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_2",
+        "tags": [
+          "MA11 - Match Play"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "rnd",
+            "in": "query",
+            "required": false,
+            "description": "Round uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/leaderboard/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_3",
+        "tags": [
+          "MA2 - Leaderboard"
+        ],
+        "parameters": [
+          {
+            "name": "trn",
+            "in": "query",
+            "required": true,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/holebyhole/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_4",
+        "tags": [
+          "MA3 - Hole by Hole"
+        ],
+        "parameters": [
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person uuid"
+          },
+          {
+            "name": "rnd",
+            "in": "query",
+            "required": false,
+            "description": "Round uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Tournament",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Leaderboard",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Hole by Hole",
+        "description": ""
+      },
+      {
+        "name": "MA11 - Match Play",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tour Calendar",
+        "description": ""
+      },
+      {
+        "name": "PE2 - Player career",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Rankings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - People",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Golf API- Rankings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-rankings.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Golf API- Rankings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "Rankings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Rankings data according to either ranking type or date",
+            "/golfdata/rankings/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "type",
+            "Get Rankings information only for the specified ranking type . In the Rankings feed, you must use the type parameter ( r"
+          ],
+          [
+            "date",
+            "Get Rankings information only for up to the specified date . Pass the date (in the format YYYY-MM-DDZ ) GET https://api."
+          ],
+          [
+            "type + date",
+            "Get Rankings information only for up to the specified date and ranking type . Parameters: type ( required ) + date ( opt"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for Rankings"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required. Last modification date and time in UTC - returned for XML only"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings/type"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the ranking type"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ],
+          [
+            "Description",
+            "Required. Name of the ranking type - the value will correspond with the value passed to the type parameter"
+          ],
+          [
+            "Values",
+            "String - one of the following: OWGR | LPGA | FedEx | PGA_money | Race_to_Dubai"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "date"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings/ranking"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the ranking information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "personId"
+          ],
+          [
+            "Description",
+            "Required. Unique ID (UUID) of the ranking person"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "firstName"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataGolf API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-coverage-tiers.htm",
+      "sport": "golf",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataGolf API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Leaderboard",
+            "Delivers leaderboard scores."
+          ],
+          [
+            "Tee Times",
+            "Delivers starting times for players per round."
+          ],
+          [
+            "Hole by Hole",
+            "Individual player scorecards with hole-by-hole socres."
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Leaderboard (A)",
+            "Post-match Leaderboard",
+            "Including matchplay events",
+            "Within 2-3 hours."
+          ],
+          [
+            "2",
+            "Leaderboard (A)",
+            "Post-match Leaderboard & Hole by Hole Scores",
+            "Including matchplay events",
+            ""
+          ],
+          [
+            "Hole by Hole (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Tee Times (B)",
+            "Live Leaderboard",
+            "Including matchplay events",
+            "Every 20-30 mins."
+          ],
+          [
+            "Leaderboard (L)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Leaderboard feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-leaderboard.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Golf API- Leaderboard feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "Leaderboard (MA2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Leaderboard for a team from the /leaderboard feed",
+            "/golfdata/leaderboard/{outletAuthKey}/{tournamentUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "trn",
+            "Get information for a list of tournaments in the specified Tour Calendar by tour calendar UUID. GET https://api.performf"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "leaderboard"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for leaderboard"
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/golfdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "leaderBoard/tournaments/tournament"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for a tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required. Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament/tours"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the tours associated with the tournament."
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Tour Calendar feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-tour-calendar.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Golf API- Tour Calendar feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "Tour Calendar (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Endpoints",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tour Calendars",
+            "/golfdata/tourcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET Tour Calendar information according to specified parameter values",
+            "/golfdata/tourcalendar/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "authorized",
+            "GET the authorized t our calendars only. GET https://api.performfeeds.com/golfdata/tourcalendar/{outletAuthKey} / author"
+          ],
+          [
+            "active",
+            "GET the active (usually the current/most recent) t our calendars only. GET https://api.performfeeds.com/golfdata/tourcal"
+          ],
+          [
+            "active + authorized",
+            "GET the authorized and active t our calendars only. GET https://api.performfeeds.com/golfdata/tourcalendar/{outletAuthKe"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the Tour Calendars Note: Not present in JSON feed response, lastUpdate"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/golfdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars/tour"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tour"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "tourName"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars/tour/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tour associated with the tour calendar"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "tourYear"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Match Play feed (MA11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-match-play.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "MA11"
+      ],
+      "headings": [
+        "Sports Data Golf API- Match Play feed (MA11)",
+        "Overview",
+        "Required Compliance:",
+        "Match Play (MA11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match play information according to specified parameter values",
+            "/golfdata/matchplay/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "trn",
+            "Get match play information for the specified tournament . Pass the tournament UUID to the trn parameter. GET https://api"
+          ],
+          [
+            "rnd",
+            "Get match play information for the specified round of a tournament. Pass the round UUID to the rnd parameter. GET https:"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchplay"
+          ],
+          [
+            "Description",
+            "Required . Root element of the of the feed"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ],
+          [
+            "Description",
+            "Required. Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/golfdata"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchplay/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required. Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchplay/tournament/competition"
+          ],
+          [
+            "Description",
+            "Required. Root element of the related fields for the competition associated with the tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required. Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- People feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-people.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Golf API- People feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "People (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team and individual golfer data according to a (mandatory) parameter",
+            "/golfdata/people/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "prsn",
+            "Get information about a specific person . Pass the person\u00a0UUID to the prsn parameter. GET https://api.performfeeds.com/g"
+          ],
+          [
+            "tm",
+            "Get team/person information and control the amount of data returned by the feed, for a specific team . Pass the team UUI"
+          ],
+          [
+            "trcl",
+            "Get team/person information only for the specified tour calendar . Pass the tour calendar UUID to the trcl parameter. GE"
+          ],
+          [
+            "trn",
+            "Get team/person information only for a specific tournament . Pass the tournament UUID to the trn parameter. GET https://"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "people"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the related fields for the teams/people Note: Not present in JSON/JSONP feed respons"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "people/tourCalendars"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tourCalendars"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "people/tourCalendars/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the tour calendar. Value: name and year of the tour calendar"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour calendar"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Player Career feed (PE2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-player-career.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "PE2"
+      ],
+      "headings": [
+        "Sports Data Golf API- Player Career feed (PE2)",
+        "Overview",
+        "Required Compliance:",
+        "Player Career (PE2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player career information according to specified parameter values",
+            "/golfdata/playercareer/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "prsn",
+            "Get player career data for a specific person (a player). Pass the person\u00a0UUID to the prsn parameter. GET https://api.per"
+          ],
+          [
+            "detailed",
+            "Get detailed player career data for a specific person . GET https://api.performfeeds.com/golfdata/playercareer/{outletAu"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a player's career."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . Root element containing The UTC date and time (timestamp) of when the information/record was last updated."
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a person/player"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "firstName"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer/person/careerStats"
+          ],
+          [
+            "Description",
+            "Required . The root element containing the related fields for career statistics"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "eventsPlayed"
+          ],
+          [
+            "Description",
+            "Required . Number of eventsPlayed by the player"
+          ],
+          [
+            "Values",
+            "Integer"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "cutsMade"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Hole by Hole feed (MA3) feed",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-holebyhole.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data Golf API- Hole by Hole feed (MA3) feed",
+        "Overview",
+        "Required Compliance:",
+        "Hole by Hole (MA3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Hole by Hole data for a tournament by its UUID",
+            "/golfdata/holebyhole/{outletAuthKey}?trn={tournamentUuid}& {queryParameters}"
+          ],
+          [
+            "GET Hole by Hole data for a round in a tournament",
+            "/golfdata/holebyhole/{outletAuthKey}?rnd={roundUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "trn",
+            "GET hole by hole information for a match by the specified tournament UUID . Pass the tournament UUID to the trn paramete"
+          ],
+          [
+            "prsn + trn",
+            "GET hole by hole information for a match for a specific person (UUID) and the specified tournament UUID . Pass the perso"
+          ],
+          [
+            "rnd",
+            "GET hole by hole information for a match by the specified round UUID . Pass the round UUID to the rnd parameter. GET htt"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "holebyhole"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for Holy by Hole information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attributes list is empty for JSON - for XML feeds, it contains the following attributes"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/golfdata"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "holebyhole/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tournament Please note this node will be updated to an object from a"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String - (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "holebyhole/tournament/tours"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the tours associated with the tournament."
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataGolf API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/index.htm",
+      "sport": "golf",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataGolf API Index and User Guide",
+        "Required Compliance:",
+        "Golf API - Overview",
+        "Golf API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "http is the default request type; https is also available."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Golf API: golfdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Golf API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament (MA1) Tournament (MA1) Get details of tournaments, such as start and end date, round information, competition",
+            "/golfdata/tournament/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Leaderboard (MA2) Leaderboard (MA2) Get detailed Leaderboard information for teams and each of the individual players",
+            "/golfdata/leaderboard/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Hole by Hole (MA3) Hole by Hole (MA3) Get scores for each golfer for each individual hole and round of the tournament",
+            "/golfdata/holebyhole/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Play (MA11) Match Play (MA11) Get scores for all golfers on each individual match play of the tournament",
+            "/golfdata/matchplay/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Tour Calendars (OT2) Tour Calendars (OT2) Get information for different golf tour calendars, such as dates and IDs, grou",
+            "/golfdata/tourcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Player Career Feed (PE2) Player Career Feed (PE2) Get information about the current and past memberships of players and ",
+            "/golfdata/playercareer/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Rankings (TM2) Rankings (TM2) Get the latest rankings for a specific date",
+            "/golfdata/rankings/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Golf API- Tournament feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-api-tournament.htm",
+      "sport": "golf",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Golf API- Tournament feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "Tournament (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information for a single tournament, a competition, or all tournaments in a specified Tour Calendar, according to th",
+            "/golfdata/tournament/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "trcl",
+            "Get information for a list of tournaments in the specified Tour Calendar by tour calendar UUID. GET https://api.performf"
+          ],
+          [
+            "tourcalendar UUID",
+            "Get detailed information for a single tournament by passing the tournament UUID as a path parameter (the asset/resource)"
+          ],
+          [
+            "trn",
+            "Get detailed information for a single tournament by the specified tournament UUID. GET https://api.performfeeds.com/golf"
+          ],
+          [
+            "comp",
+            "Get tour calendar information for a specified competition . Pass the competition UUID to the comp parameter. GET https:/"
+          ],
+          [
+            "trnDt + trcl (tournament date)",
+            "Get information for a list of tournaments within the specified Tour Calendar and date range . Pass the date range (in th"
+          ],
+          [
+            "trnDt + tr",
+            "Get information for a list of tournaments for the specified tour and date range . Pass the date range (in the format YYY"
+          ],
+          [
+            "_ordSrt",
+            "Get data, such as tournament calendars, sorted according to their date/time in either date ascending (oldest first) or d"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournaments"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:golfdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/golfdata"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a single tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String - (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament/tours"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the tours associated with the tournament."
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataGolf API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/golf/opta-sdapi-golf-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Leaderboard",
+          "Delivers leaderboard scores."
+        ],
+        [
+          "Tee Times",
+          "Delivers starting times for players per round."
+        ],
+        [
+          "Hole by Hole",
+          "Individual player scorecards with hole-by-hole socres."
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Leaderboard (A)",
+          "Post-match Leaderboard",
+          "Including matchplay events",
+          "Within 2-3 hours."
+        ],
+        [
+          "2",
+          "Leaderboard (A)",
+          "Post-match Leaderboard & Hole by Hole Scores",
+          "Including matchplay events",
+          ""
+        ],
+        [
+          "Hole by Hole (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Tee Times (B)",
+          "Live Leaderboard",
+          "Including matchplay events",
+          "Every 20-30 mins."
+        ],
+        [
+          "Leaderboard (L)"
+        ],
+        [
+          "5",
+          "Tee Times (B)",
+          "Live Leaderboard",
+          "Including matchplay events",
+          "Live: Every 20-30 mins. Post: Hole by Hole and Round Scores within 2 hours"
+        ],
+        [
+          "Leaderboard (L)"
+        ],
+        [
+          "Hole by Hole (L)"
+        ],
+        [
+          "Hole by Hole/Round Scores (A)"
+        ],
+        [
+          "6",
+          "Tee Times (B)",
+          "Live Leaderboard & Hole by Hole Scores",
+          "Including matchplay events",
+          "Round 1-2: Every 20-30 mins. Round 3-4: Every 5-15 mins."
+        ],
+        [
+          "Leaderboard (L)"
+        ],
+        [
+          "Hole by Hole (L)"
+        ]
+      ]
+    ]
+  },
+  "push_feeds": [
+    {
+      "title": "Golf Feed Overview",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/Golf_Feed_Overview.htm",
+      "codes": []
+    },
+    {
+      "title": "GolfFeed Specifications",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/Golf_Feed_Specifications.htm",
+      "codes": []
+    },
+    {
+      "title": "G2 - Live Scores Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G2_Live_Scores.htm",
+      "codes": []
+    },
+    {
+      "title": "G15 - Rankings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G15_Rankings.htm",
+      "codes": []
+    },
+    {
+      "title": "G2m - Match Play - Live Scores Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G2M_Match_Play_-_Live_Scores.htm",
+      "codes": []
+    },
+    {
+      "title": "G3 - Round Details Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G3_Round_Details.htm",
+      "codes": []
+    },
+    {
+      "title": "G1 - Event List Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G1_Event_List.htm",
+      "codes": []
+    },
+    {
+      "title": "G40 - Player Profile Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/GolfFeedSpec/G40_Player_Profile.htm",
+      "codes": []
+    }
+  ]
+}

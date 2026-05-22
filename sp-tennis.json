@@ -1,0 +1,4222 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Tennis",
+  "file": "sp-tennis.json",
+  "openapi": {
+    "title": "SDAPI - Tennis",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/tennisdata",
+    "endpoint_count": 29,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestants"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentsimulations/{outletAuthKey}/{tournamentUuid}",
+        "summary": "",
+        "operationId": "getByTournamentId",
+        "tags": [
+          "TM11 - Tournament Simulations"
+        ],
+        "parameters": [
+          {
+            "name": "tournamentUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "description": "Date range"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestants"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_1",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour Calendar uuid"
+          },
+          {
+            "name": "trnDt",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "tr",
+            "in": "query",
+            "required": false,
+            "description": "Tour uuid"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}/{tournamentId}",
+        "summary": "",
+        "operationId": "getByMatchId",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tournamentId",
+            "in": "path",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour Calendar uuid"
+          },
+          {
+            "name": "trnDt",
+            "in": "query",
+            "required": false,
+            "description": "Date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "tr",
+            "in": "query",
+            "required": false,
+            "description": "Tour uuid"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getAll",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuth",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/seasonstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSeasonalStats",
+        "tags": [
+          "TM4 - Seasonal Stats"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "qualifiers",
+            "in": "query",
+            "required": false,
+            "description": "Qualifiers"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/rankings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_2",
+        "tags": [
+          "PE4 - Rankings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": true,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Ranking type"
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "Week number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/rankings/{outletAuthKey}/{tourCalendarId}",
+        "summary": "",
+        "operationId": "get_3",
+        "tags": [
+          "PE4 - Rankings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tourCalendarId",
+            "in": "path",
+            "required": true,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Ranking type"
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "required": false,
+            "description": "Week number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/prizemoney/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_4",
+        "tags": [
+          "PE11 - Prize Money"
+        ],
+        "parameters": [
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": true,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/prizemoney/{outletAuthKey}/{tourCalendarUuid}",
+        "summary": "",
+        "operationId": "get_5",
+        "tags": [
+          "PE11 - Prize Money"
+        ],
+        "parameters": [
+          {
+            "name": "tourCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/players/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayersByRequest",
+        "tags": [
+          "TM3 - Players"
+        ],
+        "parameters": [
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Ranking type"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/players/{outletAuthKey}/{tourCalendarUuid}",
+        "summary": "",
+        "operationId": "getPlayersById",
+        "tags": [
+          "TM3 - Players"
+        ],
+        "parameters": [
+          {
+            "name": "tourCalendarUuid",
+            "in": "path",
+            "required": true,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getPlayerCareer",
+        "tags": [
+          "PE2 - Player career"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/playercareer/{outletAuthKey}/{personUuid}",
+        "summary": "",
+        "operationId": "getPlayerCareerByPerson",
+        "tags": [
+          "PE2 - Player career"
+        ],
+        "parameters": [
+          {
+            "name": "personUuid",
+            "in": "path",
+            "required": true,
+            "description": "Person uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tour calendar uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_6",
+        "tags": [
+          "MA2 - Match Stats"
+        ],
+        "parameters": [
+          {
+            "name": "mt",
+            "in": "query",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchstats/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_7",
+        "tags": [
+          "MA2 - Match Stats"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchinsights/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchInsights",
+        "tags": [
+          "MA23 - Automated Insights"
+        ],
+        "parameters": [
+          {
+            "name": "mt",
+            "in": "query",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchinsights/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchInsights_1",
+        "tags": [
+          "MA23 - Automated Insights"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_8",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "mt",
+            "in": "query",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matchevent/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "get_9",
+        "tags": [
+          "MA3 - Match Events"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheditorial/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchEditorial",
+        "tags": [
+          "MA30 - Match Editorial"
+        ],
+        "parameters": [
+          {
+            "name": "mt",
+            "in": "query",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Content type "
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/matcheditorial/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatchEditorial_1",
+        "tags": [
+          "MA30 - Match Editorial"
+        ],
+        "parameters": [
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "description": "State"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "content Type"
+          },
+          {
+            "name": "_lcl",
+            "in": "query",
+            "required": false,
+            "description": "Language"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_10",
+        "tags": [
+          "MA4 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "mt",
+            "in": "query",
+            "required": false,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "ctst2",
+            "in": "query",
+            "required": false,
+            "description": "Second Contestants"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestants"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getByMatchId_1",
+        "tags": [
+          "MA4 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "required": false,
+            "description": "Detailed"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/competitionschedule/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_11",
+        "tags": [
+          "MA0 - Competition Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": true,
+            "description": "Competition uuid"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": true,
+            "description": "Year"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/competitionschedule/{outletAuthKey}/{competitionUuid}",
+        "summary": "",
+        "operationId": "get_12",
+        "tags": [
+          "MA0 - Competition Schedule"
+        ],
+        "parameters": [
+          {
+            "name": "competitionUuid",
+            "in": "path",
+            "required": true,
+            "description": "Competition uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": true,
+            "description": "Year"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA0 - Competition Schedule",
+        "description": ""
+      },
+      {
+        "name": "MA1 - Tournament",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Match Stats",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Match Events",
+        "description": ""
+      },
+      {
+        "name": "MA4 - Match",
+        "description": ""
+      },
+      {
+        "name": "MA23 - Automated Insights",
+        "description": ""
+      },
+      {
+        "name": "MA30 - Match Editorial",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tour Calendar",
+        "description": ""
+      },
+      {
+        "name": "PE2 - Player career",
+        "description": ""
+      },
+      {
+        "name": "PE4 - Rankings",
+        "description": ""
+      },
+      {
+        "name": "PE11 - Prize Money",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Players",
+        "description": ""
+      },
+      {
+        "name": "TM4 - Seasonal Stats",
+        "description": ""
+      },
+      {
+        "name": "TM11 - Tournament Simulations",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Tennis API- Match Stats feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-stats.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Match Stats feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Stats (MA2) Guide",
+        "Statistic Types",
+        "Contestant/Team/Player stats",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match stats for a team from the /matchstats feed by fixture UUID (path parameter/resource ID)",
+            "/tennisdata/matchstats/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET match stats for a team from the /matchstats feed by fixture UUID ( mt parameter)",
+            "/tennisdata/matchstats/{outletAuthKey}?mt={fixtureUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Name",
+            "Description",
+            "Data Detail Level"
+          ],
+          [
+            "ATP",
+            "WTA",
+            "Grand Slams"
+          ],
+          [
+            "Qualifier",
+            "Mains",
+            "Qualifier",
+            "Mains",
+            "Qualifier",
+            "Mains"
+          ],
+          [
+            "aces",
+            "Number of aces served by the player (when it is their own service game)",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "doubleFaults",
+            "Double faults incurred by the player \u2013 when it was their own service game",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "1stServePointsWon",
+            "Number of points won by the player on their first serve on their own service game",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "1stServePointsTotal",
+            "Number of first serves made (valid, did not require second serve)",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "2ndServePointsWon",
+            "Number of points won by the player on their 2nd serve on their own service game",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "mt",
+            "Get information about the specified fixture by passing the fixture/match UUID\u00a0in the mt parameter. GET https://api.perfo"
+          ],
+          [
+            "fixture/match UUID",
+            "Get detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the match statistics"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchStats/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Match Editorial (MA30)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-editotial.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA30"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Match Editorial (MA30)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Editorial (MA30) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls (Coming Soon)",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "<KO-24h; KO-1h> on intervals up to 1h <KO-1h; KO+6h> every 30s <KO+6h; KO+10h> on intervals up to 1h 10h+ of match end t"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match editorial by fixture UUID (path parameter)",
+            "/tennisdata/matcheditorial/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET match editorial by fixture UUID (mt parameter)",
+            "/tennisdata/matcheditorial/{outletAuthKey}?mt={fixtureUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "Get match editorial information about the specified fixture by passing the fixture/match UUID as a path parameter (the a"
+          ],
+          [
+            "mt",
+            "Get match editorial information about the specified fixture by passing the fixture/match UUID in the mt parameter. GET h"
+          ],
+          [
+            "type",
+            "Get match editorial information by the specified type . Pass one of the following values to the type parameter: commenta"
+          ],
+          [
+            "state",
+            "Get match facts by the specified state . Pass one of the following values to the state parameter: pre | live | post | al"
+          ],
+          [
+            "_lcl",
+            "1. Get match editorial for multiple languages using _lcl parameter using comma separated values for language codes. E.g."
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEditorial"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match editorial."
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEditorial/matchInfo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/matcheditorial."
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ],
+          [
+            "Description",
+            "Required . The level of detail in which the match is covered. Possible values: \u2022 0 = Only final set scores available \u2022 1"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Tour Calendar feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-tour-calendar.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Tour Calendar feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tour Calendar (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tour Calendars",
+            "/tennisdata/tourcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET a list of active Tour Calendars according to specified parameter values",
+            "/tennisdata/tourcalendar/{outletAuthKey}/active? {queryParameters}"
+          ],
+          [
+            "GET a list of authorized Tour Calendars according to specified parameter values",
+            "/tennisdata/tourcalendar/{outletAuthKey}/authorized? {queryParameters}"
+          ],
+          [
+            "GET a list of active and authorized Tour Calendars according to specified parameter values",
+            "/tennisdata/tourcalendar/{outletAuthKey}/active/ authorized?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Endpoint",
+            "Description"
+          ],
+          [
+            "/active",
+            "Get a list of only the active tour calendars (usually the current/most recent). GET https://api.performfeeds.com/tennisd"
+          ],
+          [
+            "/authorized",
+            "Get a list of only the authorized tour calendars (those that you have access to view). GET https://api.performfeeds.com/"
+          ],
+          [
+            "/active + /authorized",
+            "Get a list of only the active and authorized tour calendars. GET https://api.performfeeds.com/tennisdata/tourcalendar/{o"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the Tour Calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars/tour"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tour"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "tourName"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars/tour/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a tour associated with the tour calendar"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "tourYear"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Match Detailed feed (MA4_Detailed)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-detailed.htm",
+      "sport": "tennis",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Tennis API- Match Detailed feed (MA4_Detailed)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Detailed (MA4_Detailed) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed match information according to specified parameter values",
+            "/tennisdata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "detailed + entity UUID (fixture/contestant/tournament)",
+            "GET detailed match play data for the specified entity UUID. Pass the detailed parameter and specify a value of yes in th"
+          ],
+          [
+            "detailed + {fixtureUuid} Fixture UUID (path parameter method)",
+            "GET detailed match play data for the specified fixture UUID (path parameter method) . Pass the detailed parameter and sp"
+          ],
+          [
+            "detailed + mt Fixture UUID (query parameter method)",
+            "GET detailed match play data for the specified fixture UUID (query parameter method) . Pass the detailed parameter and s"
+          ],
+          [
+            "detailed + trn Tournament UUID (query parameter method)",
+            "GET detailed match play data for the specified tournament . Pass the detailed parameter and specify a value of yes in th"
+          ],
+          [
+            "detailed + ctst Contestant UUID (query parameter method)",
+            "GET detailed match play data for the specified contestant(s) (across all tournaments and dates). Pass the detailed param"
+          ],
+          [
+            "detailed + ctst + ctst2 Contestant UUID vs Contestant 2 UUID (query parameter method)",
+            "GET detailed match play data between two specified contestants playing head-to-head (across all tournaments and dates). "
+          ],
+          [
+            "_pgNm + _pgSz",
+            "GET detailed match play data, only in the specified page size and/or page number . All results are returned in pages and"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a specific match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ],
+          [
+            "Description",
+            "Required . The level of detail in which the match is covered. Possible values: \u2022 0 = Only final set scores available \u2022 1"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Predictions feed (MA21 Detailed)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-predictions-detailed.htm",
+      "sport": "tennis",
+      "feed_codes": [],
+      "headings": [
+        "Sports Data Tennis API- Predictions feed (MA21 Detailed)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Predictions (MA21 Detailed) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET predictions on match information and score details from the /matchpredictionsdetail feed by fixture UUID (path param",
+            "/tennisdata/predictions/matchpredictionsdetail/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get detailed information about one fixture by passing the fixture UUID as a path parameter (the asset/resource) in the U"
+          ],
+          [
+            "point (optional)",
+            "Get detailed information about one fixture and a point by passing the point parameter and the fixture UUID as a path par"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "officialStartDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Players feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-players.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Players feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Players (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output - Single Players",
+        "Feed Output - Double Players"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team and individual player information for a tour calendar from the /players feed by tour calendar UUID (path parame",
+            "/tennisdata/players/{outletAuthKey}/{tourCalendarUuid}? {queryParameters}"
+          ],
+          [
+            "GET team and individual player from the /players according to a (mandatory) parameter",
+            "/tennisdata/players/{outletAuthKey}/?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tourcalendar UUID",
+            "Get team/person information for a single tour calendar by passing the tour calendar UUID as a path parameter (the asset/"
+          ],
+          [
+            "trcl",
+            "Get team/person information only for the specified tour calendar . Pass the tour calendar UUID to the trcl parameter. GE"
+          ],
+          [
+            "trn",
+            "Get team/person information only for a specific tournament . Pass the tournament UUID to the trn parameter. GET https://"
+          ],
+          [
+            "trcl + type",
+            "Get player information only for the specified ranking type - either a single player or a doubles team. If you do NOT use"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "players"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the teams/players"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "players/tournament"
+          ],
+          [
+            "Description",
+            "Optional . Root element of the fields related to the associated tournament - returned when the feed is called by tournam"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "players/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the tour calendar - returned only when the feed is called by tour cale"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Seasonal Stats/Rankings feed (TM4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-seasonal-stats.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "TM4"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Seasonal Stats/Rankings feed (TM4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Season Stats (TM4) Guide",
+        "Contestant/Team/Player Stats",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output - Single Player"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Season Stats are available at the end of each match within a tournament."
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET season stats information for a tour calendar/tournament from the /seasonstats feed by tour calendar UUID (path param",
+            "/tennisdata/seasonstats/{outletAuthKey}/{tourCalendarUuid}? {queryParameters}"
+          ],
+          [
+            "GET season stats from the /seasonstats according to a (mandatory) parameter",
+            "/tennisdata/seasonstats/{outletAuthKey}/?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Name",
+            "Description",
+            "Data detail level"
+          ],
+          [
+            "WTA",
+            "ATP",
+            "Grand Slams"
+          ],
+          [
+            "1stServePointsTotal",
+            "Total number of 1st serve points (did not require second serve)",
+            "Y",
+            "Y",
+            "Y"
+          ],
+          [
+            "1stServePointsTotalRank",
+            "The overall ranking position of that player for the stat above across a tour or tournament.",
+            "Y",
+            "Y",
+            "Y"
+          ],
+          [
+            "1stServePointsWon",
+            "Number of points won by the player on their first serve - on their own service game",
+            "Y",
+            "Y",
+            "Y"
+          ],
+          [
+            "1stServePointsWonRank",
+            "The overall ranking position of that player for the stat above across a tour or tournament.",
+            "Y",
+            "Y",
+            "Y"
+          ],
+          [
+            "2ndServeMade",
+            "The number of 2nd serves valid/successful + Double faults",
+            "Y",
+            "Y",
+            "Y"
+          ],
+          [
+            "2ndServeMadeRank",
+            "The overall ranking position of that player for the stat above, across a tour or tournament.",
+            "Y",
+            "Y",
+            "Y"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "trcl",
+            "Get the season stats information only for the specified tour calendar . Pass the tour calendar UUID to the trcl paramete"
+          ],
+          [
+            "trn",
+            "Get season stats information only for a specific tournament . Pass the tournament UUID to the trn parameter. GET https:/"
+          ],
+          [
+            "trcl & qualifiers",
+            "Get qualifiers season stats information only for the specified tour calendar . Pass the tour calendar UUID to the trcl a"
+          ],
+          [
+            "trn & qualifiers",
+            "Get qualifiers season stats information only for the specified tournament . Pass the tournament UUID to the trn and spec"
+          ],
+          [
+            "trcl & ctst",
+            "Get season stats information only for the specified tour calendar and contestant. GET https://api.performfeeds.com/tenni"
+          ],
+          [
+            "trn & ctst",
+            "Get season stats information only for the specified tournament and contestant. GET https://api.performfeeds.com/tennisda"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "seasonStatistics"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the season stats."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Predictions feed (MA21)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-predictions.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA21"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Predictions feed (MA21)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Predictions (MA21) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET predictions on match information and score details from the /matchpredictionss feed by fixture UUID (path parameter/",
+            "/tennisdata/predictions/matchpredictions/{outletAuthKey}/ {fixtureUuid}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture UUID",
+            "Get detailed information about one fixture by passing the fixture UUID as a path parameter (the asset/resource) in the U"
+          ],
+          [
+            "point (optional)",
+            "Get detailed information about one fixture and a point by passing the point parameter and the fixture UUID as a path par"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "officialStartDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataTennis API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-coverage-tiers.htm",
+      "sport": "tennis",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataTennis API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Score",
+            "Delivers game score per set per match (not point-by point)"
+          ],
+          [
+            "Player Stats",
+            "Box Score tennis data (service, return and points stats)"
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Results (A)",
+            "Score",
+            "",
+            "Different intervals"
+          ],
+          [
+            "2",
+            "Results (A)",
+            "Player Stats",
+            "Post-match results and player stats",
+            "Different intervals"
+          ],
+          [
+            "Player Stats (A)"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Results (L)",
+            "Score",
+            "Live game by game updates",
+            "Live"
+          ],
+          [
+            "5",
+            "Results (L)",
+            "Player Stats",
+            "Live game by game updates Post-match player stats",
+            "Live Stats Post-match: 2 hours"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Rankings feed (PE4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-rankings.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "PE4"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Rankings feed (PE4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Rankings (PE4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Rankings data for a tour calendar by passing the tour calendar UUID (path parameter/resource ID) in the URL.",
+            "/tennisdata/rankings/{tourCalendarUuid}?{queryParameters}"
+          ],
+          [
+            "GET Rankings data for a tour calendar according to a (mandatory) parameter - and optionally according to either ranking ",
+            "/tennisdata/rankings/{outletAuthKey}?{tourCalendarUuid}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tour calendar UUID",
+            "Get rankings information for a single tour calendar by passing the tour calendar UUID as a path parameter (the asset/res"
+          ],
+          [
+            "trcl",
+            "Get rankings information only for the specified tour calendar . Pass the tour calendar UUID to the trcl parameter. GET h"
+          ],
+          [
+            "trcl + type",
+            "Get Rankings information only for the specified ranking type of the tour calendar. In the Rankings feed, we recommend th"
+          ],
+          [
+            "trcl + type + week",
+            "Get Rankings information only for the specified week and ranking type of the tour calendar. In the Rankings feed, to use"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the rankings"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings/tour"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the tour associated with the ranking. Value (XML only): String giving t"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tour"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the tour calendar associated with the ranking. Value (XML only): String"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tour calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Player Career feed (PE2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-player-career.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "PE2"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Player Career feed (PE2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Player Career (PE2) Guide",
+        "Coverage",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "Tier 15",
+            "Tier 12+14",
+            "Tier 4",
+            "Tier 11+13",
+            "Tier 8+9+10",
+            "Tier 6+7",
+            "Tier 5",
+            "Tier 1+2+3"
+          ],
+          [
+            "Updated on any change to player, team, season, season stats, area, competition or transfer",
+            "Updated once in 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET player career information according to specified parameter values",
+            "/tennisdata/playercareer/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET player career information for the specified person UUID only (path parameter/resource ID method)",
+            "/tennisdata/playercareer/{outletAuthKey}/{personUuid}? {queryParameters}"
+          ],
+          [
+            "GET player career information for the specified person UUID & tour calendar UUID",
+            "/tennisdata/playercareer/{outletAuthKey}/{prsn=prsnUUID}& {trcl=trclUUID}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "prsn",
+            "Get player career data for a specific person (a player) by passing the person UUID to the prsn parameter. GET https://ap"
+          ],
+          [
+            "{personUuid} (path parameter)",
+            "Get player career data for a specific person (a player) by passing the person UUID to the prsn parameter. GET https://ap"
+          ],
+          [
+            "prsn & trcl",
+            "Get player career data for a specific person (a player) by passing the person UUID and tour calendar UUID. GET https://a"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to Player Career"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "xmlns:tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "playerCareer/person"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a person"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of a person/player"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "firstName"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Match feed (MA4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA4"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Match feed (MA4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match (MA4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match information according to specified parameter values",
+            "/tennisdata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match data for the specified fixture UUID (path parameter method) . Pass the fixture UUID in the request URL directl"
+          ],
+          [
+            "mt",
+            "GET match data for the specified fixture UUID (query parameter method) . Pass the fixture UUID to the mt parameter. GET "
+          ],
+          [
+            "trn",
+            "GET match play information for the specified tournament . Pass the tournament UUID to the trn parameter. GET https://api"
+          ],
+          [
+            "ctst",
+            "GET match play information for the specified contestant(s) (across all tournaments and dates). Note: In this feed, this "
+          ],
+          [
+            "ctst + ctst2",
+            "GET match play information between two specified contestants playing head-to-head (across all tournaments and dates). By"
+          ],
+          [
+            "_pgNm + _pgSz",
+            "Get data only in the specified page size and/or page number . All results are returned in pages and these parameters hel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a specific match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match/matchInfo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ],
+          [
+            "Description",
+            "Required . The level of detail in which the match is covered. Possible values: \u2022 0 = Only final set scores available \u2022 1"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Match Events feed (MA3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-events.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA3"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Match Events feed (MA3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Events (MA3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output",
+        "Event Types",
+        "Qualifier Types"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match events information according to specified parameter values",
+            "/tennisdata/matchevent/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match events data for the specified fixture UUID (path parameter method) . Pass the fixture UUID in the request URL "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents"
+          ],
+          [
+            "Description",
+            "Required/Optional. Root element of the related fields for match events (XML only) Note: Not present in JSON/JSONP feed r"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the match information"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchEvents/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Required . Description of the match. Value: string giving the description - for example, the contestant names"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Match Preview (MA8)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-match-preview.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA8"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Match Preview (MA8)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match Preview (MA8) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls (Coming Soon)",
+        "Feed Output",
+        "ID Definitions:"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match preview information according to specified parameter values",
+            "/tennisdata/matchpreview/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "Get match preview information about the specified fixture by passing the fixture/match UUID as a path parameter (the ass"
+          ],
+          [
+            "mt",
+            "Get match preview information about the specified fixture by passing the fixture/match UUID in the mt parameter. GET htt"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchPreview"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchPreview/matchInfo"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ],
+          [
+            "Description",
+            "Required . The level of detail in which the match is covered. Possible values: \u2022 0 = Only final set scores available \u2022 1"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchPreview/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match description. Value: String giving the match description"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Competition Schedule feed (MA0)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-competition-schedule.html",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA0"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Competition Schedule feed (MA0)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Competition Schedule (MA0) guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "Get details on the competition schedule such as court information and order of play",
+            "/tennisdata/competitionschedule/{outletAuthKey}?{queryParameters} or: /tennisdata/competitionschedule/{outletAuthKey}/{c"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp + date",
+            "Get competition schedule information for a specified competition by passing the competition UUID to the comp parameter a"
+          ],
+          [
+            "comp (in path part) + date",
+            "Get competition schedule information for a specified competition by passing the competition UUID in the URL path and the"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "competitionSchedule"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to tournaments"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "lastupdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "competitionSchedule/competition"
+          ],
+          [
+            "Description",
+            "Required. Root element of the fields related to the competition"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the competition"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "areaId"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "competitionSchedule/tournaments"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the tournaments"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataTennis API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/index.htm",
+      "sport": "tennis",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataTennis API Index and User Guide",
+        "Required Compliance:",
+        "Tennis API - Overview",
+        "Tennis API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Tennis API: tennisdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Tennis API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Competition Schedule (MA0) Competition Schedule (MA0) Get details on the competition schedule, such as court information",
+            "/tennisdata/competitionschedule/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Tournament (MA1) Tournament (MA1) Get details of tournaments, such as start and end date, round information, competition",
+            "/tennisdata/tournament/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Stats (MA2) Match Stats (MA2) Get detailed match statistics for each player, including aces, break points won/lost",
+            "/tennisdata/matchstats/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match Events (MA3) Match Events (MA3) Get all events in a game - including the player, team, event, type, time (minute a",
+            "/tennisdata/matchevent/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA4) Match (MA4) Get information about an individual match and its contestants",
+            "/tennisdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match_Detailed (MA4_Detailed) Match_Detailed (MA4_Detailed) Get detailed information about an individual match and its c",
+            "/tennisdata/match/{outletAuthKey}?detailed=yes",
+            "User Guide"
+          ],
+          [
+            "Match Preview (MA8) Match Preview (MA8) Provides match preview data and contains information about previous meetings bet",
+            "/tennisdata/matchpreview/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Tournament Simulations feed (TM11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-tournament-simulations.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "TM11"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Tournament Simulations feed (TM11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET tournament simulations by tournament calendar UUID",
+            "/tennisdata/tournamentsimulations/{outletAuthKey}? trn={tournamentUUID}"
+          ],
+          [
+            "GET tournament simulations by tournament calendar UUID and query parameters ( see the Query parameters below)",
+            "/tennisdata/tournamentsimulations/{outletAuthKey}/ {tournamentUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournament UUID",
+            "GET Tournament Simulations list by passing the as a path parameter (the asset/resource method) in the URL. GET https://a"
+          ],
+          [
+            "trn",
+            "Get Tournament Simulations list for a tournament by the specified tournament UUID . Pass the tournament UUID to the trn "
+          ],
+          [
+            "trn + ctst",
+            "GET Tournament Simulations list by passing contestant UUID (in case of singles) or doubles UUID (in case of doubles) to "
+          ],
+          [
+            "trn + multiple contestant",
+            "GET Tournament Simulations list by passing multiple contestant UUIDs (in case of singles) or doubles UUIDs (in case of d"
+          ],
+          [
+            "trn + date range",
+            "GET Tournament Simulations list by tournament UUID for a given period of time GET https://api.performfeeds.com/ /tennisd"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tournament simulations."
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the associated tournament - returned only when the feed is called by to"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournamentSimulations/tournament/predictions"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to predictions."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the predictions were last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Automated Insights feed (MA23)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-automated-insights.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA23"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Automated Insights feed (MA23)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Automated Insights (MA23) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET automated insights by fixture UUID (path parameter method) and for the specified language/locale",
+            "/tennisdata/matchinsights/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ],
+          [
+            "GET automated insights by fixture UUID (mt query parameter method) and for the specified language/locale",
+            "/tennisdata/matchinsights/{outletAuthKey}?mt={fixtureUuid} &{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "{fixtureUuid} Fixture UUID",
+            "GET match insights for the specified fixture UUID (path parameter method) and locale . Pass the fixture UUID in the requ"
+          ],
+          [
+            "mt",
+            "GET match insights for the specified fixture UUID (query parameter method) . Pass the fixture UUID to the mt parameter. "
+          ],
+          [
+            "state (optional)",
+            "GET match insights by the specified state . The three states that can be passed to this query parameter are live , post "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchInsights"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the automated insight information. Note: Not present in JSON"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchInsights/matchInfo"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the match information (matchInfo)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the fixture/match"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "coverageLevel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matchInsights/matchInfo/description"
+          ],
+          [
+            "Description",
+            "Optional . Description of the match (the fixture). Value: String giving the description - for example, the contestant na"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Tournament feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-tournament.htm",
+      "sport": "tennis",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Tournament feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information for a single tournament, a competition, or all tournaments in a specified Tour Calendar, according to th",
+            "/tennisdata/tournament/{outletAuthKey}?{queryParameters} or: /tennisdata/tournament/{outletAuthKey}/{tournamentUuid}? {q"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournament UUID",
+            "Get detailed information for a single tournament by passing the tournament UUID as a path parameter (the asset/resource "
+          ],
+          [
+            "trn",
+            "Get information for a single tournament by passing the tournament UUID to the trn query parameter (the query parameter m"
+          ],
+          [
+            "trcl",
+            "Get information for a list of tournaments in the specified tour calendar by tour calendar UUID. GET https://api.performf"
+          ],
+          [
+            "comp",
+            "Get tour calendar information for a specified competition . Pass the competition UUID to the comp parameter. GET https:/"
+          ],
+          [
+            "trnDt + trcl (tournament date)",
+            "Get information for a list of tournaments within the specified t our calendar and date range . Pass the date range (in t"
+          ],
+          [
+            "trnDt + tr",
+            "Get information for a list of tournaments for the specified tour and date range . Pass the date range (in the format YYY"
+          ],
+          [
+            "_ordSrt",
+            "Get data, such as tournament calendars, sorted according to their date/time in either date ascending (oldest first) or d"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to tournaments (XML only) Note: Not present in JSON feed respon"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a single tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament/tours"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tours"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Tennis API- Prize Money feed (PE11)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-prize-money.html",
+      "sport": "tennis",
+      "feed_codes": [
+        "PE11"
+      ],
+      "headings": [
+        "Sports Data Tennis API- Prize Money feed (PE11)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Prize Money (PE11) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET Prize Money data for a tour calendar by passing the tour calendar UUID (path parameter/resource ID) in the URL.",
+            "/tennisdata/prizemoney/{outletAuthKey}/{tourCalendarUUID}& {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tourcalendar UUID",
+            "Get Prize Money list for a single tour calendar by passing the tour calendar UUID as a path parameter (the asset/resourc"
+          ],
+          [
+            "trcl",
+            "Get Prize Money information only for the specified tour calendar by passing the tour calendar UUID to the trcl parameter"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "prizeMoney"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to prize money (XML only)."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:tennisdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "prizeMoney/tour"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tour details."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tour"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "prizeMoney/tourCalendar"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to tour calendar details."
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tour calendar"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "startDate"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataTennis API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/tennis/opta-sdapi-tennis-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Score",
+          "Delivers game score per set per match (not point-by point)"
+        ],
+        [
+          "Player Stats",
+          "Box Score tennis data (service, return and points stats)"
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Results (A)",
+          "Score",
+          "",
+          "Different intervals"
+        ],
+        [
+          "2",
+          "Results (A)",
+          "Player Stats",
+          "Post-match results and player stats",
+          "Different intervals"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results (L)",
+          "Score",
+          "Live game by game updates",
+          "Live"
+        ],
+        [
+          "5",
+          "Results (L)",
+          "Player Stats",
+          "Live game by game updates Post-match player stats",
+          "Live Stats Post-match: 2 hours"
+        ],
+        [
+          "Player Stats (A)"
+        ],
+        [
+          "8",
+          "Results (L)",
+          "Umpire Feed - live scores and player stats",
+          "Live point-by-point and player stats updates",
+          "Live"
+        ],
+        [
+          "Player Stats (L)"
+        ],
+        [
+          "Fast Data"
+        ],
+        [
+          "Fast 1",
+          "Results (L)",
+          "Live scores and player stats",
+          "Live point-by-point and player stats updates",
+          "Live"
+        ],
+        [
+          "Player Stats (L)"
+        ]
+      ]
+    ]
+  },
+  "push_feeds": [
+    {
+      "title": "Tennis Feed Specification\u00a0Top Level Feed Overview - Opta's Tennis Offering",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/Top_Level_Feed_Overview_-_Opta_s_Tennis_Offering.htm",
+      "codes": []
+    },
+    {
+      "title": "TAB07 - Tennis Live Scores Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/TAB07_-_Tennis_Live_Match_Feed.htm",
+      "codes": [
+        "TAB07"
+      ]
+    },
+    {
+      "title": "TAB02\u00a0- Tennis Competition Schedule Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/TAB02_-_Tennis_Competition_Schedule_Feed.htm",
+      "codes": [
+        "TAB02"
+      ]
+    },
+    {
+      "title": "TAB15 - Tennis Rankings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/TAB15_-_Tennis_Rankings_Feed.htm",
+      "codes": [
+        "TAB15"
+      ]
+    },
+    {
+      "title": "Tennis Feed Specifications",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/Tennis_Feed_Specifications.htm",
+      "codes": []
+    },
+    {
+      "title": "TAB04 - Tennis Match Preview Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/TAB04_-_Tennis_match_preview_feed.htm",
+      "codes": [
+        "TAB04"
+      ]
+    },
+    {
+      "title": "TAB01 - Tennis Season Schedule Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/TennisFeedSpec/TAB01_-_Tennis_Season_Schedule_Feed.htm",
+      "codes": [
+        "TAB01"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,813 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Beach Soccer",
+  "file": "sp-beach-soccer.json",
+  "openapi": {
+    "title": "SDAPI - Beach Soccer",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/beachsoccerdata",
+    "endpoint_count": 6,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getTournamentCalendarsByParams",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/{type}",
+        "summary": "",
+        "operationId": "getTournamentCalendarsByParams_1",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournamentcalendar/{outletAuthKey}/{type1}/{type2}",
+        "summary": "",
+        "operationId": "getTournamentCalendarsByParams_2",
+        "tags": [
+          "OT2 - Tournament Calendars"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "type1",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "type2",
+            "in": "path",
+            "required": true,
+            "description": "Active or Authorized"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/standings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getStandingsByParams",
+        "tags": [
+          "TM2 - Team Standings"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": true,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getMatchByParams",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getMatch",
+        "tags": [
+          "MA1 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "lineups",
+            "in": "query",
+            "required": false,
+            "description": "Is lineups data"
+          },
+          {
+            "name": "tmcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament calendar"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestant"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "fx",
+            "in": "query",
+            "required": false,
+            "description": "Fixture uuid"
+          },
+          {
+            "name": "stg",
+            "in": "query",
+            "required": false,
+            "description": "Stage"
+          },
+          {
+            "name": "mt.mDt",
+            "in": "query",
+            "required": false,
+            "description": "Match date range. Format: '[YYYY-MM-DDThh:mm:ssZ TO YYYY-MM-DDThh:mm:ssZ]' including brackets"
+          },
+          {
+            "name": "live",
+            "in": "query",
+            "required": false,
+            "description": "Live"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Match status"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Match",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tournament Calendars",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Team Standings",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Beach Soccer API- Match feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/beachsoccer/opta-sdapi-beachsoccer-api-match.htm",
+      "sport": "beachsoccer",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Beach Soccer API- Match feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "On any update on match time, date, teams, competition, round, or season",
+            "For fixtures: once per 24 hours For a live match or match series: once every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a list of matches according to specified parameter values (e.g. competition)",
+            "/beachsoccerdata/match/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET detailed information for a specific fixture",
+            "/beachsoccerdata/match/{outletAuthKey}/{fixtureUuid}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixture/match UUID",
+            "Get detailed information about one fixture by passing the fixture/match UUID as a path parameter (the asset/resource) in"
+          ],
+          [
+            "mt.mDt",
+            "Get fixtures and results only for the specified date range - the maximum span of the date range is one year. Pass the da"
+          ],
+          [
+            "comp",
+            "Get information about matches only for a specific competition . Pass the competition UUID to the comp parameter. GET htt"
+          ],
+          [
+            "tmcl",
+            "Get information about matches only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl"
+          ],
+          [
+            "comp + mt.mDt",
+            "Get fixtures and results only for the specified competition across all competitions in a specified date range - the maxi"
+          ],
+          [
+            "stg",
+            "Get information about fixtures and results only for a specific stage of a tournament calendar . Pass the stage UUID to t"
+          ],
+          [
+            "live",
+            "Get only live data (such as score, goals, cards, and more) for fixtures. If there is no live data available, then an emp"
+          ]
+        ],
+        [
+          [
+            "Parameter",
+            "Live Access",
+            "Basic Access",
+            "Match Status"
+          ],
+          [
+            "live=yes",
+            "matchInfo + liveData",
+            "10313",
+            "During Live Match"
+          ],
+          [
+            "live=no",
+            "matchInfo",
+            "matchInfo",
+            "During Live Match"
+          ],
+          [
+            "Parameter not provided",
+            "matchInfo + liveData",
+            "matchInfo + liveData",
+            "Post Match Only"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required/Optional . Root element of the fields related to matches (XML only)."
+          ],
+          [
+            "Attributes list is empty. JSON/JSONP: This element is not returned for any calls - the first element is either match or "
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Beach Soccer API- Team Standings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/beachsoccer/opta-sdapi-beachsoccer-api-team-standings.htm",
+      "sport": "beachsoccer",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Beach Soccer API- Team Standings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Team Standings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "On any update to a tournament calendar (season), competition, match status/result",
+            "No more frequently than one URL poll every 30 seconds"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET team standings data according to specified parameter values",
+            "/beachsoccerdata/standings/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tmcl",
+            "Get information about matches only for the specified tournament calendar . Pass the tournament calendar UUID to the tmcl"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the team standings information (XML only) Note: Not present in JSON fee"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:beachsoccerdata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference (XML only)"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/beachsoccerdata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "teamStandings/sport"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to the sport. Value (XML only): String giving the sport name"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the sport"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name (JSON only)"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataBeach Soccer API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/beachsoccer/index.htm",
+      "sport": "beachsoccer",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataBeach Soccer API Index and User Guide",
+        "Required Compliance:",
+        "Beach Soccer API - Overview",
+        "Beach Soccer API - Available feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type"
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Beach Soccer API: beachsoccerdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource, in the case of the Beach Soccer API. For example: standings"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament Calendars (OT2) Tournament Calendars (OT2) Get basic information about the tournament calendars - the individ",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA1) Match (MA1) Provide a comprehensive fixture list, including match details such as date, kick-off time, conte",
+            "/beachsoccerdata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Team Standings (TM2) Team Standings (TM2) Provides data to create a league table - position, points, matches won/lost/dr",
+            "/beachsoccerdata/standings/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Beach Soccer API- Tournament Calendars\u00a0feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/beachsoccer/opta-sdapi-beachsoccer-api-tournament-calendars.htm",
+      "sport": "beachsoccer",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Beach Soccer API- Tournament Calendars\u00a0feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament Calendars (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Endpoints",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Updated",
+            "Polling frequency"
+          ],
+          [
+            "On any update on seasons, contestants, stages",
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tournament Calendars",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET an individual Tournament Calendar by tournament calendar UUID",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}? {tournamentCalendarUuid}"
+          ],
+          [
+            "GET Tournament Calendar information according to specified parameter values",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "comp",
+            "Get tournament calendar information only for the specified competition . Pass the competition UUID to the comp parameter"
+          ],
+          [
+            "ctst",
+            "Get tournament calendar information only for the specified contestant (the opposition in a fixture, such as a sports tea"
+          ],
+          [
+            "stages",
+            "Get or exclude the following stages , series , and standings information of a tournament calendar: All stages including "
+          ]
+        ],
+        [
+          [
+            "GET the active (usually the current/most recent) tournament calendars only.",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}/ active"
+          ],
+          [
+            "GET authorized tournament calendars only (those you have access to view).",
+            "/beachsoccerdata/tournamentcalendar/{outletAuthKey}/ authorized"
+          ]
+        ],
+        [
+          [
+            "Endpoint + Query parameter",
+            "Value and description"
+          ],
+          [
+            "/active + comp",
+            "Get the active (usually the current/most recent) tournament calendars only for the specified competition UUID . GET http"
+          ],
+          [
+            "/active + ctst",
+            "Get the active (usually the current/most recent) tournament calendars only for the specified contestant UUID . GET https"
+          ],
+          [
+            "/authorized + comp",
+            "Get the authorized tournament calendars only for the specified competition UUID . Pass the competition UUID to the comp "
+          ],
+          [
+            "/authorized + ctst",
+            "Get Tournament Calendar information for the specified contestant only (the opposition in a fixture, such as a sports tea"
+          ],
+          [
+            "/authorized + ctst + comp",
+            "Get Tournament Calendar information for the specified contestant only (the opposition in a fixture, such as a sports tea"
+          ]
+        ]
+      ]
+    }
+  ]
+}

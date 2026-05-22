@@ -1,0 +1,910 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Badminton",
+  "file": "sp-badminton.json",
+  "openapi": {
+    "title": "SDAPI - Badminton",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/badmintondata",
+    "endpoint_count": 8,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trcl",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid(s)"
+          },
+          {
+            "name": "trnDt",
+            "in": "query",
+            "required": false,
+            "description": "Tournament date range"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "_ordSrt",
+            "in": "query",
+            "required": false,
+            "description": "Order type"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tournament/{outletAuthKey}/{tournamentUuid}",
+        "summary": "",
+        "operationId": "getByMatchId",
+        "tags": [
+          "MA1 - Tournament"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "tournamentUuid",
+            "in": "path",
+            "required": true,
+            "description": ""
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getAll",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuth",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/tourcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActive",
+        "tags": [
+          "OT2 - Tour Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}",
+        "summary": "",
+        "operationId": "get_1",
+        "tags": [
+          "MA4 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "trn",
+            "in": "query",
+            "required": false,
+            "description": "Tournament uuid"
+          },
+          {
+            "name": "mt",
+            "in": "query",
+            "required": false,
+            "description": "Match uuid"
+          },
+          {
+            "name": "ctst2",
+            "in": "query",
+            "required": false,
+            "description": "Second Contestants"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "ctst",
+            "in": "query",
+            "required": false,
+            "description": "Contestants"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/match/{outletAuthKey}/{matchUuid}",
+        "summary": "",
+        "operationId": "getByMatchId_1",
+        "tags": [
+          "MA4 - Match"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "matchUuid",
+            "in": "path",
+            "required": true,
+            "description": "Fixture/match uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Tournament",
+        "description": ""
+      },
+      {
+        "name": "MA4 - Match",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Tour Calendar",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Badminton API- Tour Calendar feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/opta-sdapi-badminton-api-tour-calendar.htm",
+      "sport": "badminton",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Badminton API- Tour Calendar feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How often should I poll the feed?",
+        "Tour Calendar (OT2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET a list of Tour Calendars",
+            "/badmintondata/tourcalendar/{outletAuthKey}"
+          ],
+          [
+            "GET a list of active Tour Calendars according to specified parameter values",
+            "/badmintondata/tourcalendar/{outletAuthKey}/active? {queryParameters}"
+          ],
+          [
+            "GET a list of authorized Tour Calendars according to specified parameter values",
+            "/badmintondata/tourcalendar/{outletAuthKey}/authorized? {queryParameters}"
+          ],
+          [
+            "GET a list of active and authorized Tour Calendars according to specified parameter values",
+            "/badmintondata/tourcalendar/{outletAuthKey}/active/ authorized?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Endpoint",
+            "Description"
+          ],
+          [
+            "/active",
+            "Get a list of only the active tour calendars (usually the current/most recent). GET https://api.performfeeds.com/badmint"
+          ],
+          [
+            "/authorized",
+            "Get a list of only the authorized tour calendars (those that you have access to view). GET https://api.performfeeds.com/"
+          ],
+          [
+            "/active + /authorized",
+            "Get a list of only the active and authorized tour calendars. GET https://api.performfeeds.com/badmintondata/tourcalendar"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for the tour calendars"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:badmintondata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/badmintondata"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tourCalendars/tour"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the related fields for a tour"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) for the tour"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "tourName"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataBadminton API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/opta-sdapi-badminton-api-coverage-tiers.htm",
+      "sport": "badminton",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataBadminton API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Results",
+            "Delivers game score with point-by point updates"
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Event Data"
+          ],
+          [
+            "4",
+            "Results (L)",
+            "Score",
+            "Point by point updates with current server denoted",
+            "Live"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Badminton API- Tournament feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/opta-sdapi-badminton-api-tournament.html",
+      "sport": "badminton",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Badminton API- Tournament feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Tournament (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every hour"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information for a single tournament, a competition, or all tournaments in a specified Tour Calendar, according to th",
+            "/badmintondata/tournament/{outletAuthKey}?{queryParameters} or: /badmintondata/tournament/{outletAuthKey}/{tournamentUui"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "tournament UUID",
+            "Get detailed information for a single tournament by passing the tournament UUID as a path parameter (the asset/resource "
+          ],
+          [
+            "trn",
+            "Get information for a single tournament by passing the tournament UUID to the trn query parameter (the query parameter m"
+          ],
+          [
+            "trcl",
+            "Get information for a list of tournaments in the specified Tour Calendar by tour calendar UUID. GET https://api.performf"
+          ],
+          [
+            "comp",
+            "Get tour calendar information for a specified competition . Pass the competition UUID to the comp parameter. GET https:/"
+          ],
+          [
+            "trnDt + trcl (tournament date)",
+            "Get information for a list of tournaments within the specified Tour Calendar and date range . Pass the date range (in th"
+          ],
+          [
+            "trnDt + tr",
+            "Get information for a list of tournaments for the specified tour and date range . Pass the date range (in the format YYY"
+          ],
+          [
+            "_ordSrt",
+            "Get data, such as tournament calendars, sorted according to their date/time in either date ascending (oldest first) or d"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to tournaments (XML only) Note: Not present in JSON feed respon"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:badmintondata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/badmintondata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "tournaments/tournament"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a single tournament"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the tournament"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataBadminton API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/index.html",
+      "sport": "badminton",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataBadminton API Index and User Guide",
+        "Required Compliance:",
+        "Badminton API - Overview",
+        "Badminton API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "http is the default request type; https is also available."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Badminton API: Badmintondata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Badminton API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Tournament (MA1) Tournament (MA1) Get details of tournaments, such as start and end date, round information, competition",
+            "/badmintondata/tournament/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Match (MA4) Match (MA4) Get information about an individual match and its contestants",
+            "/badmintondata/match/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Tour Calendar (OT2) Tour Calendar (OT2) Get information for different Badminton tour calendars, such as dates and IDs, g",
+            "/badmintondata/tourcalendar/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Badminton API- Match feed (MA4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/opta-sdapi-badminton-api-match.htm",
+      "sport": "badminton",
+      "feed_codes": [
+        "MA4"
+      ],
+      "headings": [
+        "Sports Data Badminton API- Match feed (MA4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Match (MA4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "One call per fixture UUID every 30 seconds (Live)"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET match information according to specified parameter values",
+            "/badmintondata/match/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "fixtureUuid Fixture UUID",
+            "GET match data for the specified fixture UUID (path parameter method) . Pass the fixture UUID in the request URL directl"
+          ],
+          [
+            "mt",
+            "GET match data for the specified fixture UUID (query parameter method) . Pass the fixture UUID to the mt parameter. GET "
+          ],
+          [
+            "trn",
+            "GET match play information for the specified tournament . Pass the tournament UUID to the trn parameter. GET https://api"
+          ],
+          [
+            "ctst",
+            "GET match play information for the specified contestant(s) (across all tournaments and dates). Note: In this feed, this "
+          ],
+          [
+            "ctst + ctst2",
+            "GET match play information between two specified contestants playing head-to-head (across all tournaments and dates). By"
+          ],
+          [
+            "_pgNm + _pgSz",
+            "Get data only in the specified page size and/or page number . All results are returned in pages and these parameters hel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to matches (XML only) Note: Not present in JSON feed response, "
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute (XML only)",
+            "xmlns:badmintondata"
+          ],
+          [
+            "Description",
+            "Required . Schema reference - returned for XML only"
+          ],
+          [
+            "Values",
+            "http://www.performgroup.com/schema/badmintondata"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "matches/match"
+          ],
+          [
+            "Description",
+            "Required . Root element of the fields related to a specific match"
+          ],
+          [
+            "Attributes list is empty"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataBadminton API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/badminton/opta-sdapi-badminton-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Results",
+          "Delivers game score with point-by point updates"
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "Results (L)",
+          "Score",
+          "Point by point updates with current server denoted",
+          "Live"
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,1682 @@
+{
+  "provider": "Stats Perform",
+  "sport": "Motorsport",
+  "file": "sp-motorsport.json",
+  "openapi": {
+    "title": "SDAPI - Motorsports",
+    "version": "v1",
+    "description": "",
+    "base_url": "https://api.performfeeds.com/motorsportdata",
+    "endpoint_count": 11,
+    "endpoints": [
+      {
+        "method": "GET",
+        "path": "/sessions/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getSessionsResults",
+        "tags": [
+          "MA2 - Sessions"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "rc",
+            "in": "query",
+            "required": false,
+            "description": "Race uuid"
+          },
+          {
+            "name": "ssn",
+            "in": "query",
+            "required": false,
+            "description": "Session uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/rankings/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getRankings",
+        "tags": [
+          "TM2 - Rankings"
+        ],
+        "parameters": [
+          {
+            "name": "chcl",
+            "in": "query",
+            "required": true,
+            "description": "Championship calendar uuid"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "description": "Ranking type"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/race/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getRaces",
+        "tags": [
+          "MA1 - Races"
+        ],
+        "parameters": [
+          {
+            "name": "rc",
+            "in": "query",
+            "required": false,
+            "description": "Race uuid"
+          },
+          {
+            "name": "chcl",
+            "in": "query",
+            "required": false,
+            "description": "Championship calendar uuid"
+          },
+          {
+            "name": "rcDt",
+            "in": "query",
+            "required": false,
+            "description": "Date range"
+          },
+          {
+            "name": "comp",
+            "in": "query",
+            "required": false,
+            "description": "Competition"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/race/{outletAuthKey}/{raceUuid}",
+        "summary": "",
+        "operationId": "getRaceById",
+        "tags": [
+          "MA1 - Races"
+        ],
+        "parameters": [
+          {
+            "name": "raceUuid",
+            "in": "path",
+            "required": true,
+            "description": "Race uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/lapbylap/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getLapByLap",
+        "tags": [
+          "MA3 - Lap by Lap"
+        ],
+        "parameters": [
+          {
+            "name": "rc",
+            "in": "query",
+            "required": false,
+            "description": "Race uuid"
+          },
+          {
+            "name": "ssn",
+            "in": "query",
+            "required": false,
+            "description": "Session uuid"
+          },
+          {
+            "name": "prsn",
+            "in": "query",
+            "required": false,
+            "description": "Person uuid"
+          },
+          {
+            "name": "_pgSz",
+            "in": "query",
+            "required": false,
+            "description": "Page size"
+          },
+          {
+            "name": "_pgNm",
+            "in": "query",
+            "required": false,
+            "description": "Page number"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/grid/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getGrid",
+        "tags": [
+          "MA4 - Grid"
+        ],
+        "parameters": [
+          {
+            "name": "rc",
+            "in": "query",
+            "required": false,
+            "description": "Race uuid"
+          },
+          {
+            "name": "ssn",
+            "in": "query",
+            "required": false,
+            "description": "Session uuid"
+          },
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/competitors/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getCompetitors",
+        "tags": [
+          "TM3 - Competitors"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "rc",
+            "in": "query",
+            "required": false,
+            "description": "Race uuid"
+          },
+          {
+            "name": "tm",
+            "in": "query",
+            "required": false,
+            "description": "Team uuid"
+          },
+          {
+            "name": "chcl",
+            "in": "query",
+            "required": false,
+            "description": "Championship calendar uuid"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/championshipcalendar/{outletAuthKey}",
+        "summary": "",
+        "operationId": "getChampionschipCalendars",
+        "tags": [
+          "OT2 - Championship Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/championshipcalendar/{outletAuthKey}/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedChampionschipCalendars",
+        "tags": [
+          "OT2 - Championship Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/championshipcalendar/{outletAuthKey}/active",
+        "summary": "",
+        "operationId": "getActiveChampionschipCalendars",
+        "tags": [
+          "OT2 - Championship Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      },
+      {
+        "method": "GET",
+        "path": "/championshipcalendar/{outletAuthKey}/active/authorized",
+        "summary": "",
+        "operationId": "getAuthorizedActiveChampionschipCalendars",
+        "tags": [
+          "OT2 - Championship Calendar"
+        ],
+        "parameters": [
+          {
+            "name": "outletAuthKey",
+            "in": "path",
+            "required": true,
+            "description": "Outlet auth key"
+          },
+          {
+            "name": "_fmt",
+            "in": "query",
+            "required": true,
+            "description": "Format"
+          },
+          {
+            "name": "_rt",
+            "in": "query",
+            "required": true,
+            "description": "Mode"
+          },
+          {
+            "name": "_clbk",
+            "in": "query",
+            "required": false,
+            "description": "JSONP callback function"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      {
+        "name": "MA1 - Races",
+        "description": ""
+      },
+      {
+        "name": "MA2 - Sessions",
+        "description": ""
+      },
+      {
+        "name": "MA3 - Lap by Lap",
+        "description": ""
+      },
+      {
+        "name": "MA4 - Grid",
+        "description": ""
+      },
+      {
+        "name": "OT2 - Championship Calendar",
+        "description": ""
+      },
+      {
+        "name": "TM2 - Rankings",
+        "description": ""
+      },
+      {
+        "name": "TM3 - Competitors",
+        "description": ""
+      }
+    ]
+  },
+  "sdapi_pages": [
+    {
+      "title": "Sports Data Motorsport API- Championship Calendar feed (OT2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-championship-calendars.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "OT2"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Championship Calendar feed (OT2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Championship Calendar guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Once every 24 hours"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information about active and previous championship calendars",
+            "/motorsportdata/championshipcalendar/{outletAuthKey}?{queryParameters}"
+          ],
+          [
+            "GET information about active championship calendars",
+            "/motorsportdata/championshipcalendar/{outletAuthKey}/active? {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "active",
+            "GET information about only active (current) championship calendars . GET https://api.performfeeds.com/motorsportdata/cha"
+          ],
+          [
+            "authorized",
+            "GET information about only active (current) championship calendars which you are authorized to view/subscribed to. GET h"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "championshipCalendars"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the championship calendar/s (XML only) Note: The grid elemen"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "championshipCalendars/championship"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a championship"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the championship"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "championshipName"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Motorsport API- Races feed (MA1)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-races.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "MA1"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Races feed (MA1)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Races (MA1) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 5+13",
+            "Tier 1+3"
+          ],
+          [
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "One poll ~12-24 hours from each the end of each game (it can vary)"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information for a single race",
+            "/motorsportdata/race/{outletAuthKey}/{raceUuid}? {queryParameters}"
+          ],
+          [
+            "GET information for a single race",
+            "/motorsportdata/race/{outletAuthKey}?rc={raceUuid}& {queryParameters}"
+          ],
+          [
+            "GET information for races according to the specified parameters (championship calendar, competition, race date/time)",
+            "/motorsportdata/race/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "Race UUID",
+            "GET detailed information about a race by passing the race UUID as a path parameter in the URL. GET https://api.performfe"
+          ],
+          [
+            "rc",
+            "GET detailed information about a race by passing the race UUID to the rc parameter. GET https://api.performfeeds.com/mot"
+          ],
+          [
+            "chcl",
+            "GET information about races only for the specified championship calendar . Pass the championship calendar UUID to the ch"
+          ],
+          [
+            "comp",
+            "GET information about races in a specific competition . Pass the competition UUID to the comp parameter. GET https://api"
+          ],
+          [
+            "rcdt + chcl",
+            "GET information about races only for the specified championship calendar in given date range . Pass the tournament calen"
+          ],
+          [
+            "_pgNm + _pgSz",
+            "GET data only in the specified page size and/or page number . All results are returned in pages and these parameters hel"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "races"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the races (XML only) Note: The races element name is not pre"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ],
+          [
+            ""
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "races/race"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a race"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the race"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataMotorsport API - Coverage Tiers and Types",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-coverage-tiers.htm",
+      "sport": "motorsports",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataMotorsport API - Coverage Tiers and Types",
+        "Coverage Types And Definitions",
+        "Coverage Tiers In Detail"
+      ],
+      "tables": [
+        [
+          [
+            "Key Coverage Type",
+            "Description"
+          ],
+          [
+            "Race Results",
+            "Time, laps, Points, DNF/DNQ and final position of Race Session (In NASCAR only the top driver result is added.)"
+          ],
+          [
+            "Practise Results",
+            "Time, laps and final position of Practice. This includes the warm up results for Moto 2, Moto 3 and Moto GP"
+          ],
+          [
+            "Qualifying results",
+            "Time, laps, DNF/DNQ and final position of Qualifying Sessions"
+          ],
+          [
+            "Grid Positions",
+            "Starting grid position of Race Sessions"
+          ]
+        ],
+        [
+          [
+            "Coverage Tier",
+            "Coverage Type",
+            "Description",
+            "Comments",
+            "Timing"
+          ],
+          [
+            "Post-Match Data"
+          ],
+          [
+            "1",
+            "Race Results (A)",
+            "Race Results",
+            "",
+            "Different intervals"
+          ],
+          [
+            "2",
+            "Race Results (A)",
+            "Grid positions (After Race)",
+            "",
+            "Different intervals"
+          ],
+          [
+            "Grid Positions (A)"
+          ],
+          [
+            "3",
+            "Race Results (A)",
+            "Grid positions (Before Race)",
+            "",
+            "Different intervals"
+          ],
+          [
+            "Grid Positions (B)"
+          ],
+          [
+            "Event Data"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Motorsport API- Sessions feed (MA2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-sessions.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "MA2"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Sessions feed (MA2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Sessions (MA2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 10+12",
+            "Tier 8+9"
+          ],
+          [
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO",
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information queried by a specific race or session",
+            "/motorsportdata/sessions/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "rc",
+            "GET information queried by a specific race . Value: race UUID GET https://api.performfeeds.com/motorsportdata/sessions/{"
+          ],
+          [
+            "ssn",
+            "GET information queried by a specific session . Value: session UUID GET https://api.performfeeds.com/motorsportdata/sess"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "sessionsResults"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the sessions (XML only) Note: The sessionsResults element na"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "sessionsResults/race"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a race"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the race"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Motorsport API- Grid feed (MA4)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-grid.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "MA4"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Grid feed (MA4)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Grid (MA4) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 10+12"
+          ],
+          [
+            "No more frequently than one URL poll every 30 seconds for range: <KO - 1h; KO + 4h> Up to 1-hour interval for range: <KO"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET detailed information for a single race",
+            "/motorsportdata/grid/{outletAuthKey}?{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "rc",
+            "GET starting grid information about a race . Pass the race UUID to the rc parameter. GET https://api.performfeeds.com/mo"
+          ],
+          [
+            "ssn",
+            "GET starting grid information about a session . Pass the session UUID to the ssn parameter. GET https://api.performfeeds"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "grid"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to a grid (XML only) Note: The grid element name is not present"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "grid/race"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a race"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the race"
+          ],
+          [
+            "Values",
+            "String ( Alphanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Motorsport API- Competitors feed (TM3)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-competitors.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "TM3"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Competitors feed (TM3)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Competitors (TM3) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 1+3",
+            "Tier 5+12"
+          ],
+          [
+            "Once every 24 hours",
+            "Once every hour"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET information filtered by a race",
+            "/motorsportdata/competitors/{outletAuthKey}? rc={raceUuid} &{queryParameters}"
+          ],
+          [
+            "GET information filtered by a team",
+            "/motorsportdata/competitors/{outletAuthKey}? tm={teamUuid} &{queryParameters}"
+          ],
+          [
+            "GET information filtered by a championship calendar",
+            "/motorsportdata/competitors/{outletAuthKey}? chcl={championshipCalendarUuid} & {queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "rc",
+            "GET competitor information based on the specified race , including teams and drivers for all races. Value: race UUID GET"
+          ],
+          [
+            "tm",
+            "GET competitor information based on the specified team , including current drivers for the team. Value: team UUID GET ht"
+          ],
+          [
+            "chcl",
+            "GET competitor information based on the specified championship calendar , including all the teams and drivers that have "
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "competitors"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the competitors (XML only) Note: The competitors element nam"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "competitors/team"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a team"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the team"
+          ],
+          [
+            "Values",
+            "String (Alphanumeric - UUID)"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports DataMotorsport API Index and User Guide",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/index.htm",
+      "sport": "motorsports",
+      "feed_codes": [],
+      "headings": [
+        "Sports DataMotorsport API Index and User Guide",
+        "Required Compliance:",
+        "Motorsport API - Overview",
+        "Motorsport API - Available Feeds"
+      ],
+      "tables": [
+        [
+          [
+            "Element",
+            "Definition"
+          ],
+          [
+            "{protocol}",
+            "https is the default request type."
+          ],
+          [
+            "{requestDomain}",
+            "Request domain to access the Sports Data API. For most clients, this is the default: api.performfeeds.com Use the defaul"
+          ],
+          [
+            "{feedResource}",
+            "Resource of the Sports Data API. In this case, the Motorsport API: motorsportdata"
+          ],
+          [
+            "{feedName}",
+            "Feed name of the resource in the Motorsport API. For example: squads"
+          ],
+          [
+            "{outletAuthKey}",
+            "Outlet Authentication Key . A unique 26-character alphanumeric UUID which is unique to each outlet. Any requests made wi"
+          ],
+          [
+            "{queryParameters}",
+            "Query parameters . There are required and optional parameters. Optional parameters can help you to search the feed and c"
+          ]
+        ],
+        [
+          [
+            "Feed",
+            "Endpoint",
+            "Reference"
+          ],
+          [
+            "Races (MA1) Races (MA1) Get information about the race, including the circuit, competition, championship calendar, and t",
+            "/motorsportdata/race/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Sessions (MA2) Sessions (MA2) Get information about a session, including start/end date and time, status, result, and pa",
+            "/motorsportdata/sessions/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Grid (MA4) Grid (MA4) Get grid information for a race, including driver and team details",
+            "/motorsportdata/grid/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Championship Calendars (OT2) Championship Calendars (OT2) Get basic information about previous and active championship c",
+            "/motorsportdata/championshipcalendar/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Rankings (TM2) Rankings (TM2) Get rankings information for teams and drivers in a championship",
+            "/motorsportdata/rankings/{outletAuthKey}",
+            "User Guide"
+          ],
+          [
+            "Competitors (TM3) Competitors (TM3) Get information about the competitors in either a specified race, team, or champions",
+            "/motorsportdata/competitors/{outletAuthKey}",
+            "User Guide"
+          ]
+        ]
+      ]
+    },
+    {
+      "title": "Sports Data Motorsport API- Rankings feed (TM2)",
+      "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-rankings.htm",
+      "sport": "motorsports",
+      "feed_codes": [
+        "TM2"
+      ],
+      "headings": [
+        "Sports Data Motorsport API- Rankings feed (TM2)",
+        "Overview",
+        "Required Compliance:",
+        "How Often Should I Poll The Feed?",
+        "Rankings (TM2) Guide",
+        "Query Parameters And Example Request Parameters",
+        "Sample Calls",
+        "Feed Output"
+      ],
+      "tables": [
+        [
+          [
+            "Polling frequency"
+          ],
+          [
+            "Tier 1+3",
+            "Tier 7+12"
+          ],
+          [
+            "No more frequently than one URL poll every 10 minutes for range: <KO + 2h; KO + 14h> Poll twice daily outside of above t",
+            "No more frequently than one URL poll every 30 seconds for range: <KO + 0h; KO + 3h> Up to 1-hour interval for range: <KO"
+          ]
+        ],
+        [
+          [
+            "Usage",
+            "Feed"
+          ],
+          [
+            "GET rankings information according to championship calendar",
+            "/motorsportdata/rankings/{outletAuthKey}? chcl={championshipCalendarUuid}&{queryParameters}"
+          ],
+          [
+            "GET rankings information according to championship calendar and type",
+            "/motorsportdata/rankings/{outletAuthKey}? chcl={championshipCalendarUuid}&type={type}&{queryParameters}"
+          ]
+        ],
+        [
+          [
+            "Query parameter",
+            "Value and description"
+          ],
+          [
+            "chcl",
+            "GET rankings information according to championship calendar . Values: Pass the championship calendar UUID to the chcl pa"
+          ],
+          [
+            "chcl + type",
+            "GET rankings information according to championship calendar and type . Values: Pass the championship calendar UUID to th"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings"
+          ],
+          [
+            "Description",
+            "Required / Optional . Root element of the fields related to the rankings (XML only) Note: The rankings element name is n"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "lastUpdated"
+          ],
+          [
+            "Description",
+            "Required . The UTC date and time (timestamp) of when the feed information/record was last updated"
+          ],
+          [
+            "Values",
+            "Date/Time - in the format: YYYY-MM-DDThh:mm:ssZ"
+          ],
+          [
+            ""
+          ],
+          [
+            "Only present in XML (not JSON)"
+          ]
+        ],
+        [
+          [
+            "Nesting",
+            "rankings/championship"
+          ],
+          [
+            "Description",
+            "Required . Root element of the related fields for a championship"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "id"
+          ],
+          [
+            "Description",
+            "Required . Unique ID (UUID) of the championship"
+          ],
+          [
+            "Values",
+            "String ( Alpanumeric - UUID )"
+          ],
+          [
+            ""
+          ],
+          [
+            "Attribute",
+            "name"
+          ]
+        ]
+      ]
+    }
+  ],
+  "coverage_tiers": {
+    "title": "Sports DataMotorsport API - Coverage Tiers and Types",
+    "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/motorsports/opta-sdapi-motorsport-api-coverage-tiers.htm",
+    "tables": [
+      [
+        [
+          "Key Coverage Type",
+          "Description"
+        ],
+        [
+          "Race Results",
+          "Time, laps, Points, DNF/DNQ and final position of Race Session (In NASCAR only the top driver result is added.)"
+        ],
+        [
+          "Practise Results",
+          "Time, laps and final position of Practice. This includes the warm up results for Moto 2, Moto 3 and Moto GP"
+        ],
+        [
+          "Qualifying results",
+          "Time, laps, DNF/DNQ and final position of Qualifying Sessions"
+        ],
+        [
+          "Grid Positions",
+          "Starting grid position of Race Sessions"
+        ]
+      ],
+      [
+        [
+          "Coverage Tier",
+          "Coverage Type",
+          "Description",
+          "Comments",
+          "Timing"
+        ],
+        [
+          "Post-Match Data"
+        ],
+        [
+          "1",
+          "Race Results (A)",
+          "Race Results",
+          "",
+          "Different intervals"
+        ],
+        [
+          "2",
+          "Race Results (A)",
+          "Grid positions (After Race)",
+          "",
+          "Different intervals"
+        ],
+        [
+          "Grid Positions (A)"
+        ],
+        [
+          "3",
+          "Race Results (A)",
+          "Grid positions (Before Race)",
+          "",
+          "Different intervals"
+        ],
+        [
+          "Grid Positions (B)"
+        ],
+        [
+          "Event Data"
+        ],
+        [
+          "4",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "5",
+          "Race Results (L)",
+          "Live Race and Qualification & Grid Positions",
+          "Race and Qualifying Lap by Lap Live",
+          "Lap by Lap"
+        ],
+        [
+          "Qualifying Results (L)"
+        ],
+        [
+          "Grid Positions (B)"
+        ],
+        [
+          "6",
+          "Race Results (A)",
+          "Post-match Qualifying, Practise and Race Results + Grid Positions",
+          "",
+          "Different intervals"
+        ],
+        [
+          "Practice Results (A)"
+        ],
+        [
+          "Qualifying Results (A)"
+        ],
+        [
+          "Grid Positions (A)"
+        ],
+        [
+          "7",
+          "Race Results (L)",
+          "Live Delayed Race Results, Grid Positions. Post-Match Practise & Qualifying Results",
+          "Only the Race Live Delayed",
+          "Every 2/3 laps"
+        ],
+        [
+          "Practice Results (A)"
+        ],
+        [
+          "Qualifying Results (A)"
+        ],
+        [
+          "Grid Positions (B)"
+        ]
+      ]
+    ]
+  },
+  "push_feeds": [
+    {
+      "title": "MR5 - Team Standings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR5_Team_Standings.htm",
+      "codes": [
+        "MR5"
+      ]
+    },
+    {
+      "title": "MR10 - Teams Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR10_Teams_Specification.htm",
+      "codes": [
+        "MR10"
+      ]
+    },
+    {
+      "title": "MotorsportFeed Specifications",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/Motorsport_Feed_Specifications.htm",
+      "codes": []
+    },
+    {
+      "title": "MR9 - Driver/Teams Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR9_Driver_Teams_Specification.htm",
+      "codes": [
+        "MR9"
+      ]
+    },
+    {
+      "title": "MR2 - Free Practice and Qualifying Overview Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR2_Free_Practice_and_Qualifying_Overview.htm",
+      "codes": [
+        "MR2"
+      ]
+    },
+    {
+      "title": "MR3 - Individual Driver Lap By Lap Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR3_Individual_Driver_Lap_by_Lap_Specification.htm",
+      "codes": [
+        "MR3"
+      ]
+    },
+    {
+      "title": "MR1 Race Overview Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR1_Race_Overview.htm",
+      "codes": [
+        "MR1"
+      ]
+    },
+    {
+      "title": "MR12 - Constructor Standings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR12_Constructor_Standings.htm",
+      "codes": [
+        "MR12"
+      ]
+    },
+    {
+      "title": "MR8 - Grid File Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR8_Grid_File_Specification.htm",
+      "codes": [
+        "MR8"
+      ]
+    },
+    {
+      "title": "MR4 - Driver Standings Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR4_Driver_Standings.htm",
+      "codes": [
+        "MR4"
+      ]
+    },
+    {
+      "title": "MR6 Race Schedule Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR6_Race_Schedule_Specification.htm",
+      "codes": [
+        "MR6"
+      ]
+    },
+    {
+      "title": "MR11 - Drivers Feed",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/MR11_Drivers_Specification.htm",
+      "codes": [
+        "MR11"
+      ]
+    },
+    {
+      "title": "Motorsport\u00a0Feed Overview",
+      "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/MotorsportFeedSpec/Motorsport_Feed_Overview.htm",
+      "codes": []
+    }
+  ]
+}

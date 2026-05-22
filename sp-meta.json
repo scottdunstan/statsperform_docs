@@ -1,0 +1,1564 @@
+{
+  "provider": "Stats Perform",
+  "file": "sp-meta.json",
+  "overview": {
+    "description": "Stats Perform (formerly Opta) provides sports data APIs, push feeds, editorial content, video, and betting stats across all major global sports. APIs require authentication. Two main data delivery methods: REST API (sdapi) and Push/Streaming (opta-push).",
+    "total_pages": 1453,
+    "total_sports_api_specs": 17,
+    "projects": [
+      "static",
+      "sdapi",
+      "dynamic-betting-stats-api",
+      "editorial",
+      "video(vod)",
+      "sgapi",
+      "sddp",
+      "apimanagement/sdapi",
+      "apimanagement/opta",
+      "apimanagement/statsapi",
+      "srsr",
+      "data/opta-push",
+      "data/rugby"
+    ]
+  },
+  "feed_code_reference": {
+    "sdapi_patterns": {
+      "OT": "Tournament/Competition feeds (e.g. OT2 = Tournament Calendar)",
+      "MA": "Match feeds (e.g. MA1 = Match, MA2 = Match Statistics, MA3 = Match Events)",
+      "TM": "Team feeds (e.g. TM1 = Teams, TM2 = Standings, TM3 = Squads, TM4 = Seasonal Stats)",
+      "PE": "Person/Player feeds (e.g. PE9 = NLG Player Bios)"
+    },
+    "opta_push_patterns": {
+      "F": "Football/Soccer feeds (F1-F75+, e.g. F1 = Live Scores, F9 = Match Events, F24 = Match Stats)",
+      "C": "Cricket feeds (C1-C50+)",
+      "RL": "Rugby League feeds (RL1-RL57+)",
+      "RU": "Rugby Union feeds (RU1-RU57+)",
+      "MR": "Motorsport feeds (MR1-MR12)",
+      "TAB": "Tennis feeds (TAB01-TAB15)",
+      "AFL": "Australian/American Football feeds (AFL1-AFL40+)",
+      "NET": "Netball feeds (NET1-NET9)"
+    }
+  },
+  "metadata": {
+    "source_files": "01_essentials.zip + 03_json.zip from Stats Perform documentation snapshot",
+    "crawl_date": "2026-05-20",
+    "total_source_pages": 1453,
+    "openapi_specs_count": 17
+  },
+  "product_areas": {
+    "dynamic_betting_stats_api": {
+      "description": "GraphQL-based API for dynamic betting statistics. Supports queries for events, head-to-head, recommendations, home/away splits.",
+      "page_count": 57,
+      "query_types": [
+        "Events",
+        "Head To Head",
+        "Recommendations",
+        "Home And Away",
+        "Players"
+      ],
+      "api_style": "GraphQL",
+      "pages": [
+        {
+          "title": "Dynamic Betting Stats API Overview And Authorisation Guide",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/dynamic-stats-api-overview-and-authorisation-guide.html",
+          "tables_count": 1,
+          "headings": [
+            "Dynamic Betting Stats API Overview And Authorisation Guide"
+          ]
+        },
+        {
+          "title": "Query Home And Away",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-home-and-away-stats.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Home And Away"
+          ]
+        },
+        {
+          "title": "GraphQL API/ Queries",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-lineup-stats.html",
+          "tables_count": 0,
+          "headings": [
+            "GraphQL API/ Queries"
+          ]
+        },
+        {
+          "title": "Query Recommendations",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-recommendations.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Recommendations"
+          ]
+        },
+        {
+          "title": "Query Events",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-events.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Events"
+          ]
+        },
+        {
+          "title": "Query Head To Head",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-head-to-head.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Head To Head"
+          ]
+        },
+        {
+          "title": "Query Statistics",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-statistics.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Statistics"
+          ]
+        },
+        {
+          "title": "American Football API Index and User Guide",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/index.html",
+          "tables_count": 2,
+          "headings": [
+            "American Football API Index and User Guide"
+          ]
+        },
+        {
+          "title": "American Football Schema",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-schema.html",
+          "tables_count": 22,
+          "headings": [
+            "American Football Schema"
+          ]
+        },
+        {
+          "title": "Query Streaks",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/American_Football/dynamic-stats-api-americanfootball-query-streaks.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Streaks"
+          ]
+        },
+        {
+          "title": "Fouls Won",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-fouls-won.html",
+          "tables_count": 0,
+          "headings": [
+            "Fouls Won"
+          ]
+        },
+        {
+          "title": "Query Lineup Stats",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-query-lineup-stats.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Lineup Stats"
+          ]
+        },
+        {
+          "title": "First To Score For Team",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-first_to_score_for_team.html",
+          "tables_count": 0,
+          "headings": [
+            "First To Score For Team"
+          ]
+        },
+        {
+          "title": "Query Events",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-query-events.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Events"
+          ]
+        },
+        {
+          "title": "Corners: 8.5 or more, 9.5 or more, 10.5 or more",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-corners.html",
+          "tables_count": 0,
+          "headings": [
+            "Corners: 8.5 or more, 9.5 or more, 10.5 or more"
+          ]
+        },
+        {
+          "title": "Soccer API Index and User Guide",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/soccer-index.html",
+          "tables_count": 2,
+          "headings": [
+            "Soccer API Index and User Guide"
+          ]
+        },
+        {
+          "title": "Team Cards: 2.5 or more, 3.5 or more",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-team-cards.html",
+          "tables_count": 0,
+          "headings": [
+            "Team Cards: 2.5 or more, 3.5 or more"
+          ]
+        },
+        {
+          "title": "Events",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-events.html",
+          "tables_count": 2,
+          "headings": [
+            "Events"
+          ]
+        },
+        {
+          "title": "Expected Assists",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-expected-assists.html",
+          "tables_count": 0,
+          "headings": [
+            "Expected Assists"
+          ]
+        },
+        {
+          "title": "Query Head To Head",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-head-to-head.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Head To Head"
+          ]
+        },
+        {
+          "title": "xG Player / xG Team",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-query-xg-player-xg-team.htm",
+          "tables_count": 0,
+          "headings": [
+            "xG Player / xG Team"
+          ]
+        },
+        {
+          "title": "Query Statistics",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/olddynamic-stats-api-soccer-query-statistics.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Statistics"
+          ]
+        },
+        {
+          "title": "Score with a Header / Left Foot / Right Foot / Other Body Part",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-score-header-right-left-foot.html",
+          "tables_count": 0,
+          "headings": [
+            "Score with a Header / Left Foot / Right Foot / Other Body Part"
+          ]
+        },
+        {
+          "title": "Away Win + Both Teams To Score",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-away-win.html",
+          "tables_count": 0,
+          "headings": [
+            "Away Win + Both Teams To Score"
+          ]
+        },
+        {
+          "title": "First Player to be Booked",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-first-player-to-be-booked.html",
+          "tables_count": 0,
+          "headings": [
+            "First Player to be Booked"
+          ]
+        },
+        {
+          "title": "Query Home And Away",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-home-to-away-stats.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Home And Away"
+          ]
+        },
+        {
+          "title": "Soccer Schema",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-schema.html",
+          "tables_count": 20,
+          "headings": [
+            "Soccer Schema"
+          ]
+        },
+        {
+          "title": "Both Teams To Receive a Card",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-query-both-teams-receive-card.htm",
+          "tables_count": 0,
+          "headings": [
+            "Both Teams To Receive a Card"
+          ]
+        },
+        {
+          "title": "Query Recommendations",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-query-recommendations.html",
+          "tables_count": 2,
+          "headings": [
+            "Query Recommendations"
+          ]
+        },
+        {
+          "title": "Full-Time Result + O/U 2.5 Goals + O/U 3.5 Goals",
+          "url": "https://documentation.statsperform.com/docs/rh/dynamic-betting-stats-api/Topics/Soccer/dynamic-stats-api-soccer-statistics-full-time-results-ou-2.5goals-ou-3.5goals.html",
+          "tables_count": 0,
+          "headings": [
+            "Full-Time Result + O/U 2.5 Goals + O/U 3.5 Goals"
+          ]
+        }
+      ]
+    },
+    "editorial": {
+      "description": "Editorial content API: articles, fixture data, images, slideshows. Includes Master Fixture List for cross-referencing content.",
+      "page_count": 20,
+      "pages": [
+        {
+          "title": "Master Fixture List - Find Fixture Data & Content across Perform Feeds",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Master_Fixture_List_(MFL)/mfl-overview-and-quick-start-guide.htm",
+          "tables_count": 9,
+          "headings": [
+            "Master Fixture List - Find Fixture Data & Content across Perform Feeds",
+            "How to Use the MFL Feed - Quick Start Guide",
+            "Obtaining MFL UUIDs from MFL Data Elements"
+          ]
+        },
+        {
+          "title": "How to Get Editorial Content by Fixture, Sport, Contestant or Competition",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Master_Fixture_List_(MFL)/get-content-by-mfl-uuid.htm",
+          "tables_count": 14,
+          "headings": [
+            "How to Get Editorial Content by Fixture, Sport, Contestant or Competition"
+          ]
+        },
+        {
+          "title": "Find and map content and data with Master Fixture List IDs",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Master_Fixture_List_(MFL)/using-master-fixture-list-ids.htm",
+          "tables_count": 3,
+          "headings": [
+            "Find and map content and data with Master Fixture List IDs"
+          ]
+        },
+        {
+          "title": "How to Change the Image Size, Quality and Position",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/changing-image-size-quality-position.htm",
+          "tables_count": 1,
+          "headings": [
+            "How to Change the Image Size, Quality and Position",
+            "Tutorial - Create a List of Articles with a Headline and Image"
+          ]
+        },
+        {
+          "title": "Article API - Integration Example",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/integration-example.htm",
+          "tables_count": 1,
+          "headings": [
+            "Article API - Integration Example"
+          ]
+        },
+        {
+          "title": "How to Retrieve Slidelist Articles",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-slidelist-articles.htm",
+          "tables_count": 3,
+          "headings": [
+            "How to Retrieve Slidelist Articles",
+            "Searching for and Retrieving Slidelists"
+          ]
+        },
+        {
+          "title": "Get articles by MFL ID, keyword, category, or other query criteria",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-articles-using-parameters-mfl-ids-keywords-categories.htm",
+          "tables_count": 10,
+          "headings": [
+            "Get articles by MFL ID, keyword, category, or other query criteria",
+            "1. Using Query Parameters As Search Criteria",
+            "2. How To Get/Exclude Assets By Linked MFL UUID And Expose MFL Entity Metadata",
+            "3. Using The Master Fixture List Feed To Obtain Linked MFL Entity Metadata",
+            "4. How To Filter The Feed Using Keywords |kwd"
+          ]
+        },
+        {
+          "title": "How to Return a Single Article",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-a-single-article.htm",
+          "tables_count": 1,
+          "headings": [
+            "How to Return a Single Article",
+            "How to Request Multiple Individual Articles"
+          ]
+        },
+        {
+          "title": "How To Use The Article API And Editorial Service",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/how-to-use-article-service-and-editorial-feeds.htm",
+          "tables_count": 6,
+          "headings": [
+            "How To Use The Article API And Editorial Service",
+            "Overview",
+            "What Are Articles And Article Types?",
+            "What Content Is Linked To Articles?",
+            "Which Data Formats Are Supported?"
+          ]
+        },
+        {
+          "title": "Finding linked articles, syndicated Editorial content and the article owner",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-linked-or-syndicated-articles-and-article-owner.htm",
+          "tables_count": 3,
+          "headings": [
+            "Finding linked articles, syndicated Editorial content and the article owner",
+            "Find or filter by article owner (ao), article status (ao), or owner article UUID (oaID)",
+            "Get Links For Syndicated Articles Published On Partner Websites (More Link)",
+            "Finding Related Articles And Using Related Links",
+            "Syndicated Articles In The Perform CMS"
+          ]
+        },
+        {
+          "title": "Stats Perform Feeds - Editorial FAQs",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/editorial_faqs.htm",
+          "tables_count": 6,
+          "headings": [
+            "Stats Perform Feeds - Editorial FAQs"
+          ]
+        },
+        {
+          "title": "Article API Reference and Query Parameters Index",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/article-api-reference-and-query-parameters-index.htm",
+          "tables_count": 57,
+          "headings": [
+            "Article API Reference and Query Parameters Index",
+            "Using Query Parameters to find and filter content",
+            "Common tasks and API endpoint reference",
+            "Article API Query parameters index"
+          ]
+        },
+        {
+          "title": "Enhanced Articles With Embedded Content",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/enhanced-articles-embed-content.htm",
+          "tables_count": 0,
+          "headings": [
+            "Enhanced Articles With Embedded Content",
+            "Shareable And Great-Looking Content",
+            "FAQs"
+          ]
+        },
+        {
+          "title": "Get articles with images",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-articles-with-images.htm",
+          "tables_count": 2,
+          "headings": [
+            "Get articles with images"
+          ]
+        },
+        {
+          "title": "How to retrieve an article list",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Article/get-an-article-list.htm",
+          "tables_count": 1,
+          "headings": [
+            "How to retrieve an article list"
+          ]
+        },
+        {
+          "title": "How To Return A Single Image",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Image/get-a-single-image.htm",
+          "tables_count": 1,
+          "headings": [
+            "How To Return A Single Image",
+            "How To Request Multiple Individual Images"
+          ]
+        },
+        {
+          "title": "How To Retrieve An Image List",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Image/get-an-image-list.htm",
+          "tables_count": 1,
+          "headings": [
+            "How To Retrieve An Image List"
+          ]
+        },
+        {
+          "title": "How To Use the Image API Feed Service",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Image/how-to-use-image-service-and-feed.htm",
+          "tables_count": 3,
+          "headings": [
+            "How To Use the Image API Feed Service",
+            "Overview",
+            "What Are Images and Image Types?",
+            "What Content Is Linked to Images?",
+            "Which Data Formats Are Supported?"
+          ]
+        },
+        {
+          "title": "Image API Reference And Query Parameters Index",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Image/image-api-reference-and-query-parameters.htm",
+          "tables_count": 33,
+          "headings": [
+            "Image API Reference And Query Parameters Index",
+            "Using Query Parameters To find And Filter Content",
+            "Common Tasks And API Endpoint Reference",
+            "Image API Query Parameters Index"
+          ]
+        },
+        {
+          "title": "How to Retrieve Live Text Commentary (LTC) Articles",
+          "url": "https://documentation.statsperform.com/docs/rh/editorial/Topics/Live_Text_Commentary/get-live-text-commentary-articles.htm",
+          "tables_count": 21,
+          "headings": [
+            "How to Retrieve Live Text Commentary (LTC) Articles",
+            "Live Text Commentary Packages and Content",
+            "LTC Feed Supported Response Formats",
+            "Resources to Find and Retrieve Live Text Commentary Articles",
+            "Retrieving an Individual Live Text Commentary from the LTC Feed"
+          ]
+        }
+      ]
+    },
+    "sports_graphics_api": {
+      "description": "Sports Graphics API (sgapi): visual/graphic data feeds for soccer (touch zones, radars, carries, power rankings, season simulations, etc).",
+      "project_key": "sgapi",
+      "page_count": 19,
+      "feeds": [
+        "Sports Graphics API - Soccer- Touch Zone (GP3)",
+        "Sports Graphics API - Soccer- Radar (GP1)",
+        "Sports Graphics API - Soccer- Touch Map (GP4)",
+        "Sports Graphics API - Soccer- Power Rankings (GP10)",
+        "Sports Graphics API - Soccer- Carries (GP6)",
+        "Sports Graphics API - Soccer- Season Simulations (GP8)",
+        "Sports Graphics API - Soccer- LineUps (GP7)",
+        "Sports Graphics API - Soccer- Pass Map (GP5)",
+        "Sports Graphics API - Soccer- Momentum (GP9)",
+        "Sports GraphicsAPI - Soccer Index and User Guide",
+        "Sports Graphics API - Soccer-\u00a0xG Map (GP2)",
+        "Sports Graphics API - Tennis- Most Likely Opponent (GP6)",
+        "Sports Graphics API - Tennis- Point Skill Rating (GP5)",
+        "Sports Graphics API - Tennis- Top Movers (GP7)",
+        "Sports Graphics API - Tennis- Tournament Simulation (GP1)",
+        "Sports Graphics API - Tennis- Pre Match Win Predictor (GP3)",
+        "Sports GraphicsAPI - Tennis Index and User Guide",
+        "Sports Graphics API - Tennis- Live Win Probability (GP4)",
+        "Sports Graphics API - Tennis- Skill Rating\u00a0(GP2)"
+      ]
+    },
+    "video_vod": {
+      "description": "Video On Demand API: access to sports video content, highlight clips.",
+      "page_count": 14,
+      "pages": [
+        {
+          "title": "Stats Perform Feeds API Overview And Authorisation Guide",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Shared_Resources/api-overview-and-authorisation-guide.htm",
+          "tables_count": 5,
+          "headings": [
+            "Stats Perform Feeds API Overview And Authorisation Guide"
+          ]
+        },
+        {
+          "title": "Error codes and messages",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Shared_Resources/error-codes-and-messages.htm",
+          "tables_count": 2,
+          "headings": [
+            "Error codes and messages"
+          ]
+        },
+        {
+          "title": "Glossary",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Shared_Resources/glossary.htm",
+          "tables_count": 0,
+          "headings": [
+            "Glossary"
+          ]
+        },
+        {
+          "title": "Developer Inspiration",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Shared_Resources/developer-inspiration-to-use-perform-feeds.htm",
+          "tables_count": 0,
+          "headings": [
+            "Developer Inspiration"
+          ]
+        },
+        {
+          "title": "Get New And Updated Content By Published Or Last Updated Date/Time",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Shared_Resources/get-content-and-by-publish-time-and-updated-time-using-deltas.htm",
+          "tables_count": 10,
+          "headings": [
+            "Get New And Updated Content By Published Or Last Updated Date/Time",
+            "Content Updates And Our Editorial Workflow - Article Example",
+            "Vettel Beats Hamilton To Australian GP Glory",
+            "Key Tasks"
+          ]
+        },
+        {
+          "title": "How To Change The Image Size, Quality And Position",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/changing-image-size-quality-position.htm",
+          "tables_count": 1,
+          "headings": [
+            "How To Change The Image Size, Quality And Position",
+            "Tutorial - Create A List Of Articles With A Headline And Image"
+          ]
+        },
+        {
+          "title": "Stats Perform Feeds - Video FAQs",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/faqs.htm",
+          "tables_count": 5,
+          "headings": [
+            "Stats Perform Feeds - Video FAQs"
+          ]
+        },
+        {
+          "title": "Get Videos By MFL ID, Keyword, Category, Or Other Query Criteria",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/get-videos-using-parameters-mfl-ids-keywords-categories.htm",
+          "tables_count": 11,
+          "headings": [
+            "Get Videos By MFL ID, Keyword, Category, Or Other Query Criteria",
+            "1. Using Query Parameters As Search Criteria",
+            "2. How To Get/Exclude Assets By Linked MFL UUID And Expose MFL Entity Metadata",
+            "3. Using the Master Fixture List Feed To Obtain Linked MFL Entity Metadata",
+            "4. How To Filter The Feed Using Keywords |kwd"
+          ]
+        },
+        {
+          "title": "VOD API Reference And Query Parameters Index",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/vod-api-reference-and-query-parameters.htm",
+          "tables_count": 59,
+          "headings": [
+            "VOD API Reference And Query Parameters Index",
+            "Using Query Parameters To Find And Filter Content",
+            "Common Tasks And API Endpoint Reference",
+            "VOD API Query Parameters Index"
+          ]
+        },
+        {
+          "title": "VOD Submission API",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/video-container-api.html",
+          "tables_count": 2,
+          "headings": [
+            "VOD Submission API"
+          ]
+        },
+        {
+          "title": "Delivery Methods For Video packages",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/video-delivery-methods.htm",
+          "tables_count": 1,
+          "headings": [
+            "Delivery Methods For Video packages"
+          ]
+        },
+        {
+          "title": "VOD Launch API Tutorial, Reference, And Parameters Index",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/vodlaunch-api-reference-and-query-parameters.htm",
+          "tables_count": 23,
+          "headings": [
+            "VOD Launch API Tutorial, Reference, And Parameters Index",
+            "Using Query Parameters",
+            "VOD Launch API Query parameters Index |/vodlaunch",
+            "Common Tasks And API Endpoint Reference"
+          ]
+        },
+        {
+          "title": "How To Use The VOD API And Script Feed",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/how-to-use-video-service-and-feeds.htm",
+          "tables_count": 5,
+          "headings": [
+            "How To Use The VOD API And Script Feed",
+            "Overview"
+          ]
+        },
+        {
+          "title": "How to retrieve Video Scripts from Stats Perform Feeds",
+          "url": "https://documentation.statsperform.com/docs/rh/video(vod)/Topics/Video(VOD)/how-to-retrieve-video-scripts-from-perform-feeds.htm",
+          "tables_count": 5,
+          "headings": [
+            "How to retrieve Video Scripts from Stats Perform Feeds"
+          ]
+        }
+      ]
+    },
+    "smart_ratings_reels": {
+      "description": "SmartRatings/SmartReels: player rating APIs and automated highlights inventory.",
+      "project_key": "srsr",
+      "apis": [
+        "Plays API",
+        "Games API",
+        "Alerts API",
+        "Highlights Inventory API",
+        "Highlights API"
+      ]
+    },
+    "stats_api": {
+      "description": "STATS API (legacy/specialist): separate endpoint structure for certain sports (Golf, etc). More statistics-focused.",
+      "project_key": "apimanagement/statsapi",
+      "sports": {
+        "golf": [
+          {
+            "title": "STATS APIGolf - Leaders",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/statsapiamp-golf-api-leaders-endpoint.htm"
+          },
+          {
+            "title": "STATS APIGolf - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/statsapiamp-golf-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIGolf - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/statsapiamp-golf-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIGolf Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/Index.htm"
+          },
+          {
+            "title": "STATS APIgolf - Teams",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/statsapiamp-golf-api-teams-endpoint.htm"
+          },
+          {
+            "title": "STATS APIGolf - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Golf/statsapiamp-golf-api-participants-endpoint.htm"
+          }
+        ],
+        "rugby": [
+          {
+            "title": "STATS APIRugby - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Rugby/statsapiamp-rugby-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIRugby - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Rugby/statsapiamp-rugby-api-participants-endpoint.htm"
+          },
+          {
+            "title": "STATS APIRugby Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Rugby/index.htm"
+          },
+          {
+            "title": "STATS APIRugby - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Rugby/statsapiamp-rugby-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIRugby - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Rugby/statsapiamp-rugby-api-standings-endpoint.htm"
+          }
+        ],
+        "soccer": [
+          {
+            "title": "STATS APISoccer - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-participants.htm"
+          },
+          {
+            "title": "STATS APISoccer -Suspensions",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-suspensions-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Team Rankings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-team-rankings-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-standings-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Projections",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-projections-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Teams",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-teams-endpoint.htm"
+          },
+          {
+            "title": "STATS APISoccer - Transfers",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-transfers.htm"
+          },
+          {
+            "title": "STATS APISoccer Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/index.htm"
+          },
+          {
+            "title": "STATS APISoccer - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Soccer/statsapiamp-soccer-api-events-endpoint.htm"
+          }
+        ],
+        "basketball": [
+          {
+            "title": "STATS APIBasketball - Tourney Win Probability",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-tourneywinprobability-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-standings-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-participants.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Team Rating",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-teamrating-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Win Probability",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-winprobability-endpoint1.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Season Structure",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-season-structure.htm"
+          },
+          {
+            "title": "STATS APIBasketball Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/Index.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Fantasy Projections",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-fantasyprojections-endpoint1.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Matchup Gaming",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-matchup-gaming.htm"
+          },
+          {
+            "title": "STATS APIbasketball - Endpoint Modified",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-endpoint-modified.htm"
+          },
+          {
+            "title": "STATS APIBasketball - Events Deleted",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Basketball/statsapiamp-basketball-api-eventsdeleted-endpoint.htm"
+          }
+        ],
+        "hockey": [
+          {
+            "title": "STATS APIIce Hockey - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-standings-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Fantasy Projections",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-fantasyprojections-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Events Deleted",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-events-deleted-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-participants-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce hockey Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/index.htm"
+          },
+          {
+            "title": "STATS APIIce hockey - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Matchup Gaming",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-matchup-gaming-endpoint.htm"
+          },
+          {
+            "title": "STATS APIIce Hockey - Endpoint Modified",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Ice_Hockey/statsapiamp-icehockey-api-endpointmodified-endpoint.htm"
+          }
+        ],
+        "baseball": [
+          {
+            "title": "STATS APIBaseball - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-participants.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-standings-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Win Probability",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-winprobability-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Fantasy Projections",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-fantasyprojections-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Pitching Probables",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-pitchingprobables-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Events Deleted",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-eventsdeleted-endpoint.htm"
+          },
+          {
+            "title": "STATS APIBaseball Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/index.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Endpoint Modified",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-endpoint-modified.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Matchup Gaming",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-matchup-gaming.htm"
+          },
+          {
+            "title": "STATS APIBaseball - Batter Vs Pitcher",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Baseball/statsapiamp-baseball-api-batter-pitcher-endpoint.htm"
+          }
+        ],
+        "football": [
+          {
+            "title": "STATS APIAustralian Football - Teams",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Australian_Football/statsapiamp-australianfootball-api-teams-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAustralian Football - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Australian_Football/statsapiamp-australianfootball-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAustralian FootballIndex and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Australian_Football/index.htm"
+          },
+          {
+            "title": "STATS APIAustralian Football - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Australian_Football/statsapiamp-australianfootball-api-standings.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Practice Reports",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-practice-reports.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Awards",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-awards-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Fantasy Projections",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-fantasyprojections-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-participants.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Standings",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-standings.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Endpoint Modified",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-endpointmodified-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-statistics-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Matchup Gaming",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-matchupgaming-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican football Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/index.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Bye Weeks",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-byeweeks-endpoint.htm"
+          },
+          {
+            "title": "STATS APIAmerican Football - Events Deleted",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/American Football/statsapiamp-americanfootball-api-eventsdeleted-endpoint.htm"
+          }
+        ],
+        "mlb": [
+          {
+            "title": "STATS APIAll Sports - MLB IDs",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Common Documents/statsapiamp-common-documents-api-mlbids-endpoint.htm"
+          }
+        ],
+        "tennis": [
+          {
+            "title": "STATS APITennis - Leaders",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/statsapiamp-tennis-api-leaders-endpoint.htm"
+          },
+          {
+            "title": "STATS APITennis - Participants",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/statsapiamp-tennis-api-participants-endpoint.htm"
+          },
+          {
+            "title": "STATS APITennis - Teams",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/statsapiamp-tennis-api-teams-endpoint.htm"
+          },
+          {
+            "title": "STATS APITennis - Events",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/statsapiamp-tennis-api-events-endpoint.htm"
+          },
+          {
+            "title": "STATS APITennis Index and User Guide",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/index.htm"
+          },
+          {
+            "title": "STATS APITennis - Statistics",
+            "url": "https://documentation.statsperform.com/docs/rh/apimanagement/statsapi/Topics/Tennis/statsapiamp-tennis-api-statistics-endpoint.htm"
+          }
+        ]
+      },
+      "page_count": 126
+    },
+    "opta_push_general_shared": [
+      {
+        "title": "Opta Common Feed Parameters",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Opta_Common_Feed_Parameters.htm",
+        "codes": []
+      },
+      {
+        "title": "Amazon S3 Delivery Setup",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Amazon_S3_Delivery.htm",
+        "codes": []
+      },
+      {
+        "title": "Opta OMO Pull Service",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/OMO_Pull_Service.htm",
+        "codes": []
+      },
+      {
+        "title": "Opta Feed FAQs",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Support_&_FAQs.htm",
+        "codes": []
+      },
+      {
+        "title": "Opta Delivery Setup",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Delivery_Setup.htm",
+        "codes": []
+      },
+      {
+        "title": "Information On The Transmission Of Opta\u00a0Online Services Via FTP Push",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Guidelines_for_Opta_FTP_Push.htm",
+        "codes": []
+      },
+      {
+        "title": "HTTP Push Overview",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/HTTP_push_overview.htm",
+        "codes": []
+      },
+      {
+        "title": "AFL1 - Fixtures Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL1_Fixture_Feed.htm",
+        "codes": [
+          "AFL1"
+        ]
+      },
+      {
+        "title": "AFL29 - Bet Preview Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL29_Bet_Preview.htm",
+        "codes": [
+          "AFL29"
+        ]
+      },
+      {
+        "title": "AFL40 - Squads Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL40_Squads_Feed.htm",
+        "codes": [
+          "AFL40"
+        ]
+      },
+      {
+        "title": "AFL3 - Standings Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL3_Standings_Feed.htm",
+        "codes": [
+          "AFL3"
+        ]
+      },
+      {
+        "title": "AFL Feed Specifications",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL_Feed_Specifications.htm",
+        "codes": []
+      },
+      {
+        "title": "AFL9 - Player and Team Statistics Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/AFLFeedSpec/AFL9_Player_and_Team_Statistics_Feed.htm",
+        "codes": [
+          "AFL9"
+        ]
+      },
+      {
+        "title": "Opta Widget Specifications",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/Widget_Specifications/Opta_Widget_Specifications.htm",
+        "codes": []
+      },
+      {
+        "title": "Netball Feed Specifications",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/NetballFeedSpec/Netball_Feed_Specifications.htm",
+        "codes": []
+      },
+      {
+        "title": "NET9 - Player/Team Statistics Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/NetballFeedSpec/NET9_Player_Team_Statistics_Feed.htm",
+        "codes": [
+          "NET9"
+        ]
+      },
+      {
+        "title": "NET3 - Standings Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/NetballFeedSpec/NET3_Standings_Feed.htm",
+        "codes": [
+          "NET3"
+        ]
+      },
+      {
+        "title": "NET1 - Fixtures and Results Feed",
+        "url": "https://documentation.statsperform.com/docs/data/opta-push/Topics/NetballFeedSpec/NET1_-_Fixtures_and_Results_Feed.htm",
+        "codes": [
+          "NET1"
+        ]
+      }
+    ],
+    "sddp": {
+      "description": "Sports Data Delta Push - streaming delivery mechanism for push feeds",
+      "pages": [
+        {
+          "title": "Overlay MA12DP Feeds Appendices",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/assets/Appendix/Appendices.htm",
+          "tables_count": 2,
+          "headings": [
+            "Overlay MA12DP Feeds Appendices"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)- Integration Guide | Badminton",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Badminton/badminton-sddp-integration-guide-b1dp.htm",
+          "tables_count": 25,
+          "headings": [
+            "Sports Data Delta Push (SDDP)- Integration Guide | Badminton"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)| Badminton Index and Overview",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Badminton/badmintonindex.htm",
+          "tables_count": 1,
+          "headings": [
+            "Sports Data Delta Push (SDDP)| Badminton Index and Overview",
+            "Badminton - Overview"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)| American Football Index and Overview",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/American_Football/americanfootballindex.htm",
+          "tables_count": 1,
+          "headings": [
+            "Sports Data Delta Push (SDDP)| American Football Index and Overview",
+            "American Football - Overview"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Opta Stream",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/American_Football/americanfootball-sddp-opta-stream-ma28dp.htm",
+          "tables_count": 2,
+          "headings": [
+            "Sports Data Delta Push- Opta Stream",
+            "Opta Stream (MA28DP) Guide"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)- Integration Guide | American Football",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/American_Football/americanfootball-sddp-integration-guide.htm",
+          "tables_count": 4,
+          "headings": [
+            "Sports Data Delta Push (SDDP)- Integration Guide | American Football"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer - Permitted data points for Betting",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-permitted-data-points.htm",
+          "tables_count": 1,
+          "headings": [
+            "Sports Data Delta Push- Soccer - Permitted data points for Betting"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Match Stream",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma28dp.htm",
+          "tables_count": 2,
+          "headings": [
+            "Sports Data Delta Push- Match Stream",
+            "Match Stream (MA28DP) Guide |OptaStream"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)| Soccer Index and Overview",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/soccerindex.html",
+          "tables_count": 1,
+          "headings": [
+            "Sports Data Delta Push (SDDP)| Soccer Index and Overview",
+            "Soccer - Overview"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Opta Points",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma17dp.htm",
+          "tables_count": 5,
+          "headings": [
+            "Sports Data Delta Push- Opta Points",
+            "Opta Points (MA17DP) Guide |OptaPoints"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Automated Insights",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma23dp.htm",
+          "tables_count": 7,
+          "headings": [
+            "Sports Data Delta Push- Soccer Automated Insights",
+            "Automated Insights (MA23DP) Guide |Insights"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Match Events",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma3dp.htm",
+          "tables_count": 34,
+          "headings": [
+            "Sports Data Delta Push- Soccer Match Events",
+            "Match Events (MA3DP) Guide |matchEvent"
+          ]
+        },
+        {
+          "title": "Sports Data Delta PushSoccer - Calculation of data points",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-calculation-of-opta-data-points.htm",
+          "tables_count": 3,
+          "headings": [
+            "Sports Data Delta PushSoccer - Calculation of data points"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Overlays",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma12dp.html",
+          "tables_count": 9,
+          "headings": [
+            "Sports Data Delta Push- Soccer Overlays",
+            "Overlays (MA12DP) Guide |xGoals"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Live Score",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma1dp.htm",
+          "tables_count": 48,
+          "headings": [
+            "Sports Data Delta Push- Soccer Live Score",
+            "Live Score (MA1DP) Guide |LiveScore"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Match Stats",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma2dp.htm",
+          "tables_count": 6,
+          "headings": [
+            "Sports Data Delta Push- Soccer Match Stats",
+            "Match Stats (MA2DP) Guide |stats"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Soccer Match Events Aggregated Stats",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/sports-data-delta-push-integration-guide-ma18dp.htm",
+          "tables_count": 4,
+          "headings": [
+            "Sports Data Delta Push- Soccer Match Events Aggregated Stats",
+            "Match Events Aggregated Stats (MA18DP) Guide |matchEventStats"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)- Integration Guide | Soccer",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Soccer/soccer-sddp-integration-guide.htm",
+          "tables_count": 7,
+          "headings": [
+            "Sports Data Delta Push (SDDP)- Integration Guide | Soccer"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push- Opta Stream",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Basketball/basketball-sddp-opta-stream-ma28dp.htm",
+          "tables_count": 2,
+          "headings": [
+            "Sports Data Delta Push- Opta Stream",
+            "Opta Stream (MA28DP) Guide"
+          ]
+        },
+        {
+          "title": "Sports Data Delta Push (SDDP)| Basketball Index and Overview",
+          "url": "https://documentation.statsperform.com/docs/rh/sddp/Topics/Basketball/basketballindex.htm",
+          "tables_count": 1,
+          "headings": [
+            "Sports Data Delta Push (SDDP)| Basketball Index and Overview",
+            "Basketball - Overview"
+          ]
+        }
+      ]
+    }
+  },
+  "sports_index": {
+    "american_football": {
+      "file": "sp-american-football.json",
+      "feed_codes": [
+        "OT2",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA4",
+        "MA5",
+        "MA21",
+        "MA22",
+        "MA53",
+        "PE9",
+        "TM1",
+        "TM2",
+        "TM3",
+        "TM4",
+        "TM6",
+        "TM11"
+      ]
+    },
+    "soccer": {
+      "file": "sp-soccer.json",
+      "feed_codes": [
+        "F1",
+        "F9",
+        "F24",
+        "F24b",
+        "F25",
+        "F26",
+        "F27",
+        "F30",
+        "F40",
+        "OT2",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "TM1",
+        "TM2",
+        "TM3",
+        "TM4"
+      ]
+    },
+    "cricket": {
+      "file": "sp-cricket.json",
+      "feed_codes": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C10",
+        "C11",
+        "C12",
+        "C14",
+        "C24",
+        "C29",
+        "C30",
+        "C40",
+        "C50",
+        "C51",
+        "MA1",
+        "MA2",
+        "MA3"
+      ]
+    },
+    "rugby": {
+      "file": "sp-rugby.json",
+      "feed_codes": [
+        "RL1",
+        "RL2",
+        "RL3",
+        "RL4",
+        "RU1",
+        "RU2",
+        "RU3",
+        "RU4",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA6",
+        "MA9",
+        "OT2"
+      ]
+    },
+    "basketball": {
+      "file": "sp-basketball.json",
+      "feed_codes": [
+        "OT2",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA21",
+        "MA22",
+        "MA53",
+        "PE2",
+        "PE9",
+        "TM1",
+        "TM2",
+        "TM3",
+        "TM4",
+        "TM5",
+        "TM11"
+      ]
+    },
+    "baseball": {
+      "file": "sp-baseball.json",
+      "feed_codes": [
+        "OT2",
+        "OT3",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA21",
+        "MA22",
+        "TM1",
+        "TM2",
+        "TM3",
+        "TM4",
+        "TM6",
+        "TM11"
+      ]
+    },
+    "ice_hockey": {
+      "file": "sp-ice-hockey.json",
+      "feed_codes": [
+        "OT2",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA21",
+        "MA22",
+        "MA31",
+        "PE9",
+        "TM1",
+        "TM2",
+        "TM3",
+        "TM4",
+        "TM6"
+      ]
+    },
+    "tennis": {
+      "file": "sp-tennis.json",
+      "feed_codes": [
+        "TAB01",
+        "TAB02",
+        "TAB04",
+        "TAB07",
+        "TAB15",
+        "OT2",
+        "MA0",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA4",
+        "MA8",
+        "MA21",
+        "MA23",
+        "MA30",
+        "TM3",
+        "TM4",
+        "PE2",
+        "PE4"
+      ]
+    },
+    "golf": {
+      "file": "sp-golf.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "MA2",
+        "MA3",
+        "MA11",
+        "PE2",
+        "TM2",
+        "TM3"
+      ]
+    },
+    "motorsport": {
+      "file": "sp-motorsport.json",
+      "feed_codes": [
+        "MR1",
+        "MR2",
+        "MR3",
+        "MR4",
+        "MR5",
+        "MR6",
+        "MR8",
+        "MR9",
+        "MR10",
+        "MR11",
+        "MR12",
+        "OT2",
+        "MA1",
+        "MA2",
+        "MA4",
+        "TM2",
+        "TM3"
+      ]
+    },
+    "handball": {
+      "file": "sp-handball.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "MA2",
+        "TM2",
+        "TM3",
+        "TM4"
+      ]
+    },
+    "volleyball": {
+      "file": "sp-volleyball.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "MA2",
+        "TM2",
+        "TM3"
+      ]
+    },
+    "australian_football": {
+      "file": "sp-australian-football.json",
+      "feed_codes": [
+        "AFL1",
+        "AFL3",
+        "AFL9",
+        "AFL29",
+        "AFL40",
+        "OT2",
+        "MA1",
+        "TM1",
+        "TM2"
+      ]
+    },
+    "badminton": {
+      "file": "sp-badminton.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "MA4"
+      ]
+    },
+    "beach_soccer": {
+      "file": "sp-beach-soccer.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "TM2"
+      ]
+    },
+    "futsal": {
+      "file": "sp-futsal.json",
+      "feed_codes": [
+        "OT2",
+        "MA1",
+        "TM2"
+      ]
+    }
+  }
+}

@@ -21047,142 +21047,206 @@
     }
   ],
   "coverage_tiers": {
-    "title": "Sports DataSoccer API - Coverage Tiers and Types",
+    "title": "Sports Data Soccer API - Coverage Tiers and Types",
     "url": "https://documentation.statsperform.com/docs/rh/sdapi/Topics/soccer/opta-sdapi-soccer-api-coverage-tiers.htm",
-    "tables": [
-      [
-        [
-          "Key Coverage Type",
-          "Description"
+    "legend": "(B) = Before | (L) = Live | (A) = After/Post-match",
+    "coverage_types": {
+      "Results": "Delivers scores per match",
+      "Scorers": "Delivers goal scorers per match",
+      "Lineups": "Delivers the lineup player names per match",
+      "Match Events": "Delivers cards and substitutions",
+      "Match Events Premium": "Delivers formations, assists, penalty shootout scorers",
+      "Match Stats": "Basic performance data including shots, free-kicks, and corners with x/y coordinates",
+      "Player Stats": "Live performance data including passes, tackles, and clearances with x/y coordinates",
+      "Touches Pro & Video Sync": "Full check of collection, additional data points and millisecond timestamps"
+    },
+    "coverage_tiers": {
+      "1": {
+        "name": "Post-Match Data \u2014 Score",
+        "group": "Post-Match Data",
+        "coverage_types": [
+          "Results (A)"
         ],
-        [
-          "Results",
-          "Delivers scores per match"
-        ],
-        [
-          "Scorers",
-          "Delivers goal scorers per match"
-        ],
-        [
-          "Lineups",
-          "Delivers the lineup player names per match"
-        ],
-        [
-          "Match Events",
-          "Delivers cards and substitutions"
-        ],
-        [
-          "Match Events Premium",
-          "Delivers formations, assists, penalty shootout scorers"
-        ],
-        [
-          "Match Stats",
-          "Basic performance data including shots, free-kicks, and corners with x/y coordinates"
-        ],
-        [
-          "Player Stats",
-          "Live performance data including passes, tackles, and clearances with x/y coordinates"
-        ],
-        [
-          "Touches Pro & Video Sync",
-          "-"
-        ]
-      ],
-      [
-        [
-          "Coverage Tier",
-          "Coverage Type",
-          "Description",
-          "Comments",
-          "Timing"
-        ],
-        [
-          "Post-Match Data"
-        ],
-        [
-          "1",
+        "description": "Post-match result of the match",
+        "timing": "Opta: Within 1 hour. Sports Data API: Different intervals"
+      },
+      "2": {
+        "name": "Post-Match Data \u2014 Scorers",
+        "group": "Post-Match Data",
+        "coverage_types": [
           "Results (A)",
-          "Score",
-          "Post-match result of the match",
-          "Opta: Within 1 hour Sports Data API: Different intervals"
-        ],
-        [
-          "2",
-          "Results (A)",
-          "Scorers",
-          "Post-match result of the match and goal scorers",
-          "Opta: Within 1 hour Sports Data API: Different intervals"
-        ],
-        [
           "Scorers (A)"
         ],
-        [
-          "3",
+        "description": "Post-match result of the match and goal scorers",
+        "timing": "Opta: Within 1 hour. Sports Data API: Different intervals"
+      },
+      "3": {
+        "name": "Post-Match Data \u2014 Line-ups and Basic Events",
+        "group": "Post-Match Data",
+        "coverage_types": [
           "Results (A)",
-          "Line-ups and Basic Events",
-          "Post-match result of the match and goal scorers",
-          "Opta: Within 1 hour Sports Data API: Different intervals"
-        ],
-        [
-          "Scorers (A)"
-        ],
-        [
-          "Lineups (A)"
-        ],
-        [
+          "Scorers (A)",
+          "Lineups (A)",
           "Match Events (A)"
         ],
-        [
-          "Live Data"
+        "description": "Post-match result of the match and goal scorers, with line-ups and basic events",
+        "timing": "Opta: Within 1 hour. Sports Data API: Different intervals"
+      },
+      "4": {
+        "name": "Live \u2014 Score",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)"
         ],
-        [
-          "4",
+        "description": "Live scores",
+        "timing": "Live"
+      },
+      "5": {
+        "name": "Live \u2014 Scorers",
+        "group": "Live Data",
+        "coverage_types": [
           "Results (L)",
-          "Score",
-          "Live scores",
-          "Live"
-        ],
-        [
-          "5",
-          "Results (L)",
-          "Scorers",
-          "Live scores with goal scorers",
-          "Live"
-        ],
-        [
           "Scorers (L)"
         ],
-        [
-          "6",
+        "description": "Live scores with goal scorers",
+        "timing": "Live"
+      },
+      "6": {
+        "name": "Live \u2014 Line-ups and Basic Events (post-match)",
+        "group": "Live Data",
+        "coverage_types": [
           "Results (L)",
-          "Line-ups and Basic Events",
-          "Live scores Post-match goal scorers, line-ups, bookings, and substitutions",
-          "Live Post-match: Different intervals"
-        ],
-        [
-          "Scorers (A)"
-        ],
-        [
-          "Lineups (A)"
-        ],
-        [
+          "Scorers (A)",
+          "Lineups (A)",
           "Match Events (A)"
         ],
-        [
-          "7",
+        "description": "Live scores. Post-match goal scorers, line-ups, bookings, and substitutions",
+        "timing": "Live. Post-match: Different intervals"
+      },
+      "7": {
+        "name": "Live \u2014 Line-ups and Basic Events (live scorers)",
+        "group": "Live Data",
+        "coverage_types": [
           "Results (L)",
-          "Line-ups and Basic Events",
-          "Live scores with goal scorers Post-match line-ups, bookings, and substitutions. Note : Basic stats will be added for few of the competition.",
-          "Live Post-match: Different intervals"
+          "Scorers (L)",
+          "Lineups (A)",
+          "Match Events (A)"
         ],
-        [
-          "Scorers (L)"
+        "description": "Live scores with goal scorers. Post-match line-ups, bookings, and substitutions. Note: Basic stats will be added for few competitions.",
+        "timing": "Live. Post-match: Different intervals"
+      },
+      "8": {
+        "name": "Live \u2014 Line-ups, Basic Stats and Basic Events",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Basic Stats (L)",
+          "Match Events (L)"
         ],
-        [
-          "Lineups (A)"
-        ]
-      ]
-    ]
+        "description": "Live scores, goal scorers, line-ups, bookings, and substitutions",
+        "timing": "Live"
+      },
+      "9": {
+        "name": "Live \u2014 Line-ups, Basic Stats and Basic Events Premium",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Basic Stats (L)",
+          "Match Events Premium (L)"
+        ],
+        "description": "Tier 8 + formations, assists, and penalty shootout scorers",
+        "timing": "Live"
+      },
+      "10": {
+        "name": "Live \u2014 Line-ups and Basic Events + Non-Live SSTZ",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Match Events (L)",
+          "Match Stats (A)",
+          "Player Stats (A)"
+        ],
+        "description": "Tier 8 + 9 + 12 combined",
+        "timing": "Live. Post-match: Different intervals"
+      },
+      "11": {
+        "name": "Live \u2014 FDC Live Stats",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Match Events (L)",
+          "Match Stats (L)"
+        ],
+        "description": "Live basic performance data including shots, free-kicks, corners, cards and substitutions with x/y coordinates. Excludes passes, tackles, clearances etc.",
+        "timing": "Live"
+      },
+      "12": {
+        "name": "Non-Live SSTZ",
+        "group": "Post-Match Data",
+        "coverage_types": [
+          "Results (A)",
+          "Scorers (A)",
+          "Lineups (A)",
+          "Match Events (A)",
+          "Match Stats (A)",
+          "Player Stats (A)"
+        ],
+        "description": "Performance data collected post-match",
+        "timing": "Different intervals \u2014 most often available a few days after matches"
+      },
+      "13": {
+        "name": "Live SSTZ",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Match Events (L)",
+          "Match Stats (L)",
+          "Player Stats (L)"
+        ],
+        "description": "Live performance data (full detail analysis) including shots, passes, tackles etc. with x/y coordinates",
+        "timing": "Live"
+      },
+      "14": {
+        "name": "Non-Live Performance Data + Post-match Touches Pro & Video Sync",
+        "group": "Post-Match Data",
+        "coverage_types": [
+          "Results (A)",
+          "Scorers (A)",
+          "Lineups (A)",
+          "Match Events (A)",
+          "Match Stats (A)",
+          "Player Stats (A)",
+          "Touches Pro & Video Sync (A)"
+        ],
+        "description": "Tier 12 + Post-match Pro. Full check of T12 collection, additional data points and millisecond timestamps",
+        "timing": "Post-match: Different intervals"
+      },
+      "15": {
+        "name": "Live Performance Data + Post-match Touches Pro & Video Sync",
+        "group": "Live Data",
+        "coverage_types": [
+          "Results (L)",
+          "Scorers (L)",
+          "Lineups (L)",
+          "Match Events (L)",
+          "Match Stats (L)",
+          "Player Stats (L)",
+          "Touches Pro & Video Sync (L)"
+        ],
+        "description": "Tier 13 + Post-match Pro. Full check of T13 collection, additional data points and millisecond timestamps",
+        "timing": "Live. Post-match: Different intervals"
+      }
+    }
   },
   "push_feeds": [
     {
